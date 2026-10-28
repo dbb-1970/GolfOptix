@@ -17,4 +17,3 @@
 
 #move-warning{max-width:440px;width:calc(100% - 32px);border:1px solid #b5c6a8;border-radius:8px;padding:30px;color:#153b2d;background:#fffefa}#move-warning::backdrop{background:#09291f88}#move-warning h2{font-size:28px;margin:0 0 18px}#move-warning p{font-size:14px;line-height:1.7}#move-warning>div{display:flex;gap:10px;flex-wrap:wrap}#move-warning .button{font-size:12px;padding:12px 15px}
 
-.connection-options{max-height:150px;overflow:auto;border:1px solid #dce2d3;padding:8px;margin:10px 0}.asset-popover .connection-options label,.asset-popover details>label{display:flex;align-items:center;gap:8px;font-size:10px;line-height:1.6;margin:8px 0}.asset-popover details input[type=checkbox]{width:16px;height:16px;min-height:16px;padding:0;flex-shrink:0}
