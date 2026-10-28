@@ -23,3 +23,13 @@ Sprinklers have a label field and Save label button. Corrections use stable asse
 Undo map edit reverses up to 50 moves, label corrections, removals and restores in the current tab's session, including across map navigation and reload. Ctrl/Cmd+Z also works outside text-entry fields. Undo restores the exact prior geometry/pipe bindings and label/removal state while retaining all repair notes and history, including repair changes entered after the map edit. Updates from another tab clear the local undo stack to avoid applying stale snapshots. Browser-local demo storage remains in place.
 
 Thirteen model tests pass. Browser checks verified rename, removal confirmation, undo removal, undo label change and corrected overview labels. The browser-native confirmation stalled in Chrome during testing, so removal now uses an in-page dialog instead.
+
+## Adding irrigation assets
+
+The add toolbar supports sprinklers, valves and water lines. Choose the hole and optionally enter a label, then place the point on the map. A line starts by clicking a sprinkler/valve or a map point; intermediate clicks add bends. Clicking a destination sprinkler/valve finishes it automatically, or Finish line completes two or more free points. Every addition previews as an unsaved draft, then uses the same full-map OK/Cancel warning as a move. Escape or Cancel addition discards the draft. No record is created before OK.
+
+New geometry has USER-prefixed stable IDs, its own history and a distinct user-created overlay, not source attribution. It is stored in master coordinates and transformed consistently into overview, hole views and portrait prints. User labels remain upright; the original card crop clips additions and repair markers to the map area. New points can be moved, renamed (sprinklers), removed, restored and flagged for repair. New lines support repair notes and removal. Session undo of an addition hides the new item while retaining its geometry/history for restoration.
+
+Line endpoints explicitly attached by clicking a sprinkler or valve remember that stable ID and its position at creation. Future endpoint moves update the line in every map view and print. Intermediate bends stay fixed. Existing endpoint offsets at creation are subtracted so moved source features do not displace the new line twice. Custom points attached to new lines do not pull unrelated source branches.
+
+Seventeen model tests pass, including creation, invalid/zero-length geometry, endpoint following and undo-addition history retention. Browser checks placed a sprinkler and valve, drew a line between them, moved its sprinkler endpoint, and verified all three additions and their labels in the overview.
