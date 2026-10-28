@@ -1,20 +1,14 @@
 # GOLFOPTIX
+## GROUNDED IN TRUTH
 
-**GROUNDED IN TRUTH**
+Golf course infrastructure intelligence. Public marketing site and an explicitly approved Kings Ridge demonstration.
 
-GolfOptix is being developed as a public website and an authenticated **My Course** platform for source-backed golf course mapping.
+The front page explains the complete product vision. Course login opens a view-only mock workspace for Kings Ridge Golf Club / Kings Course: an overview with 18 clickable hole numbers, individual hole views, zoom/pan, map layers and printable cards.
 
-## Development direction
+Mock sign-in does not authenticate a real account. The owner approved the clean r007 course exports for public demonstration; original engineering evidence is excluded. Operational customer data will require server-enforced membership and private storage.
 
-- GitHub source with Netlify hosting, following the RebelWerx delivery approach.
-- Public website planned for **golfoptix.com**.
-- My Course planned for authenticated course access, map layers, evidence status, and review workflows.
-- Initial mapping scope: Kings Course at Kings Ridge GC. Ridge Course is deferred.
+- [Website preview and implementation scope](docs/WEBSITE-PREVIEW.md)
+- [Local product plan](docs/PLAN.md)
+- [Access and deployment notes](docs/ACCESS.md)
 
-## Map assets
-
-This public repository must not contain private course maps, original engineering photographs, or source evidence. The approved atlas remains the editing authority; the application will consume reviewed, versioned assets through a separate private distribution path.
-
-## Status
-
-Project setup is in progress. Hosting, domain routing, authentication, and private asset delivery have not yet been connected. This repository does not represent a deployed or operational platform.
+Deployment: existing Netlify project golfoptix, automatically from main. Authoritative atlas remains separate; the app never regenerates it.

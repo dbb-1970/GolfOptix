@@ -1,0 +1,99 @@
+{
+  "customer": "Kings Ridge Golf Club",
+  "course": "Kings Course",
+  "revision": "007",
+  "heads": 298,
+  "valves": 78,
+  "holes": [
+    {
+      "hole": 1,
+      "par": 5,
+      "partial": true
+    },
+    {
+      "hole": 2,
+      "par": 3,
+      "partial": false
+    },
+    {
+      "hole": 3,
+      "par": 4,
+      "partial": false
+    },
+    {
+      "hole": 4,
+      "par": 3,
+      "partial": false
+    },
+    {
+      "hole": 5,
+      "par": 4,
+      "partial": false
+    },
+    {
+      "hole": 6,
+      "par": 5,
+      "partial": false
+    },
+    {
+      "hole": 7,
+      "par": 4,
+      "partial": false
+    },
+    {
+      "hole": 8,
+      "par": 4,
+      "partial": false
+    },
+    {
+      "hole": 9,
+      "par": 4,
+      "partial": false
+    },
+    {
+      "hole": 10,
+      "par": 4,
+      "partial": false
+    },
+    {
+      "hole": 11,
+      "par": 4,
+      "partial": false
+    },
+    {
+      "hole": 12,
+      "par": 4,
+      "partial": false
+    },
+    {
+      "hole": 13,
+      "par": 4,
+      "partial": true
+    },
+    {
+      "hole": 14,
+      "par": 3,
+      "partial": true
+    },
+    {
+      "hole": 15,
+      "par": 5,
+      "partial": false
+    },
+    {
+      "hole": 16,
+      "par": 4,
+      "partial": false
+    },
+    {
+      "hole": 17,
+      "par": 3,
+      "partial": false
+    },
+    {
+      "hole": 18,
+      "par": 4,
+      "partial": false
+    }
+  ]
+}
