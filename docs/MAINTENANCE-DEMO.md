@@ -13,3 +13,13 @@ Print work order prepares the approved portrait hole card with current position/
 Demo state is browser-local localStorage under golfoptix-maintenance-demo-v1. It persists on reload and across views and same-origin tabs. It does not synchronize between devices, browsers or different hostnames. Export backup downloads JSON. Source revision is pinned to r007; revision migration is not implemented. No operational data is uploaded to GitHub or Netlify.
 
 Validation: nine model tests cover lifecycle, repeated-label identity, multiple open issues, invalid input, connected pipe deformation/loop closure and selected valve connections. Browser checks cover reporting/red flags, printed notes with 78 retained valve elements, movement confirmation, shared overview offsets and closing a repair with retained history. Mobile-specific emulation was unavailable in this browser session; responsive styles are included but a handset interaction pass remains useful.
+
+## Removal, label correction and session undo
+
+Sprinklers, irrigation lines and valves have a reversible Remove from map action with an in-page confirmation. Symbols, hit targets, matching labels, pipe casings and repair markers are hidden consistently from overview, hole views and prints. Removed irrigation items in the sidebar opens their retained history and Restore action. Removing an item does not remove other irrigation items or erase repair history.
+
+Sprinklers have a label field and Save label button. Corrections use stable asset IDs, so repeated source labels remain distinct. Corrected labels appear on the map, in search, repair lists, history and printed notes; original source labels remain recorded. The source SVGs and authoritative atlas are unchanged.
+
+Undo map edit reverses up to 50 moves, label corrections, removals and restores in the current tab's session, including across map navigation and reload. Ctrl/Cmd+Z also works outside text-entry fields. Undo restores the exact prior geometry/pipe bindings and label/removal state while retaining all repair notes and history, including repair changes entered after the map edit. Updates from another tab clear the local undo stack to avoid applying stale snapshots. Browser-local demo storage remains in place.
+
+Thirteen model tests pass. Browser checks verified rename, removal confirmation, undo removal, undo label change and corrected overview labels. The browser-native confirmation stalled in Chrome during testing, so removal now uses an in-page dialog instead.
