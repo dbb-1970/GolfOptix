@@ -33,3 +33,9 @@
 .maintenance-toolbar .button:hover{transform:none}
 .add-tools>strong{display:flex;align-items:center;min-height:40px;margin-bottom:0}
 @media(max-width:700px){.add-tools>strong{display:block;min-height:0;margin-bottom:2px}}
+
+/* Match the tagline to the wordmark's visible text width on every page. */
+.wordmark{position:relative;padding-bottom:17px}
+.wordmark small{position:absolute;left:0;right:1.8px;bottom:0;display:flex;justify-content:space-between;margin:0;font-size:7.6px;line-height:1;letter-spacing:0;white-space:pre;text-transform:uppercase}
+.wordmark small span{font:inherit;color:inherit}
+@media(max-width:700px){.wordmark{padding-bottom:15px}.wordmark small{font-size:6px}}
