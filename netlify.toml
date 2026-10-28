@@ -6,3 +6,9 @@
   [headers.values]
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Keep preview maps out of search results; this is not access control.
+[[headers]]
+  for = "/course-preview/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
