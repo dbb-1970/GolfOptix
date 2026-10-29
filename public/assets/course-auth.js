@@ -5,5 +5,6 @@ const activeTrack=u.courses.find(c=>c.id==='kings-ridge-kings');document.getElem
 GolfMaintenance.KEY+=':'+u.id;window.GOLF_ACCOUNT_ID=u.id;
 window.golfAuthSignout=async()=>{await logout();location.replace('/login/');};
 const author=document.getElementById('maintenance-author');if(author){author.value=u.name;author.readOnly=true;}
-for(const path of ['/assets/course.js','/assets/maintenance.js','/assets/backup-ui.js'])await new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=path+'?v=auth1';s.onload=resolve;s.onerror=reject;document.body.append(s);});
+for(const path of ['/assets/course.js','/assets/maintenance.js','/assets/backup-ui.js'])await new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=path+'?v=startup2';s.onload=resolve;s.onerror=reject;document.body.append(s);});
+await golfCourse.reload();
 }catch{const e=document.getElementById('map-loading');if(e)e.textContent='Please sign in with an approved course account.';}
