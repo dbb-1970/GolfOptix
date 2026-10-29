@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {canCourse,initialRoles,publicUser} from '../netlify/lib/access.mjs';
+import identity from '../netlify/functions/identity.mjs';
+test('anonymous and pending users cannot read courses',()=>{assert.equal(canCourse(null,'kings-ridge-kings'),false);assert.equal(canCourse({roles:[],userMetadata:{roles:['admin'],courses:['kings-ridge-kings']}},'kings-ridge-kings'),false);});
+test('administrator accesses every course; ordinary membership stays scoped',()=>{assert.equal(canCourse({roles:['admin']},'any-course'),true);assert.equal(canCourse({roles:['kings-member']},'kings-ridge-kings'),true);assert.equal(canCourse({roles:['kings-member']},'another-course'),false);assert.equal(canCourse({roles:[],appMetadata:{courses:['kings-ridge-kings']}},'kings-ridge-kings'),false);});
+test('signup event ignores user supplied roles and course membership',()=>{const a=identity.userSignup({user:{email:'unknown@example.com',userMetadata:{roles:['admin'],requested_course:'Kings Ridge'},appMetadata:{roles:['admin']}}});assert.deepEqual(a.user.appMetadata.roles,[]);assert.deepEqual(a.user.appMetadata.courses,[]);});
+test('signup requires name and course; membership does not come from a request',()=>{let denied=false;identity.userValidate({user:{userMetadata:{full_name:'Someone'}},deny(){denied=true;}});assert.equal(denied,true);assert.deepEqual(initialRoles('unknown@example.com'),[]);assert.equal(publicUser({roles:[],userMetadata:{requested_course:'Kings Ridge'}}).courses.length,0);});

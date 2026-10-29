@@ -1,7 +1,7 @@
 'use strict';
 (()=>{
 let pendingMove=null,moveBindings=[],sourceBindings={};
-const UNDO_KEY='golfoptix-map-undo-v1';let undoStack=[];try{undoStack=JSON.parse(sessionStorage.getItem(UNDO_KEY)||'[]');if(!Array.isArray(undoStack))undoStack=[];}catch{}
+const UNDO_KEY='golfoptix-map-undo-v1:'+window.GOLF_ACCOUNT_ID;let undoStack=[];try{undoStack=JSON.parse(sessionStorage.getItem(UNDO_KEY)||'[]');if(!Array.isArray(undoStack))undoStack=[];}catch{}
 const M=GolfMaintenance,$=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';let state=M.blank(),selected=null,drag=null,moving=false,liveSvg=null,features=new Map();
 try{const raw=localStorage.getItem(M.KEY);if(raw)state=M.validate(JSON.parse(raw));}catch{setTimeout(()=>message('Saved demo data could not be read. Export any existing backup before making changes.'),0);}
 function el(tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;}

@@ -1,0 +1,9 @@
+import {getUser,admin,verifyRequestOrigin} from '@netlify/identity';
+import {initialRoles,publicUser} from '../lib/access.mjs';
+export default async(req)=>{
+ const me=await getUser();if(!me?.roles?.includes('admin'))return new Response('Forbidden',{status:403,headers:{'Cache-Control':'no-store'}});
+ if(req.method==='GET'){const page=Math.max(1,Number(new URL(req.url).searchParams.get('page'))||1);const users=await admin.listUsers({page,perPage:50});return Response.json({users:users.map(u=>({...publicUser(u),confirmed:!!u.confirmedAt,approvedCourses:u.appMetadata?.courses||[]})),page},{headers:{'Cache-Control':'no-store'}});}
+ if(req.method!=='POST')return new Response('Method not allowed',{status:405});
+ try{verifyRequestOrigin(req);const b=await req.json();const u=await admin.getUser(b.id);if(!u.confirmedAt)return new Response('Email must be verified first',{status:400});if(u.roles?.includes('admin'))return new Response('Administrator permissions cannot be changed here',{status:400});const course=String(b.course||'').trim().toLowerCase();if(!/^[a-z0-9][a-z0-9-]{1,79}$/.test(course))return new Response('Choose a valid course identifier',{status:400});if(course==='kings-ridge-kings'&&!initialRoles(u.email).includes('kings-member'))return new Response('Kings Ridge is reserved for its assigned user.',{status:403});const courses=new Set(u.appMetadata?.courses||[]);b.approve?courses.add(course):courses.delete(course);const roles=(u.roles||[]).filter(x=>x!=='kings-member');if(course==='kings-ridge-kings'&&b.approve)roles.push('kings-member');await admin.updateUser(u.id,{app_metadata:{...u.appMetadata,courses:[...courses],roles,access_updated_at:new Date().toISOString(),access_updated_by:me.id}});return Response.json({ok:true},{headers:{'Cache-Control':'no-store'}});}catch{return new Response('Could not update access. Refresh and try again.',{status:400});}
+};
+export const config={path:'/api/admin/users'};

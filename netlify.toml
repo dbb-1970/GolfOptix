@@ -1,5 +1,6 @@
 [build]
   publish = "public"
+  command = "npm run build"
 
 [[headers]]
   for = "/*"
@@ -12,3 +13,52 @@
   for = "/course-preview/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
+
+[build.environment]
+  NODE_VERSION = "22"
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Server-enforced access: even direct map URLs require a signed Identity role.
+[[redirects]]
+  from = "/course/*"
+  to = "/course/:splat"
+  status = 200
+  force = true
+  conditions = {Role = ["admin", "kings-member"]}
+[[redirects]]
+  from = "/course/*"
+  to = "/login/?required=course"
+  status = 302
+  force = true
+[[redirects]]
+  from = "/course-preview/*"
+  to = "/course-preview/:splat"
+  status = 200
+  force = true
+  conditions = {Role = ["admin", "kings-member"]}
+[[redirects]]
+  from = "/course-preview/*"
+  to = "/access-denied/"
+  status = 403
+  force = true
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/:splat"
+  status = 200
+  force = true
+  conditions = {Role = ["admin"]}
+[[redirects]]
+  from = "/admin/*"
+  to = "/login/?required=admin"
+  status = 302
+  force = true
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "no-store"
+[[headers]]
+  for = "/course-preview/*"
+  [headers.values]
+    Cache-Control = "private, no-store"

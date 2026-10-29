@@ -1,0 +1,13 @@
+{
+  "name": "golfoptix",
+  "private": true,
+  "scripts": {
+    "build": "node --check netlify/functions/session.mjs"
+  },
+  "dependencies": {
+    "@netlify/identity": "2.0.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
