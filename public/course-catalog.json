@@ -1,0 +1,21 @@
+{
+  "courses": [
+    {
+      "id": "kings-ridge",
+      "name": "Kings Ridge Golf Club",
+      "tracks": [
+        {
+          "id": "kings-ridge-kings",
+          "name": "Kings Course",
+          "available": true,
+          "url": "/course/"
+        },
+        {
+          "id": "kings-ridge-ridge",
+          "name": "Ridge Course",
+          "available": false
+        }
+      ]
+    }
+  ]
+}
