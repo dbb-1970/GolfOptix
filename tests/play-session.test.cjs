@@ -1,0 +1,4 @@
+const {test}=require('node:test'),assert=require('node:assert/strict'),{create}=require('../public/assets/play-state.js');
+test('play changes are isolated per page and end clears the session',()=>{const a=create(),b=create();a.setItem('edits','changed');assert.equal(b.getItem('edits'),null);a.end();assert.equal(a.getItem('edits'),null);assert.throws(()=>a.setItem('edits','again'));});
+test('inactivity expiry clears all play data once',()=>{let time=0,expired=0;const a=create({now:()=>time,idleMs:100,maxMs:1000,onExpire:()=>expired++});a.setItem('edits','changed');time=60;a.touch();time=159;assert.equal(a.check(),true);time=160;assert.equal(a.check(),false);assert.equal(a.getItem('edits'),null);assert.equal(expired,1);});
+test('activity cannot extend the absolute session limit',()=>{let time=0;const a=create({now:()=>time,idleMs:100,maxMs:250});for(time=50;time<250;time+=50)a.touch();assert.equal(a.check(),false);});

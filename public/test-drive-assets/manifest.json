@@ -1,0 +1,121 @@
+{
+  "customer": "Juniper Cove Golf Club",
+  "course": "Lakes Course",
+  "revision": "demo-001",
+  "fictional": true,
+  "terrain_source": "OpenStreetMap Augusta-area mapping; ODbL 1.0",
+  "irrigation": "Entirely simulated; no real infrastructure claim",
+  "heads": 472,
+  "valves": 54,
+  "branches": 54,
+  "holes": [
+    {
+      "hole": 1,
+      "name": "First Light",
+      "par": 4,
+      "partial": false
+    },
+    {
+      "hole": 2,
+      "name": "Juniper Rise",
+      "par": 5,
+      "partial": false
+    },
+    {
+      "hole": 3,
+      "name": "Heron Bend",
+      "par": 4,
+      "partial": false
+    },
+    {
+      "hole": 4,
+      "name": "The Narrows",
+      "par": 3,
+      "partial": false
+    },
+    {
+      "hole": 5,
+      "name": "Copper Sands",
+      "par": 4,
+      "partial": false
+    },
+    {
+      "hole": 6,
+      "name": "Stillwater",
+      "par": 3,
+      "partial": false
+    },
+    {
+      "hole": 7,
+      "name": "Lakeside",
+      "par": 4,
+      "partial": false
+    },
+    {
+      "hole": 8,
+      "name": "Cypress Gate",
+      "par": 5,
+      "partial": false
+    },
+    {
+      "hole": 9,
+      "name": "Homeward",
+      "par": 4,
+      "partial": false
+    },
+    {
+      "hole": 10,
+      "name": "The Crossing",
+      "par": 4,
+      "partial": false
+    },
+    {
+      "hole": 11,
+      "name": "Fox Hollow",
+      "par": 4,
+      "partial": false
+    },
+    {
+      "hole": 12,
+      "name": "Long Reach",
+      "par": 3,
+      "partial": false
+    },
+    {
+      "hole": 13,
+      "name": "Whispering Pines",
+      "par": 5,
+      "partial": false
+    },
+    {
+      "hole": 14,
+      "name": "Silverbank",
+      "par": 4,
+      "partial": false
+    },
+    {
+      "hole": 15,
+      "name": "The Lookout",
+      "par": 5,
+      "partial": false
+    },
+    {
+      "hole": 16,
+      "name": "Island Turn",
+      "par": 3,
+      "partial": false
+    },
+    {
+      "hole": 17,
+      "name": "Golden Hour",
+      "par": 4,
+      "partial": false
+    },
+    {
+      "hole": 18,
+      "name": "Harbour Home",
+      "par": 4,
+      "partial": false
+    }
+  ]
+}

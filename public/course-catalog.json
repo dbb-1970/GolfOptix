@@ -16,6 +16,19 @@
           "available": false
         }
       ]
+    },
+    {
+      "id": "juniper-cove",
+      "name": "Juniper Cove Golf Club (DEMO COURSE)",
+      "publicDemo": true,
+      "tracks": [
+        {
+          "id": "juniper-cove-lakes",
+          "name": "Lakes Course",
+          "available": true,
+          "url": "/test-drive/"
+        }
+      ]
     }
   ]
 }
