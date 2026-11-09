@@ -9,3 +9,8 @@ Normal customer edits persist in the current browser under the authenticated use
 Dimensions are approximate map metres, intended for visual fitting rather than surveying or construction. Shape choices are oval, natural outline and rounded rectangle. Existing source-backed terrain is not silently converted into user-added geometry.
 
 Validation: 33 automated checks pass, including old irrigation edits/repairs/backups, new landscape serialization, resizing, rotation, undo, removal, restore and invalid import rejection. Local browser checks cover adding, sizing, moving, overview consistency and refresh persistence on an isolated Kings fixture. Production customer state is not modified by QA.
+
+## Existing features
+Existing mapped trees/tree groups, shrubs, flower beds, bunkers, water, streams, greens, fairways, tees, paths, buildings and range areas are selectable. Existing shapes retain their original outline; width, length and rotation are saved as a separate source-size overlay. Restore original size resets those values; the existing position reset and Undo controls remain available. Kings canopy groups keep their stable canopy IDs. Pond shoreline decoration follows its source pond. Infrastructure is redrawn above edited terrain, without changing engineering coordinates.
+
+Additional validation covers repeated original-feature resizing, persisted bounds, first-resize undo and invalid source-size imports. 35 automated checks pass. Browser comparison confirms the same bunker transform on hole and overview, original-size restoration, and tree selection.
