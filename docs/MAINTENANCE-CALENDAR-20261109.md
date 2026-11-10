@@ -41,3 +41,7 @@ Automated tests cover permissions, origin checks, conflicting/replayed/failed wr
 Vehicle/tool service types are reserved in the model; fleet registration, service intervals and equipment workflows are future work. No satellite diagnostics, weather integration, notifications, chemical inventory, spray-controller integration or automatic irrigation control was added. Calendar times currently use America/New_York for the active Florida course. Live authenticated cloud saving, full reload and archiving were verified with a clearly labeled system-check plan; zero active plans remained after cleanup. Physical-phone touch behavior still needs a real-device check; the production handler regression reproduces and verifies the capture-transfer fix. Shared records currently use one course document; partitioning/retention is needed before large-scale usage.
 
 Rollback the application with a reverting commit restoring the baseline files; retain online calendar data. Do not erase browser data or the Blobs store during rollback. Preserve downloaded map/calendar exports before any intentional data replacement.
+
+## Coverage label correction
+
+Removed the foreground copies of sprinkler labels. Coverage now retains the single original label set and its original typography; the Sprinkler labels checkbox controls that set. Irrigation symbol foreground copies remain so white heads and black valves stay legible. No source map or saved coverage setting changed.
