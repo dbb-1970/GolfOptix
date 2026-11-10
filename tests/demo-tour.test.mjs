@@ -2,7 +2,7 @@ import {test} from 'node:test';import assert from 'node:assert/strict';
 import {tourSteps,tourPages,readTour,placeFlyout} from '../public/assets/demo-tour-model.js';
 
 test('walkthrough state expires and rejects malformed or out-of-range progress',()=>{
- const now=10000000,valid={version:1,active:true,seen:true,index:5,updatedAt:now-1000};
+ const now=10000000,valid={version:2,active:true,seen:true,index:5,updatedAt:now-1000};
  assert.equal(readTour(JSON.stringify(valid),now).index,5);
  for(const value of ['bad',JSON.stringify({...valid,index:-1}),JSON.stringify({...valid,index:tourSteps.length}),JSON.stringify({...valid,updatedAt:now-3600001}),JSON.stringify({...valid,updatedAt:now+100}),JSON.stringify({...valid,active:'yes'})])assert.equal(readTour(value,now).active,false);
 });
@@ -20,4 +20,10 @@ test('desktop flyouts prefer an unobstructed side of the pointed-to control',()=
 test('tour destinations are exclusively public demo pages; instructions cannot grant access',()=>{
  assert.ok(tourSteps.length>=20);for(const s of tourSteps){assert.ok(Object.hasOwn(tourPages,s.page));assert.ok(tourPages[s.page].startsWith('/test-drive/'));}
  assert.match(tourSteps.find(s=>s.prepare==='worker').text,/demo creates no real accounts or emails/);
+});
+test('the guided journey covers classification, work logs, draft closure, manager review and retained history',()=>{
+ for(const prepare of ['tourLog','tourSubmit','tourAssistant','tourReview','tourApprove','tourHistory'])assert.ok(tourSteps.some(s=>s.prepare===prepare));
+ assert.ok(tourSteps.some(s=>s.target==='#calendar-order-kind'));
+ assert.ok(tourSteps.some(s=>s.target==='.repair-form [name="maintenanceKind"]'));
+ assert.equal(readTour(JSON.stringify({version:1,active:true,seen:true,index:5,updatedAt:Date.now()})).active,false);
 });
