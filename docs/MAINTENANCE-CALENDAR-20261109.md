@@ -45,3 +45,7 @@ Rollback the application with a reverting commit restoring the baseline files; r
 ## Coverage label correction
 
 Removed the foreground copies of sprinkler labels. Coverage now retains the single original label set and its original typography; the Sprinkler labels checkbox controls that set. Irrigation symbol foreground copies remain so white heads and black valves stay legible. No source map or saved coverage setting changed.
+
+## Zoom labels and radius slider
+
+Live map labels stay within 9–13 screen pixels and suppress overlapping labels; zooming in reveals more. The single original label set is used. Source SVGs and print typography remain unchanged. Coverage radius now has a slider, live distance readout, unsaved map preview, an exact-distance field and Cancel coverage changes. Coverage patterns use Full/Half/Quarter/Three-quarter circle and plain direction names, retaining existing custom settings. Degrees remain only in stored geometry. Feet require a user-set hole scale.
