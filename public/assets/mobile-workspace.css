@@ -14,3 +14,8 @@ html:has(body.phone-workspace),body.phone-workspace{height:100%;overflow:hidden;
 
 .coverage-field input[type=range]{padding:0;border:0;accent-color:#247da3;cursor:ew-resize;min-height:44px;touch-action:pan-y}.coverage-radius-readout{display:block;margin:8px 0 16px;font-size:18px;font-weight:700;color:#23677d}.coverage-editor select{width:100%;min-height:44px;font-size:16px;padding:9px;background:#fffefa;border:1px solid #bdcdb2;border-radius:4px}
 .phone-workspace .asset-popover:has(.coverage-options[open]){height:65%;max-height:65%}
+
+/* Touch exploration must not draw Safari's blue rectangular SVG focus/tap halo. */
+#map-mount,#map-mount *{-webkit-tap-highlight-color:transparent}
+#map-mount [data-edit-asset]:focus:not(:focus-visible),#map-mount[data-map-input="pointer"] [data-edit-asset]:focus{outline:none!important}
+#map-mount [data-edit-asset]:focus-visible{outline:2px solid #bb923c;outline-offset:3px}

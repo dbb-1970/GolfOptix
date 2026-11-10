@@ -3,6 +3,9 @@
 function el(tag,text,cls){const e=document.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;return e;}
 function button(text,action,label){const b=el('button',text);b.type='button';if(label)b.setAttribute('aria-label',label);b.onclick=action;return b;}
 const sidebar=document.querySelector('.course-sidebar'),toolbar=document.querySelector('.maintenance-toolbar'),stage=$('map-stage'),mapPanel=$('map-panel');
+// Safari can outline a focused SVG path by its whole bounding box after a touch.
+const mapMount=$('map-mount');document.addEventListener('pointerdown',e=>{if(e.target.closest?.('#map-mount'))mapMount.dataset.mapInput='pointer';},true);document.addEventListener('keydown',e=>{if(e.key==='Tab')mapMount.dataset.mapInput='keyboard';},true);
+
 const paneHeading=el('div',null,'mobile-drawer-heading');const paneTitle=el('h2','Course tools');const closePane=button('Close',()=>openPane(null));paneHeading.append(paneTitle,closePane);sidebar.prepend(paneHeading);const toolHeading=paneHeading.cloneNode(true);toolHeading.querySelector('h2').textContent='Edit & tools';toolHeading.querySelector('button').onclick=()=>openPane(null);toolbar.prepend(toolHeading);
 function wrap(name,nodes){const group=el('section',null,'mobile-pane');group.dataset.mobilePane=name;const first=nodes.find(Boolean);if(!first)return;first.before(group);for(const node of nodes)if(node)group.append(node);}
 wrap('holes',[$('overview-button'),sidebar.querySelector('.sidebar-title'),sidebar.querySelector('.sidebar-caption'),$('hole-list')]);wrap('layers',[sidebar.querySelector('.layer-section')]);wrap('search',[sidebar.querySelector('.repair-list')]);wrap('more',[sidebar.querySelector('.map-evidence'),sidebar.querySelector('.sidebar-bottom')]);

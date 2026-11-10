@@ -49,3 +49,7 @@ Removed the foreground copies of sprinkler labels. Coverage now retains the sing
 ## Zoom labels and radius slider
 
 Live map labels stay within 9–13 screen pixels and suppress overlapping labels; zooming in reveals more. The single original label set is used. Source SVGs and print typography remain unchanged. Coverage radius now has a slider, live distance readout, unsaved map preview, an exact-distance field and Cancel coverage changes. Coverage patterns use Full/Half/Quarter/Three-quarter circle and plain direction names, retaining existing custom settings. Degrees remain only in stored geometry. Feet require a user-set hole scale.
+
+## Touch focus outline correction
+
+Suppressed Safari’s native blue tap highlight and SVG feature bounding-box focus outline during pointer/touch exploration. Keyboard Tab navigation retains a visible gold focus indicator. The reported blue rectangle is browser focus feedback, not irrigation geometry or a zoom-limit boundary; zoom limits and source drawings were not changed.
