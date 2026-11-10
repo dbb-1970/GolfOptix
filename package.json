@@ -2,9 +2,10 @@
   "name": "golfoptix",
   "private": true,
   "scripts": {
-    "build": "node --check netlify/functions/session.mjs"
+    "build": "node --check netlify/functions/session.mjs && node --check netlify/functions/maintenance-calendar.mjs && node --test tests/*.test.*"
   },
   "dependencies": {
+    "@netlify/blobs": "11.1.9",
     "@netlify/identity": "2.0.0"
   },
   "engines": {
