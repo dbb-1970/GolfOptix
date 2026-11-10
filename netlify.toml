@@ -20,6 +20,24 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
+# Real maintenance pages require an approved role, including direct HTML URLs.
+# The public, fictional Test Drive lives under its own /test-drive/ path.
+[[redirects]]
+  from = "/maintenance/*"
+  to = "/maintenance/:splat"
+  status = 200
+  force = true
+  conditions = {Role = ["admin", "kings-member"]}
+[[redirects]]
+  from = "/maintenance/*"
+  to = "/login/?required=maintenance"
+  status = 302
+  force = true
+[[headers]]
+  for = "/maintenance/*"
+  [headers.values]
+    Cache-Control = "private, no-store"
+
 # Server-enforced access: even direct map URLs require a signed Identity role.
 [[redirects]]
   from = "/course/*"

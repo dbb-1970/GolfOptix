@@ -71,3 +71,6 @@
 
 /* Club-style ball markers lead a single, left-aligned list of hero links. */
 .hero .hero-course-links{display:flex;flex-direction:column;align-items:flex-start;gap:13px;margin-top:30px}.hero-course-link{display:flex;align-items:center;gap:19px;min-height:58px;text-decoration:none;color:#f1e8d1}.golf-ball-marker{width:58px;height:58px;flex:0 0 58px;filter:drop-shadow(0 4px 5px #0004);transition:transform .2s ease,filter .2s ease}.hero-course-link .text-link{font-size:12px;font-weight:400;padding:10px 0;min-width:202px;justify-content:space-between;border-bottom:1px solid #82917b80;gap:24px}.hero-course-link:hover .text-link{color:#e8ce94;border-color:#d0b16b}.hero-course-link:hover .golf-ball-marker{transform:translateY(-2px) rotate(-5deg);filter:drop-shadow(0 6px 7px #0005)}.hero-course-link:focus-visible{outline:2px solid #dcc38c;outline-offset:6px;border-radius:4px}@media(max-width:620px){.hero .hero-course-links{gap:12px}.hero-course-link{gap:16px}.hero-course-link .text-link{min-width:195px}}@media(prefers-reduced-motion:reduce){.hero-course-link .golf-ball-marker{transition:none}.hero-course-link:hover .golf-ball-marker{transform:none}}
+
+/* Maintenance is the single entry to the course's work tools. */
+.workspace-maintenance-link{display:inline-flex;align-items:center;gap:10px}.workspace-maintenance-link svg{width:22px;height:22px;flex:none}
