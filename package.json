@@ -5,7 +5,7 @@
     "build": "node --check netlify/functions/session.mjs && node --check netlify/functions/maintenance-calendar.mjs && node --test tests/*.test.*"
   },
   "dependencies": {
-    "@netlify/blobs": "11.1.9",
+    "@netlify/blobs": "10.0.0",
     "@netlify/identity": "2.0.0"
   },
   "engines": {

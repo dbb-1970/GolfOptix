@@ -10,6 +10,8 @@ Use **Schedule watering**, **Schedule pesticide application** or **Schedule fert
 
 Open an entry to start, complete, move or skip that occurrence. A move requires a reason and leaves other repeat dates unchanged. Skipping requires a reason. Application completion requires notes. Completed occurrences preserve their planned product/instructions and actual amount independently of later plan edits. Archive retains records and history; it can be reversed. Changes record the authenticated editor, server time and before/after fields.
 
+The storage SDK is pinned to `@netlify/blobs@10.0.0`, which supports the required conditional writes. The initial 11.1.9 deployment could not install a transitive telemetry dependency on the host; no failed build replaced production.
+
 Shared calendars use the `golfoptix-maintenance-calendar-v1` Netlify Blobs store, one `courses/<track-id>` record per approved private track. The API checks membership and origin, uses course and record versions plus conditional ETag writes, and reads back writes before acknowledging success. A conflicting edit leaves the form in place for review. Public demo data never uses this API and resets on exit, refresh, 15-minute idle or one-hour absolute expiry. Never add customer records to the public source repository.
 
 **Download calendar records** creates a JSON export. **Print this calendar view** prints the chosen view. Calendar exports currently have no import UI. Existing **Map backups** cover maps and map-overlay state, including coverage settings/scales; they do not replace or restore the online calendar.
