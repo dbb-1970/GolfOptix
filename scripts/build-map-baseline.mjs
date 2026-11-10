@@ -1,0 +1,4 @@
+import {readFile,mkdir,writeFile} from 'node:fs/promises';import {createHash} from 'node:crypto';import {gzipSync} from 'node:zlib';import source from '../netlify/lib/map-source-release.json' with {type:'json'};
+const files={};for(const [name,digest]of Object.entries(source.files)){const text=await readFile(new URL('../public/course-preview/'+name,import.meta.url),'utf8');if(createHash('sha256').update(text).digest('hex')!==digest)throw Error('Approved source map changed: '+name);files[name]=text;}
+await mkdir(new URL('../.netlify/',import.meta.url),{recursive:true});await writeFile(new URL('../.netlify/recovery-baseline.json',import.meta.url),JSON.stringify({release:source.release,encoding:'gzip-base64',data:gzipSync(JSON.stringify(files)).toString('base64')}));
+console.log('Verified and packaged '+Object.keys(files).length+' pinned source maps for private recovery.');

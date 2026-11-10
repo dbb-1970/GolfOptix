@@ -1,0 +1,14 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+node_modules/
+
+# Private course evidence must never enter the public app repository.
+snapshot/
+private/
+course-assets/
+
+config/private-maintenance-connections.json
+
+.netlify/
