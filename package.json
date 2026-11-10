@@ -2,7 +2,7 @@
   "name": "golfoptix",
   "private": true,
   "scripts": {
-    "build": "node --check netlify/functions/session.mjs && node --check netlify/functions/maintenance-calendar.mjs && node --check netlify/functions/crew.mjs && node --check netlify/functions/crew-password.mjs && node --check netlify/functions/crew-email-dispatch.mjs && node --check public/assets/login.js && node --check public/assets/crew-app.js && node --test tests/*.test.*"
+    "build": "node --check netlify/functions/session.mjs && node --check netlify/functions/maintenance-calendar.mjs && node --check netlify/functions/crew.mjs && node --check netlify/functions/crew-password.mjs && node --check netlify/functions/crew-email-dispatch.mjs && node --check public/assets/demo-tour.js && node --check public/assets/login.js && node --check public/assets/crew-app.js && node --test tests/*.test.*"
   },
   "dependencies": {
     "@netlify/blobs": "10.0.0",
