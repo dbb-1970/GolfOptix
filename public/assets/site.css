@@ -74,3 +74,5 @@
 
 /* Maintenance is the single entry to the course's work tools. */
 .workspace-maintenance-link{display:inline-flex;align-items:center;gap:10px}.workspace-maintenance-link svg{width:22px;height:22px;flex:none}
+
+.workspace-crew-link{display:inline-flex;align-items:center;gap:10px}.workspace-crew-link svg{width:22px;height:22px;flex:none}
