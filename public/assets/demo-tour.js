@@ -59,7 +59,7 @@ function init(){
   }
   async function show(){
     if(!state.active||busy)return;const step=tourSteps[state.index];
-    if(step.page!==page){persist();location.assign(tourPages[step.page]);return;}
+    if(step.page!==page){persist();dispatchEvent(new Event('golf-demo-navigation'));location.assign(tourPages[step.page]);return;}
     busy=true;next.disabled=back.disabled=true;launch.hidden=true;
     try{
       await prepare(step);target=await waitFor(()=>{const e=findTarget(step);return visible(e)?e:null;},2500);

@@ -8,7 +8,7 @@ export async function sendCrewEmail({to,subject,text,key},fetcher=fetch){if(!ema
 async function findUser(admin,email){for(let page=1;page<=100;page++){const users=await admin.listUsers({page,perPage:50}),found=users.find(u=>u.email?.toLowerCase()===email);if(found)return found;if(users.length<50)return null;}throw Error('Account lookup needs administrator assistance.');}
 function welcomeBody(worker,course,password){return `Welcome to GolfOptix, ${worker.name}.\n\nYour email address is your login: ${worker.email}\n${password?'Temporary password: '+password+'\nChange this password before opening your work. It expires in 72 hours. Never share it.\nUse the most recent welcome email if a replacement was issued.':'Your existing GolfOptix password has not changed. Use your usual password or the password recovery option.'}\n\n${password?'Finish setting up your account':'Open your crew account'}: ${crewAccountLink(course)}\nYour superintendent’s course and track are already selected. Your crew account has been created; you do not need to register again.\n\nYour superintendent has added you to this course crew. Your job title is ${worker.jobTitle}. If you were not expecting this invitation, contact your superintendent.\n\nGolfOptix · Grounded in Truth`;
 }
-function ticketBody(a,worker,course){return `GolfOptix work ticket\n\n${a.title}\nTicket: ${a.id}\nAssigned to: ${worker.name}\nDate: ${a.date}\nStarts: ${a.startTime} (America/New_York)\nPlanned duration: ${a.duration} minutes\nLocation: ${a.area||(a.hole?'Hole '+a.hole:'Course grounds')}\nStatus: ${a.status}\n\n${a.notes||'See your superintendent for work instructions.'}\n\nView your ticket: ${SITE}/crew/?course=${encodeURIComponent(course)}&ticket=${encodeURIComponent(a.id)}\nThis message reflects the assignment when sent. Sign in to check its latest details.`;}
+function ticketBody(a,worker,course){return `GolfOptix work ticket\n\n${a.title}\nTicket: ${a.id}\nAssigned to: ${worker.name}\nDate: ${a.date}\nStarts: ${a.startTime} (America/New_York)\nPlanned duration: ${a.duration} minutes\nLocation: ${a.area||(a.hole?'Hole '+a.hole:'Course grounds')}\nStatus: ${a.status}\nType: ${a.maintenanceKind==='emergency'?'Emergency (unplanned)':a.maintenanceKind==='planned'?'Planned maintenance':'Not classified — legacy'}\nLatest activity: ${a.history?.at(-1)?.note||'See the ticket history.'}\n\n${a.notes||'See your superintendent for work instructions.'}\n\nView your ticket: ${SITE}/crew/?course=${encodeURIComponent(course)}&ticket=${encodeURIComponent(a.id)}\nThis message reflects the assignment when sent. Sign in to check its latest details.`;}
 export async function dispatchCrew({getStore,admin,course,send=sendCrewEmail,ready=emailReady,now=()=>new Date().toISOString(),limit=3}){
  if(!ready())return{configured:false,processed:0};const store=crewStore(getStore);let processed=0;const started=Date.now();
  for(let turn=0;turn<limit;turn++){if(Date.now()-started>15000)break;
@@ -19,9 +19,9 @@ export async function dispatchCrew({getStore,admin,course,send=sendCrewEmail,rea
    // the previous message may have been accepted. A manager must reissue it.
    for(const j of Object.values(s.outbox))if(j.status==='processing'&&Date.parse(j.leaseUntil)<=Date.parse(now())){j.status='unconfirmed';j.error='Previous delivery could not be confirmed. Reissue the welcome or review this ticket notification.';s.revision++;changed=true;}
    const job=Object.values(s.outbox).find(j=>j.status==='pending'&&j.type==='welcome')||Object.values(s.outbox).find(j=>j.status==='pending'&&s.workers[j.workerId]?.identityId);if(!job)return changed?s:null;
-   const worker=s.workers[job.workerId],a=job.assignmentId?s.assignments[job.assignmentId]:null;
+   const worker=s.workers[job.workerId],a=job.assignmentId?(job.type==='repair'?s.workOrders?.[job.assignmentId]:s.assignments[job.assignmentId]):null;
    if(!worker||worker.archived||(a&&a.version!==job.assignmentVersion)){job.status='cancelled';s.revision++;return s;}
-   if(job.type==='ticket'&&!worker.identityId)return null; // Welcome/account must be ready first.
+   if(job.type!=='welcome'&&!worker.identityId)return null; // Welcome/account must be ready first.
    job.status='processing';job.lease=token;job.leaseUntil=new Date(Date.parse(now())+90000).toISOString();job.attempts++;s.revision++;selected={job:structuredClone(job),worker:structuredClone(worker),assignment:structuredClone(a)};return s;
   });
   if(!selected)break;const {job,worker,assignment}=selected;
@@ -40,7 +40,7 @@ export async function dispatchCrew({getStore,admin,course,send=sendCrewEmail,rea
     recipientId=existing.id;await admin.updateUser(recipientId,{...(password?{password}:{}),app_metadata:metadata});
     await mutateCrew(store,course,s=>{const current=s.outbox[job.id];if(current?.lease!==token)throw Error('Invitation changed before account confirmation.');s.workers[worker.id].identityId=recipientId;s.revision++;return s;});
    }
-   if(job.type==='ticket'){const identity=await admin.getUser(recipientId);if(identity.email?.toLowerCase()!==worker.email)throw Error('The worker login email no longer matches the saved recipient.');}
+   if(job.type!=='welcome'){const identity=await admin.getUser(recipientId);if(identity.email?.toLowerCase()!==worker.email)throw Error('The worker login email no longer matches the saved recipient.');}
    const providerId=await send({to:worker.email,subject:job.type==='welcome'?'Your GolfOptix crew login':`GolfOptix ticket: ${assignment.title}`,text:job.type==='welcome'?welcomeBody(worker,course,password):ticketBody(assignment,worker,course),key:'crew/'+course+'/'+job.id});
    await mutateCrew(store,course,s=>{const current=s.outbox[job.id];if(current?.lease===token){current.status='accepted';current.providerId=providerId;current.acceptedAt=now();delete current.lease;delete current.leaseUntil;s.revision++;}return s;});processed++;
   }catch{
