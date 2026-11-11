@@ -8,7 +8,7 @@ function selectCourse(){
  const course=courses.find(c=>c.id===$('hub-course').value);if(!course)return;
  const calendar=new URL(root+'calendar/',location.origin),map=new URL(course.url,location.origin);
  if(!demo)calendar.searchParams.set('course',course.id);
- $('hub-calendar').href=calendar.pathname+calendar.search;$('hub-crew').href=demo?'/test-drive/crew/':'/crew/?course='+encodeURIComponent(course.id);
+ $('hub-pumps').href=root+'pumps/?course='+encodeURIComponent(course.id);$('hub-calendar').href=calendar.pathname+calendar.search;$('hub-crew').href=demo?'/test-drive/crew/':'/crew/?course='+encodeURIComponent(course.id);
  $('hub-map-nav').href=$('hub-back-map').href=map.pathname+map.search;
  map.searchParams.set('panel','repairs');$('hub-repairs').href=map.pathname+map.search;
  if(!demo){const current=new URL(location.href);current.searchParams.set('course',course.id);history.replaceState(null,'',current.pathname+current.search);}

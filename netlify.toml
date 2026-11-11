@@ -37,6 +37,19 @@
   [headers.values]
     Cache-Control = "private, no-store"
 
+# Pump stations use manager permission checked against the private Crew roster.
+[[redirects]]
+  from = "/maintenance/pumps/*"
+  to = "/maintenance/pumps/:splat"
+  status = 200
+  force = true
+  conditions = {Role = ["admin", "kings-member", "crew"]}
+[[redirects]]
+  from = "/maintenance/pumps/*"
+  to = "/login/?required=maintenance"
+  status = 302
+  force = true
+
 # Real maintenance pages require an approved role, including direct HTML URLs.
 # The public, fictional Test Drive lives under its own /test-drive/ path.
 [[redirects]]

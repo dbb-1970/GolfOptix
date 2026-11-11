@@ -1,7 +1,7 @@
 (()=>{'use strict';const client=GolfWorkOrders.create(golfCourse.course().id),demo=!!window.GOLF_PLAY_STORAGE;let loading=false;
 const el=(tag,text)=>{const e=document.createElement(tag);if(text)e.textContent=text;return e;};
 const status=text=>document.getElementById('maintenance-status').textContent=text;
-function sync(){GolfMaintenanceUI.syncWorkOrders(Object.values(client.get()?.state.workOrders||{}));}
+function sync(){GolfMaintenanceUI.syncWorkOrders(Object.values(client.get()?.state.workOrders||{}).filter(w=>w.source!=='pump'));}
 async function refresh(){if(loading)return;loading=true;try{await client.refresh();sync();}catch{status('Shared repair work orders could not load. Your map edits remain available; retry by reopening this page.');}finally{loading=false;}}
 async function command(c){const r=await client.command(c);sync();status(demo?'Demo work order updated. No email sent.':'Work order saved online. Closure requires superintendent or assistant approval.');return r;}
 function select(form,name,label,options,value){const l=el('label',label),s=el('select');s.name=name;for(const [v,t]of options){const o=el('option',t);o.value=v;s.append(o);}s.value=value;l.append(s);form.append(l);return s;}

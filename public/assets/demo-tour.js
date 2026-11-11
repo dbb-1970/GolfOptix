@@ -1,4 +1,4 @@
-import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=recovery1';
+import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=pumps1';
 
 const page=Object.keys(tourPages).find(key=>tourPages[key]===location.pathname);
 if(page) init();
@@ -26,7 +26,7 @@ function init(){
   const next=control('NEXT →','demo-tour-next',()=>advance(1));
   card.append(meta,progress,title,copy,actions);ui.append(ring,connector,card);document.body.append(launch,ui);
   function persist(){state.updatedAt=Date.now();try{sessionStorage.setItem(KEY,JSON.stringify(state));}catch{}}
-  function finish(){if(ownedDialog?.matches('[data-tour-recovery]')){ownedDialog.close();ownedDialog=null;}window.GolfCrewTour?.restore();state.active=false;state.seen=true;persist();target=null;ui.hidden=true;document.body.append(ui);launch.hidden=false;(previousFocus?.isConnected?previousFocus:launch).focus({preventScroll:true});}
+  function finish(){window.GolfPumpTour?.restore();if(ownedDialog?.matches('[data-tour-recovery]')){ownedDialog.close();ownedDialog=null;}window.GolfCrewTour?.restore();state.active=false;state.seen=true;persist();target=null;ui.hidden=true;document.body.append(ui);launch.hidden=false;(previousFocus?.isConnected?previousFocus:launch).focus({preventScroll:true});}
   launch.onclick=()=>{previousFocus=document.activeElement;state={version:2,active:true,seen:true,index:0,updatedAt:Date.now()};persist();show();};
   function visible(e){if(!e?.isConnected||!e.getClientRects().length)return false;const s=getComputedStyle(e);return s.visibility!=='hidden'&&s.display!=='none';}
   async function waitFor(fn,ms=8000){const start=Date.now();while(Date.now()-start<ms){const value=fn();if(value)return value;await new Promise(resolve=>setTimeout(resolve,80));}return null;}
@@ -59,6 +59,8 @@ function init(){
   }
   async function prepare(step){
     switch(step.prepare){
+      case'pumpEntry':$('#close-asset')?.click();closePane();if(phone())pane('more');break;
+      case'pumpStation':case'pumpComponent':case'pumpSchedule':case'pumpBreakdown':window.GolfPumpTour?.preview(({pumpStation:'station',pumpComponent:'component',pumpSchedule:'schedule',pumpBreakdown:'breakdown'})[step.prepare]);ownedDialog=$('#pump-editor')?.open?$('#pump-editor'):null;break;
       case'recoveryEntry':recoveryEntry();break;
       case'recoveryPreview':{closePane();const d=recoverySample();if(!d.open)d.showModal();ownedDialog=d;break;}
       case'holes':pane('holes');break;
@@ -77,10 +79,11 @@ function init(){
       case'tourTicket':case'tourLog':case'tourSubmit':case'tourReview':case'tourApprove':case'tourHistory':window.GolfCrewTour?.preview(({tourTicket:'ticket',tourLog:'log',tourSubmit:'submit',tourReview:'review',tourApprove:'approve',tourHistory:'history'})[step.prepare]);ownedDialog=$('#crew-editor');break;
     }
   }
-  function findTarget(step){if(step.target==='#tour-recovery-launch'&&phone())return $('#tour-recovery-launch-mobile');if(step.target==='tourLog'||step.target==='tourApprove')return [...document.querySelectorAll('#crew-editor button')].find(b=>b.textContent===(step.target==='tourLog'?'Record work performed':'Approve closure'));if(step.target==='.test-drive-notice'&&phone())return $('.map-toolbar');if(step.target==='print')return phone()?[...document.querySelectorAll('[data-mobile-pane="more"] button')].find(b=>b.textContent==='Print this hole'):$('#print-hole');return $(step.target);}
+  function findTarget(step){if(step.target==='.pump-stations-link'&&phone())return $('[data-mobile-pane="more"] .pump-stations-link');if(step.target==='#tour-recovery-launch'&&phone())return $('#tour-recovery-launch-mobile');if(step.target==='tourLog'||step.target==='tourApprove')return [...document.querySelectorAll('#crew-editor button')].find(b=>b.textContent===(step.target==='tourLog'?'Record work performed':'Approve closure'));if(step.target==='.test-drive-notice'&&phone())return $('.map-toolbar');if(step.target==='print')return phone()?[...document.querySelectorAll('[data-mobile-pane="more"] button')].find(b=>b.textContent==='Print this hole'):$('#print-hole');return $(step.target);}
   async function advance(delta){
     if(busy)return;const following=state.index+delta;if(following<0)return;if(following>=tourSteps.length){finish();return;}
-    if(ownedDialog?.open&&tourSteps[following].group!==tourSteps[state.index].group){if(ownedDialog.matches('[data-tour-recovery]'))ownedDialog.close();else ownedDialog.querySelector('.calendar-editor-heading button')?.click();if(ownedDialog.open)return;document.body.append(ui);ownedDialog=null;}
+    if(ownedDialog?.open&&tourSteps[following].group!==tourSteps[state.index].group){if(ownedDialog.matches('[data-tour-recovery]'))ownedDialog.close();else if(ownedDialog.id==='pump-editor')ownedDialog.close();else ownedDialog.querySelector('.calendar-editor-heading button')?.click();if(ownedDialog.open)return;document.body.append(ui);ownedDialog=null;}
+    if(tourSteps[following].group!=='pumpTour')window.GolfPumpTour?.restore();
     if(!String(tourSteps[following].prepare||'').startsWith('tour'))window.GolfCrewTour?.restore();state.index=following;persist();await show();
   }
   async function show(){
@@ -92,7 +95,7 @@ function init(){
       if(!state.active)return;
       missing.hidden=!!target;target=target||launch;
       const portal=target.closest('dialog[open]')||document.body;portal.append(ui);
-      chapter.textContent=({map:'The course map',maintenance:'Maintenance',calendar:'Work planning',crew:'Your crew'})[page];
+      chapter.textContent=({map:'The course map',maintenance:'Maintenance',calendar:'Work planning',crew:'Your crew',pumps:'Pump Stations'})[page];
       count.textContent=String(state.index+1).padStart(2,'0')+' / '+tourSteps.length;bar.style.width=((state.index+1)/tourSteps.length*100)+'%';
       title.textContent=step.title;text.textContent=step.text;back.hidden=state.index===0;ui.hidden=false;
       if(target!==launch)target.scrollIntoView({block:'center',inline:'nearest',behavior:'instant'});
@@ -114,5 +117,5 @@ function init(){
   new ResizeObserver(schedulePosition).observe(card);addEventListener('resize',schedulePosition);addEventListener('scroll',schedulePosition,true);window.visualViewport?.addEventListener('resize',schedulePosition);
   document.addEventListener('keydown',e=>{if(state.active&&e.key==='Escape'){e.preventDefault();e.stopImmediatePropagation();finish();}},true);
   // Only walkthrough progress survives navigation; no practice edits or personnel are retained.
-  (async()=>{const ready=await waitFor(()=>page==='map'?window.GolfCoverage&&$('#map-mount [data-edit-asset]'):page==='maintenance'?visible($('#hub-workspace')):page==='calendar'?!$('[data-schedule-type="watering"]')?.disabled:visible($('#crew-manager-actions')));if(!ready)return;if(!state.seen&&!state.active){state.active=true;state.seen=true;state.index=tourSteps.findIndex(s=>s.page===page);persist();}if(state.active){if(tourSteps[state.index].page!==page){state.index=tourSteps.findIndex(s=>s.page===page);persist();}show();}})();
+  (async()=>{const ready=await waitFor(()=>page==='map'?window.GolfCoverage&&$('#map-mount [data-edit-asset]'):page==='maintenance'?visible($('#hub-workspace')):page==='calendar'?!$('[data-schedule-type="watering"]')?.disabled:page==='pumps'?window.GolfPumpTour&&visible($('#pump-content h1')):visible($('#crew-manager-actions')));if(!ready)return;if(!state.seen&&!state.active){state.active=true;state.seen=true;state.index=tourSteps.findIndex(s=>s.page===page);persist();}if(state.active){if(tourSteps[state.index].page!==page){state.index=tourSteps.findIndex(s=>s.page===page);persist();}show();}})();
 }

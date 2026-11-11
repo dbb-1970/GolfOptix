@@ -1,7 +1,7 @@
 /* Calendar plans and occurrence records; no automatic equipment or chemical control. */
 (function(root){
 'use strict';
-const types={watering:'Watering',pesticide:'Pesticide application',fertilizer:'Fertilizer application',equipment:'Vehicle service',tool:'Tool service'};
+const types={pump:'Pump station service',watering:'Watering',pesticide:'Pesticide application',fertilizer:'Fertilizer application',equipment:'Vehicle service',tool:'Tool service'};
 const blank=course=>({version:1,course,revision:0,schedules:{},events:[]});
 const clone=x=>JSON.parse(JSON.stringify(x));
 function fail(message){throw Error(message);}
