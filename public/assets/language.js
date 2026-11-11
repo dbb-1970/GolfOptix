@@ -12,6 +12,7 @@ function phrase(en){const raw=en.trim();if(dictionary[raw])return dictionary[raw
  const status=raw.match(/^(Demo|Saved online|Weather hold — manager review|Weather review): (.+)$/);if(status)return (dictionary[status[1]]||status[1])+': '+(dictionary[status[2]]||status[2]);
  const pending=raw.match(/^(\d+) awaiting approval$/);if(pending)return pending[1]+' pendientes de aprobación';
  const n=raw.match(/^(\d+) work orders · (\d+) emergency jobs$/);if(n)return n[1]+(n[1]==='1'?' orden de trabajo · ':' órdenes de trabajo · ')+n[2]+(n[2]==='1'?' emergencia':' emergencias');
+ const labelValue=raw.match(/^([^:]{1,100}): (.+)$/);if(labelValue&&dictionary[labelValue[1]])return dictionary[labelValue[1]]+': '+(phrase(labelValue[2])||labelValue[2]);
  const pair=raw.match(/^([^:]+): ([-\d.,]+)$/);if(pair&&dictionary[pair[1]])return dictionary[pair[1]]+': '+pair[2];
  const more=raw.match(/^More tools · (.+)$/);if(more&&dictionary[more[1]])return 'Más herramientas · '+dictionary[more[1]];
  if(raw.includes(' · ')){const pieces=raw.split(' · '),translated=pieces.map(x=>phrase(x)||x);if(translated.some((x,i)=>x!==pieces[i]))return translated.join(' · ');}
@@ -29,7 +30,7 @@ function update(){if(working)return;working=true;try{document.documentElement.la
  for(const e of document.querySelectorAll('[placeholder],[title],[aria-label]')){if(e.closest(skip))continue;for(const a of ['placeholder','title','aria-label']){const key='english'+a.replace('-',''),value=e.getAttribute(a),en=e.dataset[key]||value;if(en&&phrase(en)){e.dataset[key]=en;e.setAttribute(a,language==='es'?phrase(en):en);}}}
  }finally{working=false;}}
 const bar=toolbar(),target=document.querySelector('header,.site-nav,.app-nav,.maintenance-nav');if(target)target.append(bar);else{bar.classList.add('language-switch-floating');document.body.prepend(bar);}
-fetch('/assets/es-ui.json?v=ops3').then(r=>{if(!r.ok)throw Error();return r.json();}).then(d=>{dictionary=d;update();new MutationObserver(()=>{if(!working&&!queued){queued=true;requestAnimationFrame(()=>{queued=false;update();});}}).observe(document.body,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:['open']});}).catch(()=>{bar.title='Translation file unavailable. English remains available.';});
+fetch('/assets/es-ui.json?v=chem1').then(r=>{if(!r.ok)throw Error();return r.json();}).then(d=>{dictionary=d;update();new MutationObserver(()=>{if(!working&&!queued){queued=true;requestAnimationFrame(()=>{queued=false;update();});}}).observe(document.body,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:['open']});}).catch(()=>{bar.title='Translation file unavailable. English remains available.';});
 // Each signed-in account has a separate device preference. This does not alter access.
 if(!location.pathname.startsWith('/test-drive/'))fetch('/api/session',{cache:'no-store',credentials:'same-origin'}).then(r=>r.ok?r.json():null).then(u=>{if(!u?.id)return;storageKey='golfoptix-language:'+u.id;try{if(clicked)localStorage.setItem(storageKey,language);else{const saved=localStorage.getItem(storageKey);if(saved==='es'||saved==='en')language=saved;}}catch{}update();}).catch(()=>{});
 window.GolfLanguage={get:()=>language,refresh:update,english:value=>Object.keys(dictionary).find(k=>dictionary[k]===value)||value};

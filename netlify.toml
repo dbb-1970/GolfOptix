@@ -55,6 +55,22 @@
   status = 302
   force = true
 
+[[redirects]]
+  from = "/maintenance/chemicals/*"
+  to = "/maintenance/chemicals/:splat"
+  status = 200
+  force = true
+  conditions = {Role = ["admin", "kings-member", "crew"]}
+[[redirects]]
+  from = "/maintenance/chemicals/*"
+  to = "/login/?required=maintenance"
+  status = 302
+  force = true
+[[headers]]
+  for = "/maintenance/chemicals/*"
+  [headers.values]
+    Cache-Control = "private, no-store"
+
 # Garage personnel rights are checked against the private Crew roster.
 [[redirects]]
   from = "/maintenance/garage/*"

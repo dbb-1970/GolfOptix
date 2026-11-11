@@ -1,3 +1,4 @@
+import {verifyProductDocuments} from './chemical-documents.mjs';
 import {canCourse} from './access.mjs';
 import catalog from '../../public/course-catalog.json' with {type:'json'};
 import {Crew,crewStore,readCrew} from './crew-store.mjs';
@@ -18,7 +19,7 @@ export function createCrewHandler({getUser,verifyOrigin,getStore,emailReady=()=>
   if(state.events.some(e=>e.commandId===body.command?.commandId))return respond(result(state));if(body.revision!==state.revision)return respond({error:'Crew changed in another session. Refresh before saving.',conflict:true},409);if(entry&&!entry.etag)return respond({error:'Could not safely check the crew version.'},503);
   // A manager may not use a worker profile to change their own delegated access.
   if(access.workerId&&body.command?.id===access.workerId&&['worker.save','worker.archive'].includes(body.command.action))return respond({error:'A superintendent must change your own personnel profile or access.'},403);
-  let next;try{next=Crew.apply(state,body.command,{id:user.id,name:state.workers[access.workerId]?.name||user.name||user.userMetadata?.full_name||'User'},now(),access);}catch(e){return respond({error:e.message},/another session|Refresh|changed/.test(e.message)?409:400);}
+  let next;try{if(body.command.action==='chem.product.save')await verifyProductDocuments(getStore,course,body.command.input);next=Crew.apply(state,body.command,{id:user.id,name:state.workers[access.workerId]?.name||user.name||user.userMetadata?.full_name||'User'},now(),access);}catch(e){return respond({error:e.message},/another session|Refresh|changed/.test(e.message)?409:400);}
   const saved=await store.setJSON('courses/'+course,next,entry?{onlyIfMatch:entry.etag}:{onlyIfNew:true});if(!saved.modified)return respond({error:'Another edit arrived first. Refresh before saving.',conflict:true},409);
   const confirmed=await readCrew(store,course);if(!confirmed.state.events.some(e=>e.commandId===body.command.commandId))return respond({error:'Could not confirm this save. Refresh before retrying.'},503);return respond(result(confirmed.state));
  }catch{return respond({error:'Crew storage is temporarily unavailable. No successful save is being claimed. Please retry.'},503);}

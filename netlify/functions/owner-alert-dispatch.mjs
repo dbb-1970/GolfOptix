@@ -1,0 +1,1 @@
+import{getStore}from'@netlify/blobs';import{admin}from'@netlify/identity';import{dispatchOwnerAlerts}from'../lib/owner-alerts.mjs';export default async()=>{await dispatchOwnerAlerts({getStore,admin});};export const config={schedule:'2,7,12,17,22,27,32,37,42,47,52,57 * * * *'};

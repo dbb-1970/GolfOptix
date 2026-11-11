@@ -1,7 +1,7 @@
-import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=ops3';
+import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=chem1';
 
 const page=Object.keys(tourPages).find(key=>tourPages[key]===location.pathname);
-if(page) init();
+if(page&&!(page==='chemicals'&&new URLSearchParams(location.search).get('view')==='worker')) init();
 function init(){
   const KEY='golfoptix-superintendent-tour-v2',$=s=>document.querySelector(s);
   const phone=()=>matchMedia('(max-width:760px), (max-height:500px) and (pointer:coarse)').matches;
@@ -29,8 +29,8 @@ function init(){
   function finish(){window.GolfPumpTour?.restore();if(ownedDialog?.matches('[data-tour-recovery]')){ownedDialog.close();ownedDialog=null;}window.GolfCrewTour?.restore();state.active=false;state.seen=true;persist();target=null;ui.hidden=true;document.body.append(ui);launch.hidden=false;(previousFocus?.isConnected?previousFocus:launch).focus({preventScroll:true});}
   launch.onclick=()=>chooseGuide();
   function startGuide(index=0,quick=false){previousFocus=document.activeElement;state={version:2,active:true,seen:true,index,quick,updatedAt:Date.now()};persist();show();}
-  const quickIndices=[0,...['Every feature has a story.','Turn a problem into a repair.','A clear morning dispatch.','Reuse the job, review the instructions.','Capture the time actually worked.','Draft close is a request.','Back to the approval desk.','Approve it—or send it back.','The whole story stays with the ticket.',"Let's tee this up!"].map(title=>tourSteps.findIndex(s=>s.title===title)).filter(n=>n>=0)];
-  function chooseGuide(){state.active=false;persist();const d=make('dialog','pump-dialog'),h=make('h2',null,'Choose your walkthrough');d.append(h);function choice(label,fn){const b=make('button','button outline',label);b.type='button';b.onclick=()=>{d.close();d.remove();fn();};d.append(b);}choice('Five-minute overview',()=>startGuide(0,true));choice('Full superintendent tour',()=>startGuide(0,false));for(const [page,label]of [['map','Course map'],['garage','Garage'],['pumps','Pump Stations'],['operations','Daily work'],['calendar','Calendar'],['crew','Crew']])choice(label+' — start this chapter',()=>startGuide(tourSteps.findIndex(s=>s.page===page),false));choice('Close',finish);document.body.append(d);d.showModal();}
+  const quickIndices=[0,...['Every feature has a story.','Turn a problem into a repair.','A clear morning dispatch.','Reuse the job, review the instructions.','Actual work deserves its own record.','Let conditions start a conversation.','Capture the time actually worked.','Draft close is a request.','Back to the approval desk.','Approve it—or send it back.','The whole story stays with the ticket.',"Let's tee this up!"].map(title=>tourSteps.findIndex(s=>s.title===title)).filter(n=>n>=0)];
+  function chooseGuide(){state.active=false;persist();const d=make('dialog','pump-dialog'),h=make('h2',null,'Choose your walkthrough');d.append(h);function choice(label,fn){const b=make('button','button outline',label);b.type='button';b.onclick=()=>{d.close();d.remove();fn();};d.append(b);}choice('Five-minute overview',()=>startGuide(0,true));choice('Full superintendent tour',()=>startGuide(0,false));for(const [page,label]of [['chemicals','Chemical Management'],['map','Course map'],['garage','Garage'],['pumps','Pump Stations'],['operations','Daily work'],['calendar','Calendar'],['crew','Crew']])choice(label+' — start this chapter',()=>startGuide(tourSteps.findIndex(s=>s.page===page),false));choice('Close',finish);document.body.append(d);d.showModal();}
   function visible(e){if(!e?.isConnected||!e.getClientRects().length)return false;const s=getComputedStyle(e);return s.visibility!=='hidden'&&s.display!=='none';}
   async function waitFor(fn,ms=8000){const start=Date.now();while(Date.now()-start<ms){const value=fn();if(value)return value;await new Promise(resolve=>setTimeout(resolve,80));}return null;}
   function pane(name){if(!phone())return;const b=$('[data-pane-button="'+name+'"]');if(b&&document.body.dataset.mobilePane!==name)b.click();}
@@ -62,6 +62,7 @@ function init(){
   }
   async function prepare(step){
     switch(step.prepare){
+      case'chemProducts':case'chemPlan':case'chemApply':case'chemReports':case'chemGuidance':window.GolfChemicalTour?.preview(step.prepare);break;
       case'opsToday':case'opsTemplates':case'opsService':case'opsParts':case'opsReports':case'opsTransfer':case'opsPilot':case'opsWeather':window.GolfOperationsTour?.preview(step.prepare);break;
       case'garage':case'garageCatalog':case'garageBaseline':case'garageDetails':case'garageQR':case'garageSchedule':case'garageBreakdown':case'garageTask':window.GolfPumpTour?.preview(step.prepare);ownedDialog=$('#pump-editor')?.open?$('#pump-editor'):null;break;
       case'pumpEntry':$('#close-asset')?.click();closePane();if(phone())pane('layers');break;
@@ -100,7 +101,7 @@ function init(){
       if(!state.active)return;
       missing.hidden=!!target;target=target||launch;
       const portal=target.closest('dialog[open]')||document.body;portal.append(ui);
-      chapter.textContent=({map:'The course map',maintenance:'Maintenance',calendar:'Work planning',crew:'Your crew',pumps:'Pump Stations',garage:'Garage',operations:'Daily work'})[page];
+      chapter.textContent=({map:'The course map',maintenance:'Maintenance',calendar:'Work planning',crew:'Your crew',pumps:'Pump Stations',garage:'Garage',operations:'Daily work',chemicals:'Chemical Management'})[page];
       count.textContent=String(state.quick?quickIndices.indexOf(state.index)+1:state.index+1).padStart(2,'0')+' / '+(state.quick?quickIndices.length:tourSteps.length);bar.style.width=((state.quick?(quickIndices.indexOf(state.index)+1)/quickIndices.length:(state.index+1)/tourSteps.length)*100)+'%';
       title.textContent=step.title;text.textContent=step.text;back.hidden=state.index===0;ui.hidden=false;
       if(target!==launch)target.scrollIntoView({block:'center',inline:'nearest',behavior:'instant'});
@@ -122,5 +123,5 @@ function init(){
   new ResizeObserver(schedulePosition).observe(card);addEventListener('resize',schedulePosition);addEventListener('scroll',schedulePosition,true);window.visualViewport?.addEventListener('resize',schedulePosition);
   document.addEventListener('keydown',e=>{if(state.active&&e.key==='Escape'){e.preventDefault();e.stopImmediatePropagation();finish();}},true);
   // Only walkthrough progress survives navigation; no practice edits or personnel are retained.
-  (async()=>{const ready=await waitFor(()=>page==='map'?window.GolfCoverage&&$('#map-mount [data-edit-asset]'):page==='operations'?window.GolfOperationsTour&&visible($('#ops-content h2')):page==='maintenance'?visible($('#hub-workspace')):page==='calendar'?!$('[data-schedule-type="watering"]')?.disabled:['pumps','garage'].includes(page)?window.GolfPumpTour&&visible($('#pump-content h1')):visible($('#crew-manager-actions')));if(!ready)return;if(!state.seen&&!state.active){state.active=true;state.seen=true;state.index=tourSteps.findIndex(s=>s.page===page);persist();chooseGuide();return;}if(state.active){if(tourSteps[state.index].page!==page){state.index=tourSteps.findIndex(s=>s.page===page);persist();}show();}})();
+  (async()=>{const ready=await waitFor(()=>page==='map'?window.GolfCoverage&&$('#map-mount [data-edit-asset]'):page==='chemicals'?window.GolfChemicalTour&&visible($('#chem-content h2')):page==='operations'?window.GolfOperationsTour&&visible($('#ops-content h2')):page==='maintenance'?visible($('#hub-workspace')):page==='calendar'?!$('[data-schedule-type="watering"]')?.disabled:['pumps','garage'].includes(page)?window.GolfPumpTour&&visible($('#pump-content h1')):visible($('#crew-manager-actions')));if(!ready)return;if(!state.seen&&!state.active){state.active=true;state.seen=true;state.index=tourSteps.findIndex(s=>s.page===page);persist();chooseGuide();return;}if(state.active){if(tourSteps[state.index].page!==page){state.index=tourSteps.findIndex(s=>s.page===page);persist();}show();}})();
 }
