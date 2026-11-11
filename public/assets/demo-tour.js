@@ -1,4 +1,4 @@
-import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=pumps1';
+import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=garage4';
 
 const page=Object.keys(tourPages).find(key=>tourPages[key]===location.pathname);
 if(page) init();
@@ -59,6 +59,7 @@ function init(){
   }
   async function prepare(step){
     switch(step.prepare){
+      case'garage':case'garageCatalog':case'garageBaseline':case'garageDetails':case'garageSchedule':case'garageBreakdown':case'garageTask':window.GolfPumpTour?.preview(step.prepare);ownedDialog=$('#pump-editor')?.open?$('#pump-editor'):null;break;
       case'pumpEntry':$('#close-asset')?.click();closePane();if(phone())pane('more');break;
       case'pumpStation':case'pumpComponent':case'pumpSchedule':case'pumpBreakdown':window.GolfPumpTour?.preview(({pumpStation:'station',pumpComponent:'component',pumpSchedule:'schedule',pumpBreakdown:'breakdown'})[step.prepare]);ownedDialog=$('#pump-editor')?.open?$('#pump-editor'):null;break;
       case'recoveryEntry':recoveryEntry();break;
@@ -83,7 +84,7 @@ function init(){
   async function advance(delta){
     if(busy)return;const following=state.index+delta;if(following<0)return;if(following>=tourSteps.length){finish();return;}
     if(ownedDialog?.open&&tourSteps[following].group!==tourSteps[state.index].group){if(ownedDialog.matches('[data-tour-recovery]'))ownedDialog.close();else if(ownedDialog.id==='pump-editor')ownedDialog.close();else ownedDialog.querySelector('.calendar-editor-heading button')?.click();if(ownedDialog.open)return;document.body.append(ui);ownedDialog=null;}
-    if(tourSteps[following].group!=='pumpTour')window.GolfPumpTour?.restore();
+    if(!['pumpTour','garageTour'].includes(tourSteps[following].group))window.GolfPumpTour?.restore();
     if(!String(tourSteps[following].prepare||'').startsWith('tour'))window.GolfCrewTour?.restore();state.index=following;persist();await show();
   }
   async function show(){
@@ -95,7 +96,7 @@ function init(){
       if(!state.active)return;
       missing.hidden=!!target;target=target||launch;
       const portal=target.closest('dialog[open]')||document.body;portal.append(ui);
-      chapter.textContent=({map:'The course map',maintenance:'Maintenance',calendar:'Work planning',crew:'Your crew',pumps:'Pump Stations'})[page];
+      chapter.textContent=({map:'The course map',maintenance:'Maintenance',calendar:'Work planning',crew:'Your crew',pumps:'Pump Stations',garage:'Garage'})[page];
       count.textContent=String(state.index+1).padStart(2,'0')+' / '+tourSteps.length;bar.style.width=((state.index+1)/tourSteps.length*100)+'%';
       title.textContent=step.title;text.textContent=step.text;back.hidden=state.index===0;ui.hidden=false;
       if(target!==launch)target.scrollIntoView({block:'center',inline:'nearest',behavior:'instant'});
@@ -117,5 +118,5 @@ function init(){
   new ResizeObserver(schedulePosition).observe(card);addEventListener('resize',schedulePosition);addEventListener('scroll',schedulePosition,true);window.visualViewport?.addEventListener('resize',schedulePosition);
   document.addEventListener('keydown',e=>{if(state.active&&e.key==='Escape'){e.preventDefault();e.stopImmediatePropagation();finish();}},true);
   // Only walkthrough progress survives navigation; no practice edits or personnel are retained.
-  (async()=>{const ready=await waitFor(()=>page==='map'?window.GolfCoverage&&$('#map-mount [data-edit-asset]'):page==='maintenance'?visible($('#hub-workspace')):page==='calendar'?!$('[data-schedule-type="watering"]')?.disabled:page==='pumps'?window.GolfPumpTour&&visible($('#pump-content h1')):visible($('#crew-manager-actions')));if(!ready)return;if(!state.seen&&!state.active){state.active=true;state.seen=true;state.index=tourSteps.findIndex(s=>s.page===page);persist();}if(state.active){if(tourSteps[state.index].page!==page){state.index=tourSteps.findIndex(s=>s.page===page);persist();}show();}})();
+  (async()=>{const ready=await waitFor(()=>page==='map'?window.GolfCoverage&&$('#map-mount [data-edit-asset]'):page==='maintenance'?visible($('#hub-workspace')):page==='calendar'?!$('[data-schedule-type="watering"]')?.disabled:['pumps','garage'].includes(page)?window.GolfPumpTour&&visible($('#pump-content h1')):visible($('#crew-manager-actions')));if(!ready)return;if(!state.seen&&!state.active){state.active=true;state.seen=true;state.index=tourSteps.findIndex(s=>s.page===page);persist();}if(state.active){if(tourSteps[state.index].page!==page){state.index=tourSteps.findIndex(s=>s.page===page);persist();}show();}})();
 }

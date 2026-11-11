@@ -37,6 +37,19 @@
   [headers.values]
     Cache-Control = "private, no-store"
 
+# Garage personnel rights are checked against the private Crew roster.
+[[redirects]]
+  from = "/maintenance/garage/*"
+  to = "/maintenance/garage/:splat"
+  status = 200
+  force = true
+  conditions = {Role = ["admin", "kings-member", "crew"]}
+[[redirects]]
+  from = "/maintenance/garage/*"
+  to = "/login/?required=maintenance"
+  status = 302
+  force = true
+
 # Pump stations use manager permission checked against the private Crew roster.
 [[redirects]]
   from = "/maintenance/pumps/*"

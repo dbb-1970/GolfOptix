@@ -76,3 +76,8 @@
 .workspace-maintenance-link{display:inline-flex;align-items:center;gap:10px}.workspace-maintenance-link svg{width:22px;height:22px;flex:none}
 
 .workspace-crew-link{display:inline-flex;align-items:center;gap:10px}.workspace-crew-link svg{width:22px;height:22px;flex:none}
+
+/* Five major operations pillars, with a balanced final calendar card. */
+.home-operations-features .maintenance-cost-note{font-size:13px;line-height:1.7;margin-top:18px}.home-operations-features .maintenance-cost-note a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+
+.visual-measure{display:grid;gap:8px;margin:12px 0}.visual-measure input[type=range],.pump-dialog input[type=range]{width:100%;min-height:44px;accent-color:#235e42;padding:0}.visual-measure output{font-size:13px;font-weight:600}.measure-preview{height:18px;background:#e6ecdf;border-radius:8px;overflow:hidden}.measure-preview>span{display:block;height:100%;background:#7c9c5a;border-radius:8px}.measure-preview.rotation-preview{height:60px;width:60px;border-radius:50%;overflow:visible;border:1px solid #b8c8aa;position:relative}.measure-preview.rotation-preview>span{width:3px;height:25px;position:absolute;left:28px;top:5px;transform-origin:50% 25px;background:#235e42}.visual-measure details{font-size:12px}.visual-measure summary{min-height:44px;cursor:pointer;display:flex;align-items:center}.visual-measure details input{width:100%;min-height:44px}.station-size-preview{display:block;color:#235e42;line-height:1.2;text-align:center}

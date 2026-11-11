@@ -27,3 +27,7 @@ test('the guided journey covers classification, work logs, draft closure, manage
  assert.ok(tourSteps.some(s=>s.target==='.repair-form [name="maintenanceKind"]'));
  assert.equal(readTour(JSON.stringify({version:1,active:true,seen:true,index:5,updatedAt:Date.now()})).active,false);
 });
+
+test('Garage walkthrough covers inventory baselines, availability, scheduling, breakdowns and reservations',()=>{assert.equal(tourPages.garage,'/test-drive/maintenance/garage/');for(const prepare of ['garage','garageCatalog','garageBaseline','garageDetails','garageSchedule','garageBreakdown','garageTask'])assert.ok(tourSteps.some(s=>s.page==='garage'&&s.prepare===prepare));assert.ok(tourSteps.some(s=>s.target==='#hub-landscaping'));assert.ok(!tourSteps.some(s=>s.text.includes('Equipment inventory is planned')));});
+
+test('ease of use tour points to the live radius slider without saving',()=>{const s=tourSteps.find(s=>s.title.startsWith('Ease of use.'));assert.equal(s.prepare,'coverage');assert.match(s.target,/range/);assert.match(s.text,/saves nothing/);});
