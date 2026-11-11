@@ -3,13 +3,13 @@ import catalog from '../../public/course-catalog.json' with {type:'json'};
 import {Crew,crewStore,readCrew} from './crew-store.mjs';
 const courses=new Set(catalog.courses.filter(c=>!c.publicDemo).flatMap(c=>c.tracks.filter(t=>t.available).map(t=>t.id)));
 const respond=(body,status=200)=>Response.json(body,{status,headers:{'Cache-Control':'private, no-store'}});
-export function crewAccess(user,state){if(canCourse(user,state.course))return{manager:true,workerId:null};const w=Object.values(state.workers).find(w=>w.identityId===user?.id&&!w.archived);return w?{manager:Crew.managerTitle(w.jobTitle),workerId:w.id}:null;}
+export function crewAccess(user,state){if(canCourse(user,state.course))return{manager:true,workerId:null};const w=Object.values(state.workers).find(w=>w.identityId===user?.id&&!w.archived);return w?{manager:Crew.managerTitle(w.jobTitle),technician:w.equipmentAccess===true,workerId:w.id}:null;}
 export function createCrewHandler({getUser,verifyOrigin,getStore,emailReady=()=>false,now=()=>new Date().toISOString()}){return async req=>{
  try{
   const user=await getUser();if(!user)return respond({error:'Sign in to open Crew.'},401);const course=new URL(req.url).searchParams.get('course');if(!courses.has(course))return respond({error:'This track is unavailable.'},403);
   const store=crewStore(getStore),{entry,state}=await readCrew(store,course),access=crewAccess(user,state);if(!access)return respond({error:'Crew access is not approved for this track.'},403);
   if(user.appMetadata?.crew_temp_required){const expired=Date.parse(user.appMetadata.crew_temp_expires_at||'')<Date.parse(now());return respond({error:expired?'Your temporary password expired. Ask your superintendent to reissue your welcome email.':'Choose your own password before opening Crew.',passwordChangeRequired:!expired,temporaryPasswordExpired:expired},428);}
-  const result=s=>({state:Crew.projection(s,access.workerId,access.manager),manager:access.manager,workerId:access.workerId,storage:'cloud',emailConfigured:access.manager?emailReady():undefined});
+  const result=s=>({state:Crew.projection(s,access.workerId,access.manager,access.technician),manager:access.manager,technician:!!access.technician,workerId:access.workerId,storage:'cloud',emailConfigured:access.manager?emailReady():undefined});
   if(req.method==='GET')return respond(result(state));if(req.method!=='POST')return respond({error:'Method not allowed.'},405);
   try{verifyOrigin(req);}catch{return respond({error:'This request must come from GolfOptix.'},403);}
   if(!req.headers.get('Content-Type')?.startsWith('application/json'))return respond({error:'Send a JSON request.'},415);const raw=await req.text();if(new TextEncoder().encode(raw).length>250000)return respond({error:'This request is too large.'},413);let body;try{body=JSON.parse(raw);}catch{return respond({error:'Could not read this request.'},400);}

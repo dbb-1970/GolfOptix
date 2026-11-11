@@ -37,6 +37,24 @@
   [headers.values]
     Cache-Control = "private, no-store"
 
+[[redirects]]
+  from = "/maintenance/operations/drafts.html"
+  to = "/maintenance/operations/drafts.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/maintenance/operations/*"
+  to = "/maintenance/operations/:splat"
+  status = 200
+  force = true
+  conditions = {Role = ["admin", "kings-member", "crew"]}
+[[redirects]]
+  from = "/maintenance/operations/*"
+  to = "/login/?required=maintenance"
+  status = 302
+  force = true
+
 # Garage personnel rights are checked against the private Crew roster.
 [[redirects]]
   from = "/maintenance/garage/*"

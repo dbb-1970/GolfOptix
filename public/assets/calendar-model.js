@@ -33,7 +33,11 @@ function apply(state,cmd,actor,at=new Date().toISOString()){
  if(state.events.some(e=>e.commandId===cmd.commandId))return clone(state);
  const next=clone(state),old=next.schedules[cmd.id];if((old?.version||0)!==cmd.expectedVersion)fail('This plan changed in another session. Close it and open the latest version before saving.');
  const author={id:String(actor.id),name:text(actor.name||'Superintendent','Editor',160,true)};let r,changes={};
- if(cmd.action==='save'){
+ if(cmd.action==='import'){
+  const input=cmd.input||{};if(!Array.isArray(input.rows)||!input.rows.length||input.rows.length>50)fail('Import 1–50 calendar rows.');next.imports||={};if(next.imports[cmd.id])fail('Import already exists.');let imported=next;const ids=[];for(const [n,row]of input.rows.entries()){const id=cmd.id+'-'+n;ids.push(id);imported=apply(imported,{action:'save',id,commandId:cmd.commandId+'-'+n,expectedVersion:0,input:row},actor,at);}imported.imports[cmd.id]={id:cmd.id,recordIds:ids,at,actor:author,rolledBack:false};imported.revision++;imported.events.push({commandId:cmd.commandId,scheduleId:cmd.id,action:'import',at,author,changes:{}});return imported;
+ }else if(cmd.action==='rollback-import'){
+  const batch=next.imports?.[cmd.id];if(!batch||batch.rolledBack)fail('Choose an unused import.');for(const id of batch.recordIds){const plan=next.schedules[id];if(!plan||plan.version!==1||Object.keys(plan.occurrences).length)fail('An imported plan was used or edited. Review it individually; nothing was rolled back.');}for(const id of batch.recordIds){next.schedules[id].archived=true;next.schedules[id].version++;}batch.rolledBack=true;next.revision++;next.events.push({commandId:cmd.commandId,scheduleId:cmd.id,action:cmd.action,at,author,changes:{}});return next;
+ }else if(cmd.action==='save'){
   const fields=clean(cmd.input||{},old);r={...fields,id:cmd.id,version:(old?.version||0)+1,archived:old?.archived||false,occurrences:old?.occurrences||{},createdAt:old?.createdAt||at,createdBy:old?.createdBy||author,updatedAt:at,updatedBy:author};
   for(const [key,value]of Object.entries(fields))if(JSON.stringify(old?.[key])!==JSON.stringify(value))changes[key]={before:old?.[key]??null,after:value};
  }else{

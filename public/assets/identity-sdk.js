@@ -284,6 +284,7 @@ var User = class _User {
     return this.token;
   }
   clearSession() {
+    try{for(let n=sessionStorage.length-1;n>=0;n--){const k=sessionStorage.key(n);if(k.startsWith('golfoptix-draft:')||k==='golfoptix-draft-context')sessionStorage.removeItem(k);}}catch{}
     _User.removeSavedSession();
     this.token = null;
     currentUser = null;
