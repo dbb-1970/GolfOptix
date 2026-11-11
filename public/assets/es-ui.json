@@ -1156,5 +1156,17 @@
   "A work note is required.": "Se requiere una nota de trabajo.",
   "This ticket is not available to your account. Your draft is retained.": "Esta orden no está disponible para su cuenta. Se conserva su borrador.",
   "Terrain © OpenStreetMap contributors · ODbL 1.0 · Fictional irrigation": "Terreno © colaboradores de OpenStreetMap · ODbL 1.0 · Riego ficticio",
-  "In Worker view, each person sees only their own schedule and tickets. Choose English or Español with the flags at the top, including inside an open ticket. The interface and guide change language; original notes remain as entered, with reviewed Spanish instructions when supplied. Workers can log work and request closure, but cannot approve it. This unsaved tour sample sends no email.": "En la vista de trabajador, cada persona ve solo su horario y sus órdenes. Elija English o Español con las banderas de arriba, también dentro de una orden abierta. La interfaz y la guía cambian de idioma; las notas originales se conservan tal como se escribieron y se muestran instrucciones revisadas en español cuando se proporcionan. El personal puede registrar trabajo y solicitar el cierre, pero no aprobarlo. Este ejemplo sin guardar no envía correos."
+  "In Worker view, each person sees only their own schedule and tickets. Choose English or Español with the flags at the top, including inside an open ticket. The interface and guide change language; original notes remain as entered, with reviewed Spanish instructions when supplied. Workers can log work and request closure, but cannot approve it. This unsaved tour sample sends no email.": "En la vista de trabajador, cada persona ve solo su horario y sus órdenes. Elija English o Español con las banderas de arriba, también dentro de una orden abierta. La interfaz y la guía cambian de idioma; las notas originales se conservan tal como se escribieron y se muestran instrucciones revisadas en español cuando se proporcionan. El personal puede registrar trabajo y solicitar el cierre, pero no aprobarlo. Este ejemplo sin guardar no envía correos.",
+  "The course map": "El mapa del campo",
+  "Work planning": "Planificación del trabajo",
+  "Your crew": "Su personal",
+  "Demo": "Demostración",
+  "Saved online": "Guardado en línea",
+  "Weather review": "Revisión meteorológica",
+  "Work order opened / assigned": "Orden abierta / asignada",
+  "Assignment updated; any pending closure requires resubmission.": "Tarea actualizada; cualquier cierre pendiente debe solicitarse de nuevo.",
+  "No customer records or email changed.": "No se modificaron registros de clientes ni correos.",
+  "Reviewed Spanish instructions": "Instrucciones revisadas en español",
+  "Original instructions": "Instrucciones originales",
+  "No reviewed Spanish instructions have been supplied. Ask your superintendent before starting if anything is unclear.": "Todavía no se han proporcionado instrucciones revisadas en español. Consulte con su superintendente antes de comenzar si tiene alguna duda."
 }
