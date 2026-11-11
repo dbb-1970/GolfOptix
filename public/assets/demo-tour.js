@@ -1,4 +1,4 @@
-import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=garage4';
+import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=texture1';
 
 const page=Object.keys(tourPages).find(key=>tourPages[key]===location.pathname);
 if(page) init();
@@ -60,7 +60,7 @@ function init(){
   async function prepare(step){
     switch(step.prepare){
       case'garage':case'garageCatalog':case'garageBaseline':case'garageDetails':case'garageSchedule':case'garageBreakdown':case'garageTask':window.GolfPumpTour?.preview(step.prepare);ownedDialog=$('#pump-editor')?.open?$('#pump-editor'):null;break;
-      case'pumpEntry':$('#close-asset')?.click();closePane();if(phone())pane('more');break;
+      case'pumpEntry':$('#close-asset')?.click();closePane();if(phone())pane('layers');break;
       case'pumpStation':case'pumpComponent':case'pumpSchedule':case'pumpBreakdown':window.GolfPumpTour?.preview(({pumpStation:'station',pumpComponent:'component',pumpSchedule:'schedule',pumpBreakdown:'breakdown'})[step.prepare]);ownedDialog=$('#pump-editor')?.open?$('#pump-editor'):null;break;
       case'recoveryEntry':recoveryEntry();break;
       case'recoveryPreview':{closePane();const d=recoverySample();if(!d.open)d.showModal();ownedDialog=d;break;}

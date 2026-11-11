@@ -5,8 +5,8 @@ const activeTrack=u.courses.find(c=>c.id==='kings-ridge-kings');document.getElem
 GolfMaintenance.KEY+=':'+u.id;window.GOLF_ACCOUNT_ID=u.id;window.GOLF_SHARED_MAP=true;
 window.golfAuthSignout=async()=>{await logout();location.replace('/login/');};
 const author=document.getElementById('maintenance-author');if(author){author.value=u.name;author.readOnly=true;}
-for(const path of ['/assets/shared-map-model.js','/assets/shared-map.js'])await new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=path+'?v=garage4';s.onload=resolve;s.onerror=reject;document.body.append(s);});
+for(const path of ['/assets/shared-map-model.js','/assets/shared-map.js'])await new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=path+'?v=texture2';s.onload=resolve;s.onerror=reject;document.body.append(s);});
 window.GOLF_SHARED_INITIAL=await GolfSharedMap.init();
-for(const path of ['/assets/course.js','/assets/pump-model.js','/assets/crew-model.js','/assets/work-orders.js','/assets/maintenance.js','/assets/map-work-orders.js','/assets/mobile-workspace.js','/assets/map-help.js','/assets/coverage.js','/assets/map-labels.js','/assets/pump-map.js','/assets/recovery-ui.js','/assets/backup-ui.js'])await new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=path+'?v=garage4';s.onload=resolve;s.onerror=reject;document.body.append(s);});
+for(const path of ['/assets/course.js','/assets/pump-model.js','/assets/crew-model.js','/assets/work-orders.js','/assets/maintenance.js','/assets/map-work-orders.js','/assets/mobile-workspace.js','/assets/map-help.js','/assets/coverage.js','/assets/map-labels.js','/assets/pump-map.js','/assets/recovery-ui.js','/assets/backup-ui.js'])await new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=path+'?v=texture2';s.onload=resolve;s.onerror=reject;document.body.append(s);});
 await golfCourse.reload();
 }catch(error){const e=document.getElementById('map-loading');if(e)e.textContent='Could not open the shared course. '+error.message;}
