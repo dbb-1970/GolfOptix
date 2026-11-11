@@ -6,7 +6,7 @@ const num=(v,n,min=0,max=1e8)=>{if(v===''||v==null||!Number.isFinite(Number(v))|
 const key=v=>{if(!/^[A-Za-z][A-Za-z0-9_-]{5,110}$/.test(v||'')||['constructor','prototype','__proto__'].includes(v))fail('Invalid record ID.');return v;};
 const date=v=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(v||'')||new Date(v+'T12:00:00Z').toISOString().slice(0,10)!==v)fail('Choose a valid date.');return v;};
 const url=v=>{if(!v)return '';try{const u=new URL(v);if(u.protocol!=='https:'||u.username||u.password)throw Error();return u.href;}catch{fail('Use an https manufacturer reference.');}};
-const price={monthly:225,annual:2250,includedManagers:3,extraManagerMonthly:25,extra18Monthly:75,extra18Annual:750,onboarding:500,pilotMonthly:150,currency:'USD'};
+const price={monthly:225,annual:2250,includedManagers:3,extraManagerMonthly:25,extra18Monthly:75,extra18Annual:750,extra9Monthly:45,extra9Annual:450,onboarding:500,pilotMonthly:150,currency:'USD'};
 const init=s=>{s.operations||={templates:{},parts:{},movements:{},rates:{},imports:{},dispatches:{},weatherReviews:{},supportCases:{},pilot:null};for(const k of ['templates','parts','movements','rates','imports','dispatches','weatherReviews','supportCases'])s.operations[k]||={};return s.operations;};
 const partSnapshot=p=>Object.fromEntries(['id','name','manufacturer','partNumber','unit','fitEquipmentId','model','serialRange','reference','evidence'].map(k=>[k,p[k]??'']));
 const allTickets=s=>[...Object.values(s.assignments||{}),...Object.values(s.workOrders||{})];
