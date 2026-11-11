@@ -88,3 +88,9 @@
 dialog .language-switch{justify-content:flex-end;margin:0 0 12px;position:sticky;top:0;background:#faf9f2;z-index:2;padding:4px} @media print{.language-switch{display:none!important}}
 
 .crew-ticket-instructions{padding:16px;background:#edf2e5;border:1px solid #cad6bf;border-radius:9px;margin:16px 0}.crew-ticket-instructions h3{margin:0 0 10px}.crew-ticket-instructions p{white-space:pre-wrap;line-height:1.6;margin:0 0 12px}.crew-ticket-instructions summary{min-height:44px;cursor:pointer;font-weight:600}
+
+/* Equal-sized workspace navigation targets; language controls remain separate. */
+.maintenance-nav nav[aria-label]>a,.calendar-nav nav[aria-label]>a,.app-nav .app-account>a,.app-nav .app-account>button{display:inline-flex;box-sizing:border-box;width:132px;min-height:44px;align-items:center;justify-content:center;gap:7px;padding:10px 12px;border:1px solid #c3d1b55c;border-radius:5px;text-decoration:none;text-align:center;font:500 12px/1.4 Arial,sans-serif;color:inherit;background:#ffffff05}
+.maintenance-nav nav[aria-label]>a:hover,.calendar-nav nav[aria-label]>a:hover,.app-nav .app-account>a:hover,.app-nav .app-account>button:hover{background:#ffffff13;border-color:#c5b17e}
+.maintenance-nav nav[aria-label],.calendar-nav nav[aria-label]{gap:10px;flex-wrap:wrap}
+@media(max-width:760px){.maintenance-nav,.calendar-nav{flex-wrap:wrap}.maintenance-nav nav[aria-label],.calendar-nav nav[aria-label]{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));width:100%;gap:8px}.maintenance-nav nav[aria-label]>a,.calendar-nav nav[aria-label]>a{width:100%;min-height:44px;padding:9px 6px;font-size:11px}.app-nav .app-account{gap:8px}.app-nav .app-account>a,.app-nav .app-account>button{width:104px;font-size:11px}}
