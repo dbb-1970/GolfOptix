@@ -48,7 +48,7 @@ export const tourSteps = [
   {page:'crew',target:'tourApprove',prepare:'tourReview',group:'execution',title:'Approve it—or send it back.',text:'Approve closure is available only to an authorized manager after a work log and closure request exist. Return for more work keeps the order open with correction notes. Both decisions remain in the history.'},
   {page:'crew',target:'#crew-field-note',prepare:'tourApprove',group:'execution',title:'Make the approval accountable.',text:'Add inspection or verification notes before approving. Approval records the manager and time, closes the work order and clears its map alert. Other open repairs on the same feature remain highlighted. This read-only sample is not being approved by the tour.'},
   {page:'crew',target:'.ticket-history',prepare:'tourHistory',group:'execution',title:'The whole story stays with the ticket.',text:'The history retains who opened and assigned the ticket, logged work, draft-closed it and approved closure—with notes and times. Returned or reopened work keeps its earlier history. Legacy tickets never receive invented opener or approver names.'},
-  {page:'crew',target:'#crew-back-map',title:'You’re ready to take the wheel.',text:'Return to the course map whenever you need it. Try the controls, make a practice edit and explore your workflow. END INSTRUCTION closes this guide. The Superintendent tour button lets you start again at any time.'}
+  {page:'crew',target:'#crew-back-map',title:"Let's tee this up!",text:'Return to the course map whenever you need it. Try the controls, make a practice edit and explore your workflow. END INSTRUCTION closes this guide. The Superintendent tour button lets you start again at any time.'}
 ];
 
 export function readTour(raw, now=Date.now()) {
