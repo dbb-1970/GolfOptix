@@ -105,3 +105,6 @@ dialog .language-switch{justify-content:flex-end;margin:0 0 12px;position:sticky
 
 /* The centered ball-marker emblem replaces the O in OPTIX; keep the literal name accessible. */
 .wordmark .wordmark-symbol{display:inline-block;position:relative;width:.86em;height:.86em;vertical-align:-.065em;margin-right:.065em;letter-spacing:0;color:transparent;line-height:1}.wordmark-symbol img{display:block;position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:contain;pointer-events:none}.wordmark-symbol{user-select:none}@media(forced-colors:active){.wordmark .wordmark-symbol{color:inherit}.wordmark-symbol img{display:none}}
+
+/* Owner-approved tagline, distributed to the complete wordmark width. */
+.wordmark small{left:0;right:0;justify-content:space-between;letter-spacing:0}
