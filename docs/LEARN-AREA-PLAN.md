@@ -4,12 +4,12 @@ Recorded November 11, 2026. This is an implementation outline, not a claim that 
 
 ## Placement
 
-A Learn button in the signed-in workspace's top-right navigation, sized consistently with adjacent navigation buttons. Keep the home page focused on product introduction. The public superintendent walkthrough remains a short guided introduction, with deeper illustrated guides available after sign-in. Public demo guides can link to a sanitized subset later.
+A Learn tab at the right of the signed-in workspace navigation, sized consistently with adjacent function tabs. Keep the home page focused on product introduction. The public superintendent walkthrough remains a short guided introduction, with deeper illustrated guides available after sign-in. Public demo guides can link to a sanitized subset later.
 
 ## How people find instructions
 
 - Search a task in everyday language: “move a pin”, “assign cup cutting”, “approve a repair”, “add a mower”.
-- Browse by Maps & irrigation, Landscape, Pin placements & cup cutting, Calendar, Crew, Garage, Pump stations, Chemicals, Turf guidance, Backups & recovery, Accounts, and Troubleshooting.
+- Browse by Maps & irrigation, Ground under repair, Landscape, Pin placements & cup cutting, Calendar & course events, Crew week/day briefings, Garage, Pump stations, Chemicals, Turf guidance, Backups & recovery, Accounts, and Troubleshooting.
 - Open a relevant guide from a small “Show me how” link beside the feature being used; return to the same working screen without losing the user's form.
 - Filter instructions to the signed-in person's role. Workers see their own work and closure-request instructions; manager-only actions are clearly marked.
 - Offer English and Spanish, including the images' callouts and captions. Course-entered notes remain original or explicitly reviewed translations.

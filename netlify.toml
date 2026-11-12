@@ -56,6 +56,22 @@
   force = true
 
 [[redirects]]
+  from = "/maintenance/events/*"
+  to = "/maintenance/events/:splat"
+  status = 200
+  force = true
+  conditions = {Role = ["admin", "kings-member", "crew"]}
+[[redirects]]
+  from = "/maintenance/events/*"
+  to = "/login/?required=maintenance"
+  status = 302
+  force = true
+[[headers]]
+  for = "/maintenance/events/*"
+  [headers.values]
+    Cache-Control = "private, no-store"
+
+[[redirects]]
   from = "/maintenance/pins/*"
   to = "/maintenance/pins/:splat"
   status = 200

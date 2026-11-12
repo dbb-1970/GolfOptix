@@ -5,7 +5,7 @@ const demo=location.pathname.startsWith('/test-drive/maintenance/');
 const root=demo?'/test-drive/maintenance/':'/maintenance/';
 let courses=[];
 function selectCourse(){
- const course=courses.find(c=>c.id===$('hub-course').value);if(!course)return;if($('hub-pins'))$('hub-pins').href=root+'pins/?course='+encodeURIComponent(course.id);if($('hub-chemicals'))$('hub-chemicals').href=root+'chemicals/?course='+encodeURIComponent(course.id);if($('hub-operations'))$('hub-operations').href=root+'operations/?course='+encodeURIComponent(course.id);
+ const course=courses.find(c=>c.id===$('hub-course').value);if(!course)return;if($('hub-events'))$('hub-events').href=root+'events/?course='+encodeURIComponent(course.id);if($('hub-pins'))$('hub-pins').href=root+'pins/?course='+encodeURIComponent(course.id);if($('hub-chemicals'))$('hub-chemicals').href=root+'chemicals/?course='+encodeURIComponent(course.id);if($('hub-operations'))$('hub-operations').href=root+'operations/?course='+encodeURIComponent(course.id);
  const calendar=new URL(root+'calendar/',location.origin),map=new URL(course.url,location.origin);
  if(!demo)calendar.searchParams.set('course',course.id);
  $('hub-garage').href=root+'garage/?course='+encodeURIComponent(course.id);$('hub-landscaping').href=(demo?'/test-drive/crew/':'/crew/')+'?course='+encodeURIComponent(course.id)+'&newWork=landscaping';$('hub-pumps').href=root+'pumps/?course='+encodeURIComponent(course.id);$('hub-calendar').href=calendar.pathname+calendar.search;$('hub-crew').href=demo?'/test-drive/crew/':'/crew/?course='+encodeURIComponent(course.id);

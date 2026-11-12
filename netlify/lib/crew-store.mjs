@@ -2,6 +2,7 @@ import '../../public/assets/pump-model.js';
 import '../../public/assets/operations-model.js';
 import '../../public/assets/chemical-model.js';
 import '../../public/assets/pin-model.js';
+import '../../public/assets/event-model.js';
 import '../../public/assets/crew-model.js';
 export const Crew=globalThis.GolfCrew;
 export function crewStore(getStore){return getStore({name:'golfoptix-crew-v1',consistency:'strong'});}
