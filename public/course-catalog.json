@@ -15,7 +15,23 @@
           "name": "Ridge Course",
           "available": false
         }
-      ]
+      ],
+      "address": {
+        "street": "1950 Kings Ridge Blvd.",
+        "city": "Clermont",
+        "region": "FL",
+        "postalCode": "34711",
+        "country": "US"
+      },
+      "timeZone": "America/New_York",
+      "temperatureUnit": "F",
+      "weatherLocation": {
+        "latitude": 28.5115,
+        "longitude": -81.72,
+        "label": "Kings Ridge Golf Club \u00b7 Clermont, FL",
+        "precision": "Approximate course-area forecast point; not survey geometry",
+        "source": "https://www.kingsridgegc.com/contact/"
+      }
     },
     {
       "id": "juniper-cove",
@@ -28,7 +44,9 @@
           "available": true,
           "url": "/test-drive/"
         }
-      ]
+      ],
+      "temperatureUnit": "F",
+      "timeZone": "America/New_York"
     }
   ]
 }

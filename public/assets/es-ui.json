@@ -2077,5 +2077,11 @@
   "Open the affected record, or choose another date. No item moves until you save.": "Abra el registro afectado o elija otra fecha. Nada se mueve hasta guardar.",
   "Date changed — review current field conditions and application requirements before work.": "Cambió la fecha: revise condiciones actuales y requisitos de aplicación antes de trabajar.",
   "Sample weather · South Florida demo": "Tiempo de ejemplo · demostración del sur de Florida",
-  "Invented South Florida weather for exploring the calendar. No real course forecast.": "Tiempo ficticio del sur de Florida para explorar el calendario. No es un pronóstico real del campo."
+  "Invented South Florida weather for exploring the calendar. No real course forecast.": "Tiempo ficticio del sur de Florida para explorar el calendario. No es un pronóstico real del campo.",
+  "Course address:": "Dirección del campo:",
+  "Demo location: South Florida (fictional course)": "Ubicación de demostración: sur de Florida (campo ficticio)",
+  "GDD base (°F)": "Base de grados día (°F)",
+  "Daily minimum temperature (°F)": "Temperatura mínima diaria (°F)",
+  "Daily maximum temperature (°F)": "Temperatura máxima diaria (°F)",
+  "Daily mean temperature (°F)": "Temperatura media diaria (°F)"
 }
