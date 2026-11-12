@@ -1856,5 +1856,20 @@
   "Cancel this preparation task": "Cancelar esta tarea de preparación",
   "The shared map changed. Review your outline before saving.": "El mapa compartido cambió. Revise el contorno antes de guardar.",
   "Restore this removed repair area before redrawing its outline.": "Restaure esta zona retirada antes de redibujar el contorno.",
-  "Emergency reported. Check with your superintendent before starting work in the event window.": "Emergencia notificada. Consulte con el superintendente antes de comenzar trabajos durante el evento."
+  "Emergency reported. Check with your superintendent before starting work in the event window.": "Emergencia notificada. Consulte con el superintendente antes de comenzar trabajos durante el evento.",
+  "Schedule course work offers overseeding, aeration, topdressing, mowing and bunker care. Pesticide and fertilizer shortcuts now open Chemical Management for measured areas, product quantities, stock and approval. Existing calendar reminders remain available. NEXT opens an unsaved watering form. Daily weather icons show highs and overnight lows; choose °F or °C in the calendar. A question mark with — / — means no forecast yet. Demo weather is fictional.": "Programar trabajo ofrece resiembra, aireación, recebado, siega y cuidado de búnkeres. Los accesos de pesticidas y fertilizantes abren Gestión de productos químicos para áreas medidas, cantidades, existencias y aprobación. Se conservan los recordatorios existentes. SIGUIENTE abre un formulario de riego sin guardar. Los iconos diarios muestran máximas y mínimas nocturnas; elija °F o °C. Un signo de interrogación con — / — indica que aún no hay pronóstico. El clima de demostración es ficticio.",
+  "Temperature": "Temperatura",
+  "Temperature unit": "Unidad de temperatura",
+  "Refresh weather": "Actualizar pronóstico",
+  "Weather details": "Detalles del clima",
+  "Forecast not available": "Pronóstico no disponible",
+  "Loading forecast…": "Cargando pronóstico…",
+  "Sample weather · fictional demo": "Clima de ejemplo · demostración ficticia",
+  " · ? — / — = not forecast. Lows are overnight.": " · ? — / — = sin pronóstico. Mínimas nocturnas.",
+  "Planning information only. Check actual field conditions and product instructions before work.": "Solo para planificar. Compruebe las condiciones reales y las instrucciones del producto antes de trabajar.",
+  "Fictional sample weather.": "Clima de ejemplo ficticio.",
+  "Forecast unavailable · ? — / — means no forecast. Try Refresh weather.": "Pronóstico no disponible · ? — / — indica que no hay pronóstico. Intente actualizarlo.",
+  "The calendar shows forecasts where a weather location is connected. Record a sourced field review against a work order; the original schedule remains unchanged until a manager reschedules work.": "El calendario muestra pronósticos donde hay una ubicación meteorológica conectada. Registre una revisión de campo con fuente en una orden; el horario original no cambia hasta que un gerente reprograme el trabajo.",
+  "Beta models use your sourced observations. Calendar forecasts are separate and do not fill model readings. Missing readings remain missing. Guidance creates inspections for review, never chemical prescriptions.": "Los modelos beta usan sus observaciones con fuente. Los pronósticos del calendario son independientes y no rellenan lecturas del modelo. Las lecturas faltantes siguen faltando. La orientación genera inspecciones para revisión, nunca prescripciones químicas.",
+  "The calendar shows compact forecasts where connected, with °F / °C and question marks for unforecast dates. A manager can record a sourced field weather review on a work order. Wind and rain use sliders with live values. Forecasts never automatically move work, fill turf-model observations or authorize an application.": "El calendario muestra pronósticos compactos donde están conectados, con °F / °C y signos de interrogación para fechas sin pronóstico. Un gerente puede registrar una revisión de campo con fuente en una orden. Viento y lluvia usan controles con valores visibles. Los pronósticos nunca mueven trabajos, rellenan observaciones de modelos ni autorizan aplicaciones."
 }
