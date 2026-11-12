@@ -10,7 +10,36 @@ function estimate({plan='monthly',tracks18=1,tracks9=0,managers=0,visit=true}={}
 }
 function quote(settings,language='en'){
  const r=estimate(settings),cfg={plan:settings.plan||'monthly',tracks18:settings.tracks18??1,tracks9:settings.tracks9??0,managers:settings.managers??0,visit:settings.visit!==false},url=new URL('https://golfoptix.com/');url.searchParams.set('quote','1');for(const [k,v]of Object.entries(cfg))url.searchParams.set(k,String(v));url.hash='pricing-calculator';const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n),es=language==='es',period=r.annual?(es?'año':'year'):(es?'mes':'month');
- const text=es?`Presupuesto orientativo de GolfOptix\n\nServicio: ${money(r.recurring)} / ${period}\nRecorridos de 18 hoyos: ${cfg.tracks18}\nRecorridos adicionales de nueve hoyos: ${cfg.tracks9}\nUsuarios de gestión adicionales: ${cfg.managers} (3 incluidos)\nVisita inicial seleccionada: ${money(r.setup)}\nPrimer pago estimado: ${money(r.firstPayment)}\nTotal de 12 meses con la visita seleccionada: ${money(r.firstYear)}\n\nRevisar o ajustar este presupuesto: ${url.href}\nConocer GolfOptix: https://golfoptix.com/\n\nUSD. Es una estimación con los precios publicados actuales, no un contrato ni un cargo. No incluye impuestos aplicables ni trabajos fuera del alcance acordado. El servicio para campos fundadores requiere un acuerdo individual; no se aplican exenciones personales.`:`GolfOptix planning estimate\n\nService: ${money(r.recurring)} / ${period}\n18-hole tracks: ${cfg.tracks18}\nAdditional nine-hole tracks: ${cfg.tracks9}\nAdditional management users: ${cfg.managers} (3 included)\nSelected one-time site visit: ${money(r.setup)}\nEstimated first payment: ${money(r.firstPayment)}\n12-month total with selected visit: ${money(r.firstYear)}\n\nReview or adjust this estimate: ${url.href}\nExplore GolfOptix: https://golfoptix.com/\n\nUSD. An estimate using current published prices, not a contract or charge. Applicable taxes and work outside the agreed scope are excluded. Founding-course terms require individual agreement; personal waivers are not applied.`;
+ const benefits=es?`POR QUÉ GOLFOPTIX PARA SU EQUIPO PROFESIONAL
+
+El mapa, el plan y el equipo del campo en un espacio práctico para superintendentes.
+
+• Mapas del campo: riego, aspersores, válvulas, paisajismo y áreas en reparación. Su precisión se afina con planos de origen y correcciones de campo del superintendente.
+• Gestión del trabajo: órdenes planificadas o de emergencia, responsables, progreso, aprobación de cierre e historial.
+• Calendario: riego, fertilización, aplicaciones, cuidado del césped, banderas y corte de hoyos, torneos y preparación de eventos. Pronósticos disponibles con máximas y mínimas en °F/°C.
+• Personal: puestos, registros de credenciales, horarios semanales y diarios para teléfono o impresión, e interfaz en inglés y español.
+• Taller y bombeo: inventario de máquinas y componentes, horas/kilometraje, planes de servicio, reservas, piezas y registros de fallas.
+• Gestión química: referencias de etiquetas y fichas de seguridad revisadas, zonas medidas, planificación, existencias y registros reales de aplicaciones y fertilizantes.
+• Formación: guías ilustradas y buscables, clases para el equipo y material imprimible.
+• Registros compartidos: acceso por campo, historial de cambios y herramientas de copia de seguridad y recuperación.
+
+Pruebe la demo: https://golfoptix.com/test-drive/
+Contacto: info@golfoptix.com`:`WHY GOLFOPTIX FOR GOLF PROFESSIONALS
+
+Bring the course map, maintenance plan and crew into one practical workspace built around the superintendent.
+
+• Course maps: irrigation lines, sprinklers, valves, landscaping and ground-under-repair areas. Accuracy is refined through source plans and superintendent field corrections.
+• Work management: planned and emergency orders, assignments, progress notes, closure approval and history.
+• Calendar: watering, fertilizer and pesticide applications, turf care, pins and cup cutting, tournaments and event preparation. Available forecasts show daily highs and lows in °F/°C.
+• Crews: job titles, credential records, weekly and daily phone/print schedules, and English/Spanish interfaces.
+• Garage and pump stations: equipment/component inventory, hours/mileage, service planning, reservations, parts and failure records.
+• Chemical management: reviewed label/SDS references, measured-area planning, stock and actual application records for fertilizers and pesticides.
+• Training: searchable illustrated support guides, crew classes and printable handouts.
+• Shared records: course-scoped access, change history, backup and recovery tools.
+
+Try the demo: https://golfoptix.com/test-drive/
+Contact: info@golfoptix.com`;
+ const text=es?`Presupuesto orientativo de GolfOptix\n\nServicio: ${money(r.recurring)} / ${period}\nRecorridos de 18 hoyos: ${cfg.tracks18}\nRecorridos adicionales de nueve hoyos: ${cfg.tracks9}\nUsuarios de gestión adicionales: ${cfg.managers} (3 incluidos)\nVisita inicial seleccionada: ${money(r.setup)}\nPrimer pago estimado: ${money(r.firstPayment)}\nTotal de 12 meses con la visita seleccionada: ${money(r.firstYear)}\n\nRevisar o ajustar este presupuesto: ${url.href}\nConocer GolfOptix: https://golfoptix.com/\n\n${benefits}\n\nUSD. Es una estimación con los precios publicados actuales, no un contrato ni un cargo. No incluye impuestos aplicables ni trabajos fuera del alcance acordado. El servicio para campos fundadores requiere un acuerdo individual; no se aplican exenciones personales.`:`GolfOptix planning estimate\n\nService: ${money(r.recurring)} / ${period}\n18-hole tracks: ${cfg.tracks18}\nAdditional nine-hole tracks: ${cfg.tracks9}\nAdditional management users: ${cfg.managers} (3 included)\nSelected one-time site visit: ${money(r.setup)}\nEstimated first payment: ${money(r.firstPayment)}\n12-month total with selected visit: ${money(r.firstYear)}\n\nReview or adjust this estimate: ${url.href}\nExplore GolfOptix: https://golfoptix.com/\n\n${benefits}\n\nUSD. An estimate using current published prices, not a contract or charge. Applicable taxes and work outside the agreed scope are excluded. Founding-course terms require individual agreement; personal waivers are not applied.`;
  return{url:url.href,text,subject:(es?'Presupuesto de GolfOptix':'GolfOptix estimate')+' · '+money(r.recurring)+' / '+period};
 }
 if(typeof module!=='undefined')module.exports={price,estimate,quote};
