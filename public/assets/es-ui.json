@@ -2025,5 +2025,7 @@
   "Illustrated example": "Ejemplo ilustrado",
   "SUPPORT LIBRARY · SUPERINTENDENT GUIDE": "BIBLIOTECA DE SOPORTE · GUÍA DEL SUPERINTENDENTE",
   "COURSE LIBRARY · CREW CLASS": "BIBLIOTECA DEL CAMPO · CLASE DEL EQUIPO",
-  "Record actual attendance after teaching. This does not grant a certificate, job title or access.": "Registre la asistencia real después de enseñar. No concede certificados, puestos ni acceso."
+  "Record actual attendance after teaching. This does not grant a certificate, job title or access.": "Registre la asistencia real después de enseñar. No concede certificados, puestos ni acceso.",
+  "Calendar forecasts are available for connected locations; turf guidance uses sourced observations. A licensed chemical database is not connected.": "Hay pronósticos del calendario para ubicaciones conectadas; la orientación agronómica utiliza observaciones con fuente. No hay una base de datos química con licencia conectada.",
+  "Chemical references are course-reviewed. Licensed product data and paid weather subscriptions are not included in this beta; available calendar forecasts depend on location and forecast horizon.": "Las referencias químicas las revisa el campo. Esta beta no incluye datos de productos con licencia ni suscripciones meteorológicas de pago; los pronósticos disponibles dependen de la ubicación y el alcance del pronóstico."
 }
