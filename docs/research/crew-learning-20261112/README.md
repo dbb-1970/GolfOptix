@@ -1,0 +1,1 @@
+Research is summarized with primary-source links and applicability limits in ../../CREW-LEARNING-20261112.md. Catalog entries are references, not automatic proof of qualifications or a universal mandatory list.

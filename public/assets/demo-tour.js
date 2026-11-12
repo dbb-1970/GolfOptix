@@ -1,7 +1,7 @@
-import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=events1';
+import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=learn3';
 
 const page=Object.keys(tourPages).find(key=>tourPages[key]===location.pathname);
-if(page&&!(page==='chemicals'&&new URLSearchParams(location.search).get('view')==='worker')) init();
+if(page&&!(['chemicals','learn'].includes(page)&&new URLSearchParams(location.search).get('view')==='worker')) init();
 function init(){
   const KEY='golfoptix-superintendent-tour-v2',$=s=>document.querySelector(s);
   const phone=()=>matchMedia('(max-width:760px), (max-height:500px) and (pointer:coarse)').matches;
@@ -29,13 +29,13 @@ function init(){
   function finish(){window.GolfPumpTour?.restore();if(ownedDialog?.matches('[data-tour-recovery]')){ownedDialog.close();ownedDialog=null;}window.GolfCrewTour?.restore();state.active=false;state.seen=true;persist();target=null;ui.hidden=true;document.body.append(ui);launch.hidden=false;(previousFocus?.isConnected?previousFocus:launch).focus({preventScroll:true});}
   launch.onclick=()=>chooseGuide();
   function startGuide(index=0,quick=false){previousFocus=document.activeElement;state={version:2,active:true,seen:true,index,quick,updatedAt:Date.now()};persist();show();}
-  const quickIndices=[0,...['Every feature has a story.','Turn a problem into a repair.','A clear morning dispatch.','Reuse the job, review the instructions.','Actual work deserves its own record.','Let conditions start a conversation.','Set the day’s challenge.','Plan around the day’s play.','A clear week. A focused day.','Capture the time actually worked.','Draft close is a request.','Back to the approval desk.','Approve it—or send it back.','The whole story stays with the ticket.',"Let's tee this up!"].map(title=>tourSteps.findIndex(s=>s.title===title)).filter(n=>n>=0)];
+  const quickIndices=[0,...['Every feature has a story.','Turn a problem into a repair.','A clear morning dispatch.','Reuse the job, review the instructions.','Actual work deserves its own record.','Let conditions start a conversation.','Set the day’s challenge.','Plan around the day’s play.','A clear week. A focused day.','Capture the time actually worked.','Draft close is a request.','Back to the approval desk.','Approve it—or send it back.','The whole story stays with the ticket.','Two libraries. One familiar home.',"Let's tee this up!"].map(title=>tourSteps.findIndex(s=>s.title===title)).filter(n=>n>=0)];
   function chooseGuide(){
     state.active=false;persist();ui.hidden=true;launch.hidden=false;
     const d=make('dialog','demo-tour-picker'),h=make('h2',null,'Choose your walkthrough');h.id='tour-picker-title';d.setAttribute('aria-labelledby',h.id);
     const intro=make('p','demo-tour-picker-intro','Start with the full tour, take a quick look, or explore one chapter.');
     const form=make('form','demo-tour-picker-form'),list=make('fieldset','demo-tour-choices'),legend=make('legend','demo-tour-choice-legend','Choose a walkthrough');list.append(legend);
-    const options=[{title:'Full superintendent tour',detail:'Explore the complete GolfOptix workflow',index:0,quick:false},{title:'Five-minute overview',detail:'A quick introduction to the essentials',index:0,quick:true},...[["map","Course map"],["garage","Garage"],["pumps","Pump Stations"],["operations","Daily work"],["calendar","Calendar"],["crew","Crew"],["chemicals","Chemical Management"],["pins","Pin placements"],["events","Course events"]].map(([page,title])=>({title,detail:'Start this chapter',index:tourSteps.findIndex(s=>s.page===page),quick:false}))];
+    const options=[{title:'Full superintendent tour',detail:'Explore the complete GolfOptix workflow',index:0,quick:false},{title:'Five-minute overview',detail:'A quick introduction to the essentials',index:0,quick:true},...[["map","Course map"],["garage","Garage"],["pumps","Pump Stations"],["operations","Daily work"],["calendar","Calendar"],["crew","Crew"],["chemicals","Chemical Management"],["pins","Pin placements"],["events","Course events"],["learn","Learning libraries"]].map(([page,title])=>({title,detail:'Start this chapter',index:tourSteps.findIndex(s=>s.page===page),quick:false}))];
     options.forEach((option,i)=>{const row=make('label','demo-tour-choice'),input=make('input');input.type='radio';input.name='walkthrough';input.value=String(i);input.checked=i===0;
       const marker=make('img','demo-tour-choice-marker');marker.src='/assets/golfoptix-ball-marker.svg';marker.alt='';marker.width=36;marker.height=36;
       const copy=make('span','demo-tour-choice-copy');const title=make('strong',null,option.title),detail=make('small',null,option.detail);title.id='tour-option-'+i;detail.id='tour-option-detail-'+i;input.setAttribute('aria-labelledby',title.id);input.setAttribute('aria-describedby',detail.id);copy.append(title,detail);const tick=make('span','demo-tour-choice-tick','✓');tick.setAttribute('aria-hidden','true');row.append(input,marker,copy,tick);list.append(row);});
@@ -113,7 +113,7 @@ function init(){
       if(!state.active)return;
       missing.hidden=!!target;target=target||launch;
       const portal=target.closest('dialog[open]')||document.body;portal.append(ui);
-      chapter.textContent=({map:'The course map',maintenance:'Maintenance',calendar:'Work planning',crew:'Your crew',pumps:'Pump Stations',garage:'Garage',operations:'Daily work',chemicals:'Chemical Management',pins:'Pin placements',events:'Course events'})[page];
+      chapter.textContent=({map:'The course map',maintenance:'Maintenance',calendar:'Work planning',crew:'Your crew',pumps:'Pump Stations',garage:'Garage',operations:'Daily work',chemicals:'Chemical Management',pins:'Pin placements',events:'Course events',learn:'Learning libraries'})[page];
       count.textContent=String(state.quick?quickIndices.indexOf(state.index)+1:state.index+1).padStart(2,'0')+' / '+(state.quick?quickIndices.length:tourSteps.length);bar.style.width=((state.quick?(quickIndices.indexOf(state.index)+1)/quickIndices.length:(state.index+1)/tourSteps.length)*100)+'%';
       title.textContent=step.title;text.textContent=step.text;back.hidden=state.index===0;ui.hidden=false;
       if(target!==launch)target.scrollIntoView({block:'center',inline:'nearest',behavior:'instant'});

@@ -1,3 +1,7 @@
+# Implementation status — November 12, 2026
+
+The initial Learn release is implemented: 33 illustrated support guides, 12 crew classes, English/Spanish editions, course lesson authoring/publication and private attendance with taught versions. See [release notes](CREW-LEARNING-20261112.md). The outline below is retained as the earlier plan; custom image uploads, video and deeper field-specific courseware remain future work.
+
 # GolfOptix Learn — proposed illustrated instruction library
 
 Recorded November 11, 2026. This is an implementation outline, not a claim that the full library has shipped.

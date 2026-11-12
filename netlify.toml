@@ -20,6 +20,23 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
+# Learning content is generic; course lessons and attendance use the Crew API authorization.
+[[redirects]]
+  from = "/learn/*"
+  to = "/learn/:splat"
+  status = 200
+  force = true
+  conditions = {Role = ["admin", "kings-member", "crew"]}
+[[redirects]]
+  from = "/learn/*"
+  to = "/login/?required=learn"
+  status = 302
+  force = true
+[[headers]]
+  for = "/learn/*"
+  [headers.values]
+    Cache-Control = "private, no-store"
+
 # Crew is private; roster and personnel filtering are also enforced by its API.
 [[redirects]]
   from = "/crew/*"

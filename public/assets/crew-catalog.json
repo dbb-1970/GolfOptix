@@ -1,0 +1,468 @@
+{
+  "reviewed": "2026-11-12",
+  "roles": [
+    {
+      "group": "Leadership",
+      "name": "Director of Agronomy"
+    },
+    {
+      "group": "Leadership",
+      "name": "Director of Golf Course Maintenance"
+    },
+    {
+      "group": "Leadership",
+      "name": "Golf Course Superintendent"
+    },
+    {
+      "group": "Leadership",
+      "name": "Assistant Superintendent"
+    },
+    {
+      "group": "Leadership",
+      "name": "Senior Assistant Superintendent"
+    },
+    {
+      "group": "Leadership",
+      "name": "First Assistant Superintendent"
+    },
+    {
+      "group": "Leadership",
+      "name": "Second Assistant Superintendent"
+    },
+    {
+      "group": "Leadership",
+      "name": "Assistant in Training"
+    },
+    {
+      "group": "Leadership",
+      "name": "Turfgrass Intern"
+    },
+    {
+      "group": "Crew and course care",
+      "name": "Foreman"
+    },
+    {
+      "group": "Crew and course care",
+      "name": "Crew Leader"
+    },
+    {
+      "group": "Crew and course care",
+      "name": "Groundskeeper"
+    },
+    {
+      "group": "Crew and course care",
+      "name": "Greenskeeper"
+    },
+    {
+      "group": "Crew and course care",
+      "name": "Golf Course Maintenance Technician"
+    },
+    {
+      "group": "Crew and course care",
+      "name": "Turf Technician"
+    },
+    {
+      "group": "Crew and course care",
+      "name": "Equipment Operator"
+    },
+    {
+      "group": "Crew and course care",
+      "name": "Greens Mower Operator"
+    },
+    {
+      "group": "Crew and course care",
+      "name": "Fairway Mower Operator"
+    },
+    {
+      "group": "Crew and course care",
+      "name": "Rough Mower Operator"
+    },
+    {
+      "group": "Crew and course care",
+      "name": "Bunker Crew"
+    },
+    {
+      "group": "Crew and course care",
+      "name": "Course Setup Technician"
+    },
+    {
+      "group": "Crew and course care",
+      "name": "Seasonal Crew"
+    },
+    {
+      "group": "Crew and course care",
+      "name": "Maintenance Laborer"
+    },
+    {
+      "group": "Specialists",
+      "name": "Spray Technician"
+    },
+    {
+      "group": "Specialists",
+      "name": "Spray Tech"
+    },
+    {
+      "group": "Specialists",
+      "name": "Pesticide Applicator"
+    },
+    {
+      "group": "Specialists",
+      "name": "Fertilizer Technician"
+    },
+    {
+      "group": "Specialists",
+      "name": "Irrigation Technician"
+    },
+    {
+      "group": "Specialists",
+      "name": "Irrigation Supervisor"
+    },
+    {
+      "group": "Specialists",
+      "name": "Pump Station Technician"
+    },
+    {
+      "group": "Specialists",
+      "name": "Equipment Manager"
+    },
+    {
+      "group": "Specialists",
+      "name": "Assistant Equipment Manager"
+    },
+    {
+      "group": "Specialists",
+      "name": "Equipment Technician"
+    },
+    {
+      "group": "Specialists",
+      "name": "Assistant Equipment Technician"
+    },
+    {
+      "group": "Specialists",
+      "name": "Mechanic"
+    },
+    {
+      "group": "Specialists",
+      "name": "Horticulturist"
+    },
+    {
+      "group": "Specialists",
+      "name": "Gardener"
+    },
+    {
+      "group": "Specialists",
+      "name": "Landscape Technician"
+    },
+    {
+      "group": "Specialists",
+      "name": "Arborist"
+    },
+    {
+      "group": "Specialists",
+      "name": "Tree Care Technician"
+    },
+    {
+      "group": "Specialists",
+      "name": "Drainage Technician"
+    },
+    {
+      "group": "Specialists",
+      "name": "Facilities Maintenance Technician"
+    },
+    {
+      "group": "Specialists",
+      "name": "Maintenance Coordinator"
+    },
+    {
+      "group": "Specialists",
+      "name": "Turfgrass Apprentice"
+    }
+  ],
+  "credentials": [
+    {
+      "id": "pesticide",
+      "name": "Pesticide applicator license / certification",
+      "kind": "License",
+      "icon": "spray",
+      "source": "https://www.epa.gov/pesticide-worker-safety/federal-certification-standards-pesticide-applicators"
+    },
+    {
+      "id": "turf",
+      "name": "Ornamental & turf pesticide category",
+      "kind": "License endorsement",
+      "icon": "spray",
+      "source": "https://www.fdacs.gov/Business-Services/Pesticide-Licensing/Pesticide-Applicator-Licenses"
+    },
+    {
+      "id": "aquatic",
+      "name": "Aquatic pesticide category",
+      "kind": "License endorsement",
+      "icon": "water",
+      "source": "https://www.epa.gov/pesticide-worker-safety/federal-certification-standards-pesticide-applicators"
+    },
+    {
+      "id": "fertilizer",
+      "name": "Fertilizer / nutrient application credential",
+      "kind": "Local credential",
+      "icon": "leaf",
+      "source": "https://www.fdacs.gov/Business-Services/Pesticide-Licensing/Pesticide-Applicator-Licenses"
+    },
+    {
+      "id": "cgcs",
+      "name": "Certified Golf Course Superintendent (CGCS)",
+      "kind": "Professional certification",
+      "icon": "graduate",
+      "source": "https://www.gcsaa.org/career/certifications-exams"
+    },
+    {
+      "id": "ctem",
+      "name": "Certified Turf Equipment Manager (CTEM)",
+      "kind": "Professional certification",
+      "icon": "gear",
+      "source": "https://www.gcsaa.org/career/certifications-exams"
+    },
+    {
+      "id": "as-certificate",
+      "name": "Assistant Superintendent Certificate Series",
+      "kind": "Certificate program",
+      "icon": "graduate",
+      "source": "https://www.gcsaa.org/career/certifications-exams"
+    },
+    {
+      "id": "equipment-certificate",
+      "name": "Equipment technician / manufacturer training",
+      "kind": "Training record",
+      "icon": "gear",
+      "source": "https://www.gcsaa.org/career/workforce-development"
+    },
+    {
+      "id": "cgia",
+      "name": "Certified Golf Irrigation Auditor (CGIA)",
+      "kind": "Professional certification",
+      "icon": "water",
+      "source": "https://www.irrigation.org/ia/Certification/New_2026_structure/Choose-your-certification.aspx"
+    },
+    {
+      "id": "cit",
+      "name": "Certified Irrigation Technician (CIT)",
+      "kind": "Professional certification",
+      "icon": "water",
+      "source": "https://www.irrigation.org/ia/Certification/New_2026_structure/Choose-your-certification.aspx"
+    },
+    {
+      "id": "cic",
+      "name": "Certified Irrigation Contractor (CIC)",
+      "kind": "Professional certification",
+      "icon": "water",
+      "source": "https://www.irrigation.org/ia/Certification/New_2026_structure/Choose-your-certification.aspx"
+    },
+    {
+      "id": "clia",
+      "name": "Certified Landscape Irrigation Auditor (CLIA)",
+      "kind": "Professional certification",
+      "icon": "water",
+      "source": "https://www.irrigation.org/ia/Certification/New_2026_structure/Choose-your-certification.aspx"
+    },
+    {
+      "id": "first-aid",
+      "name": "First Aid",
+      "kind": "Training / certificate",
+      "icon": "aid",
+      "source": "https://www.redcross.org/take-a-class/aed/aed-training/aed-certification"
+    },
+    {
+      "id": "cpr",
+      "name": "CPR / AED",
+      "kind": "Training / certificate",
+      "icon": "aid",
+      "source": "https://www.redcross.org/take-a-class/aed/aed-training/aed-certification"
+    },
+    {
+      "id": "osha10",
+      "name": "OSHA 10-hour Outreach completion card",
+      "kind": "Course completion card",
+      "icon": "shield",
+      "source": "https://www.osha.gov/training/outreach"
+    },
+    {
+      "id": "osha30",
+      "name": "OSHA 30-hour Outreach completion card",
+      "kind": "Course completion card",
+      "icon": "shield",
+      "source": "https://www.osha.gov/training/outreach"
+    },
+    {
+      "id": "hazcom",
+      "name": "Hazard communication / SDS training",
+      "kind": "Employer training record",
+      "icon": "shield",
+      "source": "https://www.osha.gov/training/outreach"
+    },
+    {
+      "id": "ppe",
+      "name": "PPE training / respirator use training",
+      "kind": "Employer training record",
+      "icon": "shield",
+      "source": "https://www.osha.gov/training/outreach"
+    },
+    {
+      "id": "lockout",
+      "name": "Hazardous energy / lockout training",
+      "kind": "Employer training record",
+      "icon": "gear",
+      "source": "https://www.osha.gov/training/outreach"
+    },
+    {
+      "id": "confined",
+      "name": "Confined-space role training",
+      "kind": "Employer training record",
+      "icon": "shield",
+      "source": "https://www.osha.gov/training/outreach"
+    },
+    {
+      "id": "forklift",
+      "name": "Powered industrial truck operator training & evaluation",
+      "kind": "Employer evaluation record",
+      "icon": "vehicle",
+      "source": "https://www.osha.gov/etools/powered-industrial-trucks/training"
+    },
+    {
+      "id": "equipment",
+      "name": "Machine-specific operator training & evaluation",
+      "kind": "Employer training record",
+      "icon": "vehicle",
+      "source": "https://www.gcsaa.org/career/workforce-development"
+    },
+    {
+      "id": "chainsaw",
+      "name": "Chainsaw / tree-work training",
+      "kind": "Training record",
+      "icon": "tree",
+      "source": "https://www.gcsaa.org/career/workforce-development"
+    },
+    {
+      "id": "heat",
+      "name": "Heat illness prevention training",
+      "kind": "Employer training record",
+      "icon": "sun",
+      "source": "https://www.osha.gov/heat-exposure/resources"
+    },
+    {
+      "id": "lightning",
+      "name": "Severe-weather / lightning procedure briefing",
+      "kind": "Course training record",
+      "icon": "shield",
+      "source": "https://www.gcsaa.org/career/workforce-development"
+    },
+    {
+      "id": "spill",
+      "name": "Spill response / emergency procedure training",
+      "kind": "Employer training record",
+      "icon": "shield",
+      "source": "https://www.osha.gov/training/outreach"
+    },
+    {
+      "id": "wps",
+      "name": "WPS worker / handler training (where applicable)",
+      "kind": "Training record",
+      "icon": "spray",
+      "source": "https://www.epa.gov/pesticide-worker-safety/worker-protection-standard-training-programs-submission-process-and"
+    },
+    {
+      "id": "driver",
+      "name": "Driver / commercial driver credential",
+      "kind": "License",
+      "icon": "vehicle",
+      "source": "https://www.gcsaa.org/career/workforce-development"
+    },
+    {
+      "id": "arborist",
+      "name": "Arboriculture credential",
+      "kind": "Professional certification",
+      "icon": "tree",
+      "source": "https://www.gcsaa.org/career/workforce-development"
+    },
+    {
+      "id": "turf-study",
+      "name": "Turfgrass education / qualification",
+      "kind": "Education record",
+      "icon": "graduate",
+      "source": "https://www.gcsaa.org/career/workforce-development"
+    },
+    {
+      "id": "course-training",
+      "name": "Course-specific training completion",
+      "kind": "Internal training record",
+      "icon": "graduate",
+      "source": "https://www.gcsaa.org/career/workforce-development"
+    },
+    {
+      "id": "emcp1",
+      "name": "GCSAA Equipment Management Certificate Program \u2014 Level 1",
+      "kind": "Certificate program",
+      "icon": "gear",
+      "source": "https://www.gcsaa.org/career/certifications-exams/equipment-management-certificate-program/emcp-level-1"
+    },
+    {
+      "id": "emcp2",
+      "name": "GCSAA Equipment Management Certificate Program \u2014 Level 2",
+      "kind": "Certificate program",
+      "icon": "gear",
+      "source": "https://www.gcsaa.org/career/certifications-exams/equipment-management-certificate-program"
+    },
+    {
+      "id": "greenkeeper",
+      "name": "GCSAA Greenkeeper Certificate Program",
+      "kind": "Certificate program",
+      "icon": "leaf",
+      "source": "https://www.gcsaa.org/career/certifications-exams"
+    },
+    {
+      "id": "ipm",
+      "name": "GCSAA IPM Exam completion",
+      "kind": "Exam record",
+      "icon": "leaf",
+      "source": "https://www.gcsaa.org/career/certifications-exams"
+    },
+    {
+      "id": "electrician",
+      "name": "Electrician license (jurisdiction-specific)",
+      "kind": "License",
+      "icon": "gear",
+      "source": "https://www.osha.gov/electrical"
+    },
+    {
+      "id": "backflow",
+      "name": "Backflow prevention tester credential",
+      "kind": "Local credential",
+      "icon": "water",
+      "source": "https://www.epa.gov/dwreginfo"
+    },
+    {
+      "id": "water-operator",
+      "name": "Water / wastewater operator credential",
+      "kind": "Local credential",
+      "icon": "water",
+      "source": "https://www.epa.gov/dwreginfo"
+    },
+    {
+      "id": "isa",
+      "name": "ISA Certified Arborist",
+      "kind": "Professional certification",
+      "icon": "tree",
+      "source": "https://www.isa-arbor.com/Credentials/Overview"
+    }
+  ],
+  "sources": {
+    "gcsaa": "https://www.gcsaa.org/career/workforce-development",
+    "cert": "https://www.gcsaa.org/career/certifications-exams",
+    "ia": "https://www.irrigation.org/ia/Certification/New_2026_structure/Choose-your-certification.aspx",
+    "epa": "https://www.epa.gov/pesticide-worker-safety/federal-certification-standards-pesticide-applicators",
+    "fdacs": "https://www.fdacs.gov/Business-Services/Pesticide-Licensing/Pesticide-Applicator-Licenses",
+    "osha": "https://www.osha.gov/training/outreach",
+    "pit": "https://www.osha.gov/etools/powered-industrial-trucks/training",
+    "heat": "https://www.osha.gov/heat-exposure/resources",
+    "wps": "https://www.epa.gov/pesticide-worker-safety/worker-protection-standard-training-programs-submission-process-and"
+  },
+  "note": "Reference choices, not a universal list of legal requirements. Training records, licenses and professional certifications are distinct. Custom entries supported. No automatic verification or work authorization."
+}
