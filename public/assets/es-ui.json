@@ -2075,5 +2075,7 @@
   "Last calendar move reversed. History is retained.": "Se deshizo el último cambio. Se conserva el historial.",
   "Drag an item with a mouse, or drag its ⠿ grip on a phone. Tap the grip to choose any date. Review the new date before saving.": "Arrastre una tarea con ratón o su asa ⠿ en el teléfono. Toque el asa para elegir cualquier fecha. Revise antes de guardar.",
   "Open the affected record, or choose another date. No item moves until you save.": "Abra el registro afectado o elija otra fecha. Nada se mueve hasta guardar.",
-  "Date changed — review current field conditions and application requirements before work.": "Cambió la fecha: revise condiciones actuales y requisitos de aplicación antes de trabajar."
+  "Date changed — review current field conditions and application requirements before work.": "Cambió la fecha: revise condiciones actuales y requisitos de aplicación antes de trabajar.",
+  "Sample weather · South Florida demo": "Tiempo de ejemplo · demostración del sur de Florida",
+  "Invented South Florida weather for exploring the calendar. No real course forecast.": "Tiempo ficticio del sur de Florida para explorar el calendario. No es un pronóstico real del campo."
 }
