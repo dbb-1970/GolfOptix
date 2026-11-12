@@ -2042,10 +2042,10 @@
       "minutes": 8,
       "steps": [
         {
-          "title": "Add the exact product",
-          "text": "Record the product and its real label and SDS references.",
-          "control": "Chemical Management",
-          "example": "Exact registration and formulation",
+          "title": "Start from the catalog or add your own",
+          "text": "Browse 50 manufacturer-sourced references by name, category or manufacturer. Select one to prefill the form; confirm the exact container, registration and current documents before saving.",
+          "control": "Browse chemical starter catalog / Add your own product",
+          "example": "A reference is not stock. Confirm opening quantities separately.",
           "image": "/assets/learn/chemical-products-1.svg"
         },
         {
@@ -2076,10 +2076,10 @@
         "summary": "Instrucciones ilustradas para el superintendente. Siga cada paso y confirme el resultado en el recorrido correcto.",
         "steps": [
           {
-            "title": "Añada el producto exacto",
-            "text": "Registre la etiqueta y ficha de seguridad reales.",
-            "control": "Gestión de productos químicos",
-            "example": "Práctica: Registre la etiqueta y ficha de seguridad reales.",
+            "title": "Empiece con el catálogo o añada su producto",
+            "text": "Busque 50 referencias de fabricantes por nombre, categoría o fabricante. Seleccione una para completar el formulario; confirme el envase, registro y documentos actuales antes de guardar.",
+            "control": "Explorar catálogo inicial / Añadir su propio producto",
+            "example": "Una referencia no es inventario. Confirme las cantidades iniciales por separado.",
             "image": "/assets/learn/chemical-products-1-es.svg"
           },
           {
@@ -3014,10 +3014,10 @@
       "pitfall": "Completed or worked records are not draggable. Service reminders become dated work orders; repeat rules and meter thresholds stay unchanged.",
       "steps": [
         {
-          "title": "Choose your view",
-          "text": "Use Month for the grid or Week for larger day targets. Select a date to inspect its items.",
-          "control": "Month / Week",
-          "example": "Review this week’s job dates.",
+          "title": "Choose a day, week or date range",
+          "text": "Use Day, Week, Month or Date range. Click a month date or a week heading to open the expanded day. Previous day and Next day keep you moving; print the current view when ready.",
+          "control": "Day / Week / Month / Date range",
+          "example": "View the shown work, totals and instructions; filters still apply.",
           "image": "/assets/learn/reschedule-1.svg"
         },
         {
@@ -3056,10 +3056,10 @@
         "pitfall": "No se arrastran registros terminados ni con trabajo realizado. Los recordatorios de servicio crean órdenes fechadas; no cambian repeticiones ni umbrales.",
         "steps": [
           {
-            "title": "Elija la vista",
-            "text": "Use Mes para la cuadrícula o Semana para zonas diarias más grandes. Seleccione una fecha para sus tareas.",
-            "control": "Mes / Semana",
-            "example": "Use Mes para la cuadrícula o Semana para zonas diarias más grandes. Seleccione una fecha para sus tareas.",
+            "title": "Elija día, semana o intervalo",
+            "text": "Use Día, Semana, Mes o Intervalo. Pulse una fecha del mes o un encabezado semanal para abrir el día ampliado. Use Día anterior y Día siguiente e imprima la vista cuando esté lista.",
+            "control": "Día / Semana / Mes / Intervalo de fechas",
+            "example": "Vea tareas, totales e instrucciones; los filtros siguen activos.",
             "image": "/assets/learn/reschedule-1-es.svg"
           },
           {

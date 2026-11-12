@@ -1,0 +1,508 @@
+{
+  "version": "2026-11-12.1",
+  "market": "United States",
+  "title": "GolfOptix chemical starter catalog",
+  "scope": "Manufacturer-sourced product references. Confirm the exact formulation, container registration, current documents and local use before planning. No stock, rates or schedules are created.",
+  "products": [
+    {
+      "id": "quatrols-border-2-0",
+      "name": "Border 2.0",
+      "manufacturer": "Aquatrols",
+      "category": "Adjuvant",
+      "source": "https://www.aquatrols.com/approach-early-order-program/",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "L",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "quatrols-knockdown",
+      "name": "Knockdown",
+      "manufacturer": "Aquatrols",
+      "category": "Adjuvant",
+      "source": "https://www.aquatrols.com/approach-early-order-program/",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "L",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "quatrols-pen-a-trate-eco",
+      "name": "Pen-A-Trate ECO",
+      "manufacturer": "Aquatrols",
+      "category": "Adjuvant",
+      "source": "https://www.aquatrols.com/approach-early-order-program/",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "L",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "ebanon-urf-country-club-md-11-7-21-micro-greens-grade",
+      "name": "Country Club MD 11-7-21 · Micro Greens Grade",
+      "manufacturer": "LebanonTurf",
+      "category": "Fertilizer",
+      "source": "https://www.lebanonturf.com/media/2896/2024-ccmd-products.pdf",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "kg",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "ebanon-urf-country-club-md-14-7-14-micro-greens-grade",
+      "name": "Country Club MD 14-7-14 · Micro Greens Grade",
+      "manufacturer": "LebanonTurf",
+      "category": "Fertilizer",
+      "source": "https://www.lebanonturf.com/media/2896/2024-ccmd-products.pdf",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "kg",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "ebanon-urf-country-club-md-16-0-8-micro-greens-grade",
+      "name": "Country Club MD 16-0-8 · Micro Greens Grade",
+      "manufacturer": "LebanonTurf",
+      "category": "Fertilizer",
+      "source": "https://www.lebanonturf.com/media/2896/2024-ccmd-products.pdf",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "kg",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "ebanon-urf-country-club-md-18-0-18-micro-greens-grade",
+      "name": "Country Club MD 18-0-18 · Micro Greens Grade",
+      "manufacturer": "LebanonTurf",
+      "category": "Fertilizer",
+      "source": "https://www.lebanonturf.com/media/2896/2024-ccmd-products.pdf",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "kg",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "ebanon-urf-country-club-md-18-3-18-micro-greens-grade",
+      "name": "Country Club MD 18-3-18 · Micro Greens Grade",
+      "manufacturer": "LebanonTurf",
+      "category": "Fertilizer",
+      "source": "https://www.lebanonturf.com/media/2896/2024-ccmd-products.pdf",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "kg",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "ebanon-urf-country-club-md-22-0-16-micro-greens-grade",
+      "name": "Country Club MD 22-0-16 · Micro Greens Grade",
+      "manufacturer": "LebanonTurf",
+      "category": "Fertilizer",
+      "source": "https://www.lebanonturf.com/media/2896/2024-ccmd-products.pdf",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "kg",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "quatrols-verdelnx-grn-elite-pro",
+      "name": "VerdeLNX GRN Elite Pro",
+      "manufacturer": "Aquatrols",
+      "category": "Fertilizer",
+      "source": "https://www.aquatrols.com/approach-early-order-program/",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "L",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "quatrols-verdelnx-grn-sward",
+      "name": "VerdeLNX GRN Sward",
+      "manufacturer": "Aquatrols",
+      "category": "Fertilizer",
+      "source": "https://www.aquatrols.com/approach-early-order-program/",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "L",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "aramax-intrinsic",
+      "name": "Aramax Intrinsic",
+      "manufacturer": "BASF",
+      "category": "Fungicide",
+      "source": "https://www.betterturf.basf.us/campaigns/fall-golf-defense-program.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": null,
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "emerald",
+      "name": "Emerald",
+      "manufacturer": "BASF",
+      "category": "Fungicide",
+      "source": "https://betterturf.basf.us/products/turf-sds-labels.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "kg",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "encartis",
+      "name": "Encartis",
+      "manufacturer": "BASF",
+      "category": "Fungicide",
+      "source": "https://betterturf.basf.us/products/turf-sds-labels.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": null,
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "nvu-exteris-stressgard",
+      "name": "Exteris Stressgard",
+      "manufacturer": "Envu",
+      "category": "Fungicide",
+      "source": "https://www.us.envu.com/golf-course-management/products/exteris-stressgard",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": null,
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "yngenta-heritage-sc",
+      "name": "Heritage SC",
+      "manufacturer": "Syngenta",
+      "category": "Fungicide",
+      "source": "https://www.greencastonline.com/techarticle.aspx?gcaid=218465",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "L",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "honor-intrinsic",
+      "name": "Honor Intrinsic",
+      "manufacturer": "BASF",
+      "category": "Fungicide",
+      "source": "https://betterturf.basf.us/products/turf-sds-labels.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "kg",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "insignia-sc-intrinsic",
+      "name": "Insignia SC Intrinsic",
+      "manufacturer": "BASF",
+      "category": "Fungicide",
+      "source": "https://betterturf.basf.us/products/turf-sds-labels.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": null,
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "lexicon-intrinsic",
+      "name": "Lexicon Intrinsic",
+      "manufacturer": "BASF",
+      "category": "Fungicide",
+      "source": "https://betterturf.basf.us/products/turf-sds-labels.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": null,
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "maxtima",
+      "name": "Maxtima",
+      "manufacturer": "BASF",
+      "category": "Fungicide",
+      "source": "https://betterturf.basf.us/products/turf-sds-labels.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": null,
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "navicon-intrinsic",
+      "name": "Navicon Intrinsic",
+      "manufacturer": "BASF",
+      "category": "Fungicide",
+      "source": "https://betterturf.basf.us/products/turf-sds-labels.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": null,
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "pillar-g-intrinsic",
+      "name": "Pillar G Intrinsic",
+      "manufacturer": "BASF",
+      "category": "Fungicide",
+      "source": "https://betterturf.basf.us/products/turf-sds-labels.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "kg",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "xzemplar",
+      "name": "Xzemplar",
+      "manufacturer": "BASF",
+      "category": "Fungicide",
+      "source": "https://betterturf.basf.us/products/turf-sds-labels.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": null,
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "yngenta-primo-maxx",
+      "name": "Primo Maxx",
+      "manufacturer": "Syngenta",
+      "category": "Growth regulator",
+      "source": "https://www.greencastonline.com/labels/primo-maxx",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "L",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "yngenta-barricade-4fl",
+      "name": "Barricade 4FL",
+      "manufacturer": "Syngenta",
+      "category": "Herbicide",
+      "source": "https://www.greencastonline.com/techarticle.aspx?gcaid=218465",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "L",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "basagran-t-o",
+      "name": "Basagran T&O",
+      "manufacturer": "BASF",
+      "category": "Herbicide",
+      "source": "https://betterturf.basf.us/products/turf-sds-labels.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": null,
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "nvu-celsius-wg",
+      "name": "Celsius WG",
+      "manufacturer": "Envu",
+      "category": "Herbicide",
+      "source": "https://www.us.envu.com/golf-course-management/products/celsius-wg",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "kg",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "drive-xlr8",
+      "name": "Drive XLR8",
+      "manufacturer": "BASF",
+      "category": "Herbicide",
+      "source": "https://betterturf.basf.us/products/turf-sds-labels.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": null,
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "finale-xl-t-o",
+      "name": "Finale XL T&O",
+      "manufacturer": "BASF",
+      "category": "Herbicide",
+      "source": "https://betterturf.basf.us/products/turf-sds-labels.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": null,
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "freehand-1-75g",
+      "name": "FreeHand 1.75G",
+      "manufacturer": "BASF",
+      "category": "Herbicide",
+      "source": "https://betterturf.basf.us/products/turf-sds-labels.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "kg",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "yngenta-fusilade-ii",
+      "name": "Fusilade II",
+      "manufacturer": "Syngenta",
+      "category": "Herbicide",
+      "source": "https://www.greencastonline.com/techarticle.aspx?gcaid=218465",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "L",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "pendulum-2g",
+      "name": "Pendulum 2G",
+      "manufacturer": "BASF",
+      "category": "Herbicide",
+      "source": "https://betterturf.basf.us/products/turf-sds-labels.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "kg",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "pendulum-aquacap",
+      "name": "Pendulum AquaCap",
+      "manufacturer": "BASF",
+      "category": "Herbicide",
+      "source": "https://betterturf.basf.us/products/turf-sds-labels.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": null,
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "pylex",
+      "name": "Pylex",
+      "manufacturer": "BASF",
+      "category": "Herbicide",
+      "source": "https://betterturf.basf.us/products/turf-sds-labels.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": null,
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "segment-ii",
+      "name": "Segment II",
+      "manufacturer": "BASF",
+      "category": "Herbicide",
+      "source": "https://betterturf.basf.us/products/turf-sds-labels.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": null,
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "tower",
+      "name": "Tower",
+      "manufacturer": "BASF",
+      "category": "Herbicide",
+      "source": "https://betterturf.basf.us/products/turf-sds-labels.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": null,
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "yngenta-acelepryn",
+      "name": "Acelepryn",
+      "manufacturer": "Syngenta",
+      "category": "Insecticide",
+      "source": "https://www.greencastonline.com/techarticle.aspx?gcaid=218465",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "L",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "alucion-35-wg",
+      "name": "Alucion 35 WG",
+      "manufacturer": "BASF",
+      "category": "Insecticide",
+      "source": "https://betterturf.basf.us/products/turf-sds-labels.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "kg",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "siesta-fire-ant-bait",
+      "name": "Siesta Fire Ant Bait",
+      "manufacturer": "BASF",
+      "category": "Insecticide",
+      "source": "https://betterturf.basf.us/products/turf-sds-labels.html",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "kg",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "nvu-tetrino",
+      "name": "Tetrino",
+      "manufacturer": "Envu",
+      "category": "Insecticide",
+      "source": "https://bynder.envu.com/m/47659f0e684fa02/original/Digital_TO_Tetrino_Label_NA_US_EN.pdf",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "L",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "quatrols-aqueduct",
+      "name": "Aqueduct",
+      "manufacturer": "Aquatrols",
+      "category": "Wetting agent",
+      "source": "https://www.aquatrols.com/approach-early-order-program/",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "L",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "quatrols-aqueduct-flex",
+      "name": "Aqueduct Flex",
+      "manufacturer": "Aquatrols",
+      "category": "Wetting agent",
+      "source": "https://www.aquatrols.com/approach-early-order-program/",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "kg",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "quatrols-cascade-tre",
+      "name": "Cascade Tre",
+      "manufacturer": "Aquatrols",
+      "category": "Wetting agent",
+      "source": "https://www.aquatrols.com/approach-early-order-program/",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "L",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "quatrols-dispatch-sprayable",
+      "name": "Dispatch Sprayable",
+      "manufacturer": "Aquatrols",
+      "category": "Wetting agent",
+      "source": "https://www.aquatrols.com/approach-early-order-program/",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "L",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "quatrols-precip-g",
+      "name": "Precip G",
+      "manufacturer": "Aquatrols",
+      "category": "Wetting agent",
+      "source": "https://www.aquatrols.com/approach-early-order-program/",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "kg",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "quatrols-primer-select",
+      "name": "Primer Select",
+      "manufacturer": "Aquatrols",
+      "category": "Wetting agent",
+      "source": "https://www.aquatrols.com/approach-early-order-program/",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "L",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "quatrols-revolution",
+      "name": "Revolution",
+      "manufacturer": "Aquatrols",
+      "category": "Wetting agent",
+      "source": "https://www.aquatrols.com/approach-early-order-program/",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "L",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "quatrols-sixteen90",
+      "name": "Sixteen90",
+      "manufacturer": "Aquatrols",
+      "category": "Wetting agent",
+      "source": "https://www.aquatrols.com/approach-early-order-program/",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "L",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "quatrols-vivax-oro",
+      "name": "Vivax Oro",
+      "manufacturer": "Aquatrols",
+      "category": "Wetting agent",
+      "source": "https://www.aquatrols.com/approach-early-order-program/",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "L",
+      "reviewStatus": "reference"
+    },
+    {
+      "id": "quatrols-zipline",
+      "name": "Zipline",
+      "manufacturer": "Aquatrols",
+      "category": "Wetting agent",
+      "source": "https://www.aquatrols.com/approach-early-order-program/",
+      "sourceChecked": "2026-11-12",
+      "stockUnit": "L",
+      "reviewStatus": "reference"
+    }
+  ]
+}
