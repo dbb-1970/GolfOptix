@@ -1,0 +1,11 @@
+# Calendar moves and conflict review — 12 November 2026
+
+Managers can drag unstarted calendar cards to another date with a mouse. A dedicated grip supports phone dragging and opens a date picker on tap or click. Every drop opens a review form; nothing changes until Save new date and time. The last move offers a version-checked undo and history retains the actor, reason, old date and new date.
+
+Recurring calendar moves affect one occurrence. Moving a service reminder creates a linked dated work order without changing its repeat interval or meter baseline. Course events retain their full span; preparation deadlines are flagged rather than silently shifted. Chemical application moves keep application and dispatched ticket dates together, recheck applicable evidence and stock, and do not change quantities or stock movements. Pin work retains its instructions and duplicate coverage checks. Worked or completed records are protected. Manager permissions and optimistic versions remain enforced online.
+
+The Maintenance Calendar and Crew views expose conflict counts, affected-item badges and explanations for overlapping workers, equipment, blocked course events, preparation deadlines and recorded weather holds. Named assignees on ordinary reminders are review warnings, not inferred worker reservations. Conflicts are evaluated for the displayed dates, including hidden filters; unknown assignments and field conditions still require review. Moving a Crew-backed job rejects known resource conflicts. Plain reminders check current event blocks before saving; later event changes are detected on refresh, not through a cross-store transaction. Direct dragging is provided on the Maintenance Calendar; Crew links to that resolution workflow.
+
+The demo tour and a five-step illustrated English/Spanish learning guide explain moving and conflict review. Demo records remain temporary. No live Kings course record or email was changed during verification.
+
+Validation: automated domain/API/regression tests, desktop drag/drop into review and save, date-picker move and undo, visible named-assignee conflict review, and 390-pixel phone dialog layout. Browser phone sizing is not a physical-device touch test.

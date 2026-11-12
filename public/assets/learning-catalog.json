@@ -2999,6 +2999,99 @@
           }
         ]
       }
+    },
+    {
+      "id": "reschedule",
+      "title": "Move calendar items and resolve conflicts",
+      "category": "Calendar & events",
+      "screen": "calendar",
+      "role": "manager",
+      "library": "support",
+      "version": "2026.11.12.1",
+      "minutes": 10,
+      "summary": "Reschedule unstarted work with a mouse or phone and see conflicts before confirming.",
+      "example": "Move a one-time application reminder onto a day with another named-crew plan. Review the warning, choose a clear slot and save the change.",
+      "pitfall": "Completed or worked records are not draggable. Service reminders become dated work orders; repeat rules and meter thresholds stay unchanged.",
+      "steps": [
+        {
+          "title": "Choose your view",
+          "text": "Use Month for the grid or Week for larger day targets. Select a date to inspect its items.",
+          "control": "Month / Week",
+          "example": "Review this week’s job dates.",
+          "image": "/assets/learn/reschedule-1.svg"
+        },
+        {
+          "title": "Drag or choose a date",
+          "text": "Drag the item with a mouse. On a phone, drag its ⠿ grip, or tap the grip to choose any date.",
+          "control": "Move to date",
+          "example": "Keep normal finger scrolling on the rest of the card.",
+          "image": "/assets/learn/reschedule-2.svg"
+        },
+        {
+          "title": "Review what will move",
+          "text": "The confirmation shows the old date and proposed date/time. Only one recurring occurrence moves; an event keeps its full span.",
+          "control": "Move scheduled item",
+          "example": "Event preparation jobs stay put and may need review.",
+          "image": "/assets/learn/reschedule-3.svg"
+        },
+        {
+          "title": "Resolve conflicts",
+          "text": "Read the count and Review schedule conflicts list. Worker/equipment collisions and blocked event dates prevent conflicting job moves.",
+          "control": "Review schedule conflicts",
+          "example": "Free-text named-crew reminder overlap requires review, not an inferred reservation.",
+          "image": "/assets/learn/reschedule-4.svg"
+        },
+        {
+          "title": "Save or undo",
+          "text": "Choose Save new date and time. Undo last calendar move reverses the most recent move if its record is unchanged. History is retained.",
+          "control": "Undo last calendar move",
+          "example": "A stale record or changed availability can prevent undo.",
+          "image": "/assets/learn/reschedule-5.svg"
+        }
+      ],
+      "es": {
+        "title": "Mueva tareas del calendario y resuelva conflictos",
+        "summary": "Cambie trabajo sin iniciar con ratón o teléfono y revise conflictos antes de confirmar.",
+        "example": "Mueva un recordatorio a un día con otro plan del mismo equipo. Revise el aviso, elija un período disponible y guarde.",
+        "pitfall": "No se arrastran registros terminados ni con trabajo realizado. Los recordatorios de servicio crean órdenes fechadas; no cambian repeticiones ni umbrales.",
+        "steps": [
+          {
+            "title": "Elija la vista",
+            "text": "Use Mes para la cuadrícula o Semana para zonas diarias más grandes. Seleccione una fecha para sus tareas.",
+            "control": "Mes / Semana",
+            "example": "Use Mes para la cuadrícula o Semana para zonas diarias más grandes. Seleccione una fecha para sus tareas.",
+            "image": "/assets/learn/reschedule-1-es.svg"
+          },
+          {
+            "title": "Arrastre o elija fecha",
+            "text": "Arrastre con el ratón. En el teléfono use el asa ⠿ o tóquela para elegir una fecha. El resto de la tarjeta permite desplazarse.",
+            "control": "Mover a fecha",
+            "example": "Arrastre con el ratón. En el teléfono use el asa ⠿ o tóquela para elegir una fecha. El resto de la tarjeta permite desplazarse.",
+            "image": "/assets/learn/reschedule-2-es.svg"
+          },
+          {
+            "title": "Revise el cambio",
+            "text": "La confirmación muestra fechas y hora. Se mueve una sola ocurrencia; un evento conserva su duración. La preparación requiere revisión aparte.",
+            "control": "Mover elemento programado",
+            "example": "La confirmación muestra fechas y hora. Se mueve una sola ocurrencia; un evento conserva su duración. La preparación requiere revisión aparte.",
+            "image": "/assets/learn/reschedule-3-es.svg"
+          },
+          {
+            "title": "Resuelva conflictos",
+            "text": "Consulte el contador y la lista. Solapamientos de personal, equipos y eventos bloqueados impiden cambios conflictivos de órdenes.",
+            "control": "Revisar conflictos de horario",
+            "example": "Consulte el contador y la lista. Solapamientos de personal, equipos y eventos bloqueados impiden cambios conflictivos de órdenes.",
+            "image": "/assets/learn/reschedule-4-es.svg"
+          },
+          {
+            "title": "Guarde o deshaga",
+            "text": "Guarde fecha y hora. Deshaga el último cambio si no cambió su registro. Se conserva el historial; la disponibilidad puede impedir deshacer.",
+            "control": "Deshacer último cambio del calendario",
+            "example": "Guarde fecha y hora. Deshaga el último cambio si no cambió su registro. Se conserva el historial; la disponibilidad puede impedir deshacer.",
+            "image": "/assets/learn/reschedule-5-es.svg"
+          }
+        ]
+      }
     }
   ],
   "classes": [
