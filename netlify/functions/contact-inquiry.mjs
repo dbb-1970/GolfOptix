@@ -1,0 +1,2 @@
+import{getStore}from'@netlify/blobs';import{createPilotHandler,limitPilot}from'../lib/pilot-signup.mjs';import{validateInquiry}from'../lib/contact-inquiry.mjs';import{recordInquiryEvent}from'../lib/owner-alerts.mjs';
+export default createPilotHandler({validate:validateInquiry,prefix:'INQUIRY',limit:(req,at)=>limitPilot(getStore,req.headers.get('x-nf-client-connection-ip')||'unknown',at),record:({id,data,at})=>recordInquiryEvent({getStore,id,data,at})});
