@@ -1,3 +1,4 @@
+import '../../public/assets/business-model.js';
 import '../../public/assets/field-location-model.js';
 import '../../public/assets/pump-model.js';
 import '../../public/assets/operations-model.js';
