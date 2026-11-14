@@ -1,5 +1,5 @@
 import {randomUUID,createHash} from 'node:crypto';
-import '../../public/assets/coverage-model.js';import '../../public/assets/maintenance-model.js';import '../../public/assets/shared-map-model.js';
+import '../../public/assets/gps-model.js';import '../../public/assets/coverage-model.js';import '../../public/assets/maintenance-model.js';import '../../public/assets/shared-map-model.js';
 import {canCourse} from './access.mjs';import source from './map-source-release.json' with {type:'json'};
 export const MapModel=globalThis.GolfSharedMapModel,Maintenance=globalThis.GolfMaintenance;
 export const hash=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');

@@ -21,3 +21,4 @@
 .calendar-day-navigation{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:12px 0 20px}@media print{.calendar-day-navigation{display:none!important}}
 
 #calendar-content{scroll-margin-top:calc(var(--workspace-tabs-height,60px) + 20px)}
+.calendar-insights{margin:20px 0;padding:22px;background:#e8eee0;border:1px solid #a6b49b;border-radius:12px}.calendar-insights h2{margin:0 0 8px}.calendar-insight{background:#fffef7;border-left:4px solid #b79c5e;margin:14px 0;padding:18px}.calendar-insight h3{font-size:19px;margin:0 0 8px}.calendar-insight p{font-size:14px;line-height:1.6}.calendar-insight-actions{display:flex;flex-wrap:wrap;gap:8px}.calendar-insight-meta{color:#596750;font-size:12px!important}.calendar-insights details{margin-top:12px}@media print{.calendar-insight-actions{display:none}}
