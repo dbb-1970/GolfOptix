@@ -47,7 +47,7 @@ Redeploy after the variables are saved. No secrets should appear in build logs, 
 
 ## 5. Test your calendar connection
 1. Sign in to your approved GolfOptix course account.
-2. Open Maintenance → Daily work → More tools → Google Calendar.
+2. Open Calendar → Connect Google Calendar. Crew members can use Connect Google Calendar from their own Crew schedule.
 3. Choose Connect your Google account and approve the displayed scopes yourself.
 4. Select a writable calendar. A dedicated GolfOptix test calendar is useful for the first test.
 5. Select one future, unstarted job; save selections and sync.
@@ -56,7 +56,7 @@ Redeploy after the variables are saved. No secrets should appear in build logs, 
 8. Test simultaneous edits: the item should require review. Test an approved absence: its exported title must say unavailable, without a sick/vacation reason or private notes.
 9. Disconnect and confirm further changes stop syncing. Existing Google copies are retained.
 
-Background synchronization is scheduled every five minutes on the published production site, rather than instantaneous. Only selected items are handled. Selection currently covers work orders, course events, approved absences and individual maintenance-plan occurrences, from 30 days before today through 335 days ahead, with a maximum of 100 selections per connection. Repeating occurrences must be individually selected. Unrelated Google events are not imported. Calendar-plan title/duration edits and protected/started work are reviewed inside GolfOptix. Deleted Google copies require review rather than automatic cancellation of operational records.
+Background synchronization is scheduled every five minutes on the published production site, rather than instantaneous. Approved crew members can export only their own assigned work and approved time off; their Google edits require manager review inside GolfOptix. Managers can synchronize course schedules in both directions. Only selected items are handled. Selection currently covers work orders, course events, approved absences and individual maintenance-plan occurrences, from 30 days before today through 335 days ahead, with a maximum of 100 selections per connection. Repeating occurrences must be individually selected. Unrelated Google events are not imported. Calendar-plan title/duration edits and protected/started work are reviewed inside GolfOptix. Deleted Google copies require review rather than automatic cancellation of operational records.
 
 ## 6. Optional automatic receipt reading
 1. In Google Cloud, enable Cloud Vision API. Google requires a billing account for Vision; review pricing and approve billing yourself before enabling paid usage.

@@ -11,7 +11,7 @@ function selectCourse(){
  $('hub-garage').href=root+'garage/?course='+encodeURIComponent(course.id);$('hub-landscaping').href=(demo?'/test-drive/crew/':'/crew/')+'?course='+encodeURIComponent(course.id)+'&newWork=landscaping';$('hub-pumps').href=root+'pumps/?course='+encodeURIComponent(course.id);$('hub-calendar').href=calendar.pathname+calendar.search;$('hub-crew').href=demo?'/test-drive/crew/':'/crew/?course='+encodeURIComponent(course.id);
  $('hub-map-nav').href=$('hub-back-map').href=map.pathname+map.search;
  map.searchParams.set('panel','repairs');$('hub-repairs').href=map.pathname+map.search;
- if(!demo){const current=new URL(location.href);current.searchParams.set('course',course.id);history.replaceState(null,'',current.pathname+current.search);}
+ installDailyShortcuts(course);if(!demo){const current=new URL(location.href);current.searchParams.set('course',course.id);history.replaceState(null,'',current.pathname+current.search);}
 }
 try{
  let user;
@@ -34,3 +34,5 @@ try{
  $('hub-workspace').hidden=false;$('hub-status').textContent=demo?'This is the public Test Drive. Your real course records remain separate.':'';
 }catch(error){$('hub-status').textContent=error.message;$('hub-status').classList.add('error');$('hub-retry').hidden=false;}
 $('hub-retry').onclick=()=>location.reload();
+
+function installDailyShortcuts(course){let nav=document.getElementById('daily-shortcuts');if(!nav){nav=document.createElement('nav');nav.id='daily-shortcuts';nav.className='daily-shortcuts';nav.setAttribute('aria-label','Start your day');document.querySelector('.maintenance-context').after(nav);}nav.replaceChildren();for(const[label,path]of [['Start today','operations/'],['Plan the calendar','calendar/'],['Crew & time off','operations/'],['Equipment','garage/'],['Budget & spending','operations/']]){const a=document.createElement('a');a.className='button outline';a.textContent=label;a.href=root+path+'?course='+encodeURIComponent(course.id)+(label==='Crew & time off'?'&tab=leave':label==='Budget & spending'?'&tab=budget':'');nav.append(a);}}
