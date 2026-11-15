@@ -146,6 +146,19 @@
   status = 302
   force = true
 
+# Reports use the same authorized Crew snapshot; the UI is manager-only.
+[[redirects]]
+  from = "/maintenance/reports/*"
+  to = "/maintenance/reports/:splat"
+  status = 200
+  force = true
+  conditions = {Role = ["admin", "kings-member", "crew"]}
+[[redirects]]
+  from = "/maintenance/reports/*"
+  to = "/login/?required=reports"
+  status = 302
+  force = true
+
 # Real maintenance pages require an approved role, including direct HTML URLs.
 # The public, fictional Test Drive lives under its own /test-drive/ path.
 [[redirects]]

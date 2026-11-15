@@ -1,6 +1,6 @@
-import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=closing1';
+import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=reports1';
 
-const page=Object.keys(tourPages).find(key=>tourPages[key]===location.pathname);
+const page=Object.keys(tourPages).find(key=>tourPages[key]===location.pathname)||(location.pathname==='/test-drive/maintenance/reports/'?'operations':null);
 if(page&&!(['chemicals','learn'].includes(page)&&new URLSearchParams(location.search).get('view')==='worker')) init();
 function init(){
   const KEY='golfoptix-superintendent-tour-v2',$=s=>document.querySelector(s);

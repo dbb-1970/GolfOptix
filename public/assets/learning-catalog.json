@@ -1,5 +1,5 @@
 {
-  "version": "2026.11.12",
+  "version": "2026.11.15",
   "guides": [
     {
       "id": "start",
@@ -3089,6 +3089,97 @@
             "control": "Deshacer último cambio del calendario",
             "example": "Guarde fecha y hora. Deshaga el último cambio si no cambió su registro. Se conserva el historial; la disponibilidad puede impedir deshacer.",
             "image": "/assets/learn/reschedule-5-es.svg"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reports",
+      "title": "Read reports and follow the details",
+      "category": "Maintenance & equipment",
+      "screen": "operations",
+      "role": "manager",
+      "summary": "Understand budget status, urgent work, equipment, chemical and fuel reports without double-counting costs.",
+      "example": "A superintendent drills from Garage to a mower, then opens its service ticket.",
+      "pitfall": "Missing prices are not zero. A stock purchase is not counted again when it is consumed.",
+      "version": "2026.11.15",
+      "minutes": 10,
+      "library": "support",
+      "steps": [
+        {
+          "title": "Open Reports",
+          "text": "Choose Reports in the course navigation. Only authorized course managers can open whole-course and financial reports.",
+          "control": "Reports",
+          "example": "Choose Budget status or Work order status",
+          "image": "/assets/learn/reports-1.svg"
+        },
+        {
+          "title": "Choose the reporting period",
+          "text": "Select a saved budget to use its exact dates, or choose custom dates. Custom dates do not compare a partial period to a full annual allowance.",
+          "control": "Budget period / financial scope",
+          "example": "Actual spending and estimates remain separate",
+          "image": "/assets/learn/reports-2.svg"
+        },
+        {
+          "title": "Follow the spending",
+          "text": "Click an area such as Garage, then select a machine. Inspect its ledger and open the source ticket. Unallocated stock stays visible.",
+          "control": "Drill into a machine",
+          "example": "Garage → mower → spending entries",
+          "image": "/assets/learn/reports-3.svg"
+        },
+        {
+          "title": "Check chemical and fuel records",
+          "text": "Open Chemicals or Fuel. Compare purchases, approved usage, units and current stock. Unknown prices and missing opening readings are clearly identified.",
+          "control": "Chemicals / Fuel",
+          "example": "Purchases count once; usage is reported separately",
+          "image": "/assets/learn/reports-4.svg"
+        },
+        {
+          "title": "Act on unfinished work",
+          "text": "Open Work order status. Emergency work comes first, then scheduled date and time. Open a ticket or export and print the filtered report.",
+          "control": "Work order status",
+          "example": "All incomplete dates are included unless you limit them",
+          "image": "/assets/learn/reports-5.svg"
+        }
+      ],
+      "es": {
+        "title": "Lea los informes y siga los detalles",
+        "summary": "Consulte presupuestos, trabajo urgente, equipos, productos químicos y combustible sin duplicar costos.",
+        "steps": [
+          {
+            "title": "Abra Informes",
+            "text": "Elija Informes en la navegación del campo. Solo los responsables autorizados pueden consultar datos financieros y de todo el campo.",
+            "control": "Informes",
+            "example": "Estado del presupuesto o de las órdenes",
+            "image": "/assets/learn/reports-1-es.svg"
+          },
+          {
+            "title": "Elija el período",
+            "text": "Seleccione un presupuesto para usar sus fechas exactas o elija fechas personalizadas. No compare un período parcial con el presupuesto anual completo.",
+            "control": "Período del presupuesto",
+            "example": "Los gastos reales y las estimaciones se separan",
+            "image": "/assets/learn/reports-2-es.svg"
+          },
+          {
+            "title": "Siga los gastos",
+            "text": "Pulse un área como Taller y seleccione una máquina. Revise su libro de gastos y abra la orden original. El inventario sin asignar permanece visible.",
+            "control": "Profundizar en una máquina",
+            "example": "Taller → cortacésped → gastos",
+            "image": "/assets/learn/reports-3-es.svg"
+          },
+          {
+            "title": "Revise productos y combustible",
+            "text": "Abra Productos químicos o Combustible. Compare compras, consumo aprobado, unidades y existencias. Se indican precios o lecturas iniciales faltantes.",
+            "control": "Productos químicos / Combustible",
+            "example": "Las compras se cuentan una sola vez",
+            "image": "/assets/learn/reports-4-es.svg"
+          },
+          {
+            "title": "Actúe sobre el trabajo pendiente",
+            "text": "Abra Estado de las órdenes. Las emergencias aparecen primero, seguidas de fecha y hora. Abra una orden, exporte o imprima el informe filtrado.",
+            "control": "Estado de las órdenes",
+            "example": "Todas las fechas pendientes salvo que aplique un filtro",
+            "image": "/assets/learn/reports-5-es.svg"
           }
         ]
       }
