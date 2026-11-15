@@ -22,3 +22,8 @@
 .demo-tour-picker-actions button:focus-visible{outline:2px solid #8b702d;outline-offset:3px}.demo-tour-picker .language-switch{margin:0;padding:0 0 8px;top:-26px;background:#fbfaf4;z-index:4}
 @media(max-width:540px){.demo-tour-picker{padding:16px 16px 0;max-height:calc(100dvh - 20px);width:calc(100vw - 20px);border-radius:16px}.demo-tour-picker h2{font-size:27px}.demo-tour-choice{padding:10px 9px;gap:11px}.demo-tour-choice-copy strong{font-size:13px}.demo-tour-picker-actions{padding-bottom:calc(16px + env(safe-area-inset-bottom))}.demo-tour-picker-actions button{padding:11px 12px}.demo-tour-picker .language-switch{top:-16px}}
 @media(prefers-reduced-motion:reduce){.demo-tour-choice{transition:none}.demo-tour-choice:hover .demo-tour-choice-marker{animation:none}}
+
+/* Keep highlights attached as fonts, forms and instructional copy settle. */
+.demo-tour-ring{transition:none}
+
+.demo-tour-meta .demo-tour-count{font:700 18px/1.25 Arial,sans-serif;letter-spacing:1px;color:#fff0cb;white-space:nowrap}

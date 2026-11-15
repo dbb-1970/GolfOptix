@@ -1,4 +1,4 @@
-import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=learn3';
+import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=polish1';
 
 const page=Object.keys(tourPages).find(key=>tourPages[key]===location.pathname);
 if(page&&!(['chemicals','learn'].includes(page)&&new URLSearchParams(location.search).get('view')==='worker')) init();
@@ -6,6 +6,7 @@ function init(){
   const KEY='golfoptix-superintendent-tour-v2',$=s=>document.querySelector(s);
   const phone=()=>matchMedia('(max-width:760px), (max-height:500px) and (pointer:coarse)').matches;
   let state;try{state=readTour(sessionStorage.getItem(KEY));}catch{state=readTour(null);}
+  const targetSizeObserver=new ResizeObserver(()=>schedulePosition());
   let target=null,busy=false,ownedDialog=null,previousFocus=null,positionFrame=0;
   const make=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text)e.textContent=text;return e;};
   const launch=make('button','demo-tour-launch','✧ Superintendent tour');launch.type='button';launch.title='Start the guided superintendent walkthrough';
@@ -14,7 +15,7 @@ function init(){
   const connector=document.createElementNS('http://www.w3.org/2000/svg','svg');connector.setAttribute('class','demo-tour-connector');connector.setAttribute('aria-hidden','true');
   connector.innerHTML='<defs><marker id="tour-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#e6c887"/></marker></defs><path fill="none" stroke="#e6c887" stroke-width="2" marker-end="url(#tour-arrow)"/>';
   const card=make('section','demo-tour-card');card.setAttribute('role','dialog');card.setAttribute('aria-modal','false');card.setAttribute('aria-labelledby','demo-tour-title');card.setAttribute('aria-describedby','demo-tour-description');
-  const meta=make('div','demo-tour-meta'),chapter=make('span','demo-tour-chapter'),count=make('span');meta.append(chapter,count);
+  const meta=make('div','demo-tour-meta'),chapter=make('span','demo-tour-chapter'),count=make('span','demo-tour-count');meta.append(chapter,count);
   const progress=make('div','demo-tour-progress'),bar=make('span');progress.append(bar);progress.setAttribute('aria-hidden','true');
   const title=make('h2');title.id='demo-tour-title';
   const copy=make('div','demo-tour-copy'),text=make('p');copy.setAttribute('aria-live','polite');text.id='demo-tour-description';
@@ -93,11 +94,12 @@ function init(){
       case'assignment':openForm('#crew-assign','#crew-editor');break;
       case'copy':openForm('#crew-copy','#crew-editor');break;
       case'tickets':$('[data-crew-view="week"]')?.click();break;
+      case'tourMyDay':case'tourMyWeek':case'tourSuperDay':window.GolfCrewTour?.preview(({tourMyDay:'myday',tourMyWeek:'myweek',tourSuperDay:'superday'})[step.prepare]);break;
       case'tourWorker':case'tourAssistant':window.GolfCrewTour?.preview(step.prepare==='tourWorker'?'worker':'assistant');break;
       case'tourTicket':case'tourLog':case'tourSubmit':case'tourReview':case'tourApprove':case'tourHistory':window.GolfCrewTour?.preview(({tourTicket:'ticket',tourLog:'log',tourSubmit:'submit',tourReview:'review',tourApprove:'approve',tourHistory:'history'})[step.prepare]);ownedDialog=$('#crew-editor');break;
     }
   }
-  function findTarget(step){if(step.target==='.pump-stations-link'&&phone())return $('[data-mobile-pane="more"] .pump-stations-link');if(step.target==='#tour-recovery-launch'&&phone())return $('#tour-recovery-launch-mobile');if(step.target==='tourLog'||step.target==='tourApprove')return [...document.querySelectorAll('#crew-editor button')].find(b=>(window.GolfLanguage?.english(b.textContent)||b.textContent)===(step.target==='tourLog'?'Record work performed':'Approve closure'));if(step.target==='.test-drive-notice'&&phone())return $('.map-toolbar');if(step.target==='print')return phone()?[...document.querySelectorAll('[data-mobile-pane="more"] button')].find(b=>(window.GolfLanguage?.english(b.textContent)||b.textContent)==='Print this hole'):$('#print-hole');return $(step.target);}
+  function findTarget(step){if(step.target==='.pump-stations-link'&&phone())return $('[data-mobile-pane="more"] .pump-stations-link');if(step.target==='#tour-recovery-launch'&&phone())return $('#tour-recovery-launch-mobile');if(step.target==='tourLog'||step.target==='tourApprove')return [...document.querySelectorAll('#crew-editor button')].find(b=>(window.GolfLanguage?.english(b.textContent)||b.textContent)===(step.target==='tourLog'?'Record work performed':'Approve closure'));if(step.target==='.test-drive-notice'&&phone())return $('.map-toolbar');if(step.target==='print')return phone()?[...document.querySelectorAll('[data-mobile-pane="more"] button')].find(b=>(window.GolfLanguage?.english(b.textContent)||b.textContent)==='Print this hole'):$('#print-hole');const e=$(step.target);return e?.hidden&&e.closest('.quantity-control')?e.closest('.quantity-control').querySelector('select'):e;}
   async function advance(delta){
     if(busy)return;const following=state.quick?(quickIndices[quickIndices.indexOf(state.index)+delta]??(delta>0?tourSteps.length:-1)):state.index+delta;if(following<0)return;if(following>=tourSteps.length){finish();return;}
     if(ownedDialog?.open&&tourSteps[following].group!==tourSteps[state.index].group){if(ownedDialog.matches('[data-tour-recovery]'))ownedDialog.close();else if(ownedDialog.id==='pump-editor')ownedDialog.close();else ownedDialog.querySelector('.calendar-editor-heading button')?.click();if(ownedDialog.open)return;document.body.append(ui);ownedDialog=null;}
@@ -109,15 +111,22 @@ function init(){
     if(step.page!==page){persist();dispatchEvent(new Event('golf-demo-navigation'));location.assign(tourPages[step.page]);return;}
     busy=true;next.disabled=back.disabled=true;launch.hidden=true;
     try{
-      await prepare(step);target=await waitFor(()=>{const e=findTarget(step);return visible(e)?e:null;},2500);
+      await prepare(step);
+      // Forms settle their initial scroll and preset controls on the next frame.
+      await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+      target=await waitFor(()=>{const e=findTarget(step);return visible(e)?e:null;},2500);
       if(!state.active)return;
       missing.hidden=!!target;target=target||launch;
-      const portal=target.closest('dialog[open]')||document.body;portal.append(ui);
+      targetSizeObserver.disconnect();targetSizeObserver.observe(target);
+      // Keep tour controls in the modal top layer even if a target is unavailable.
+      const portal=target.closest('dialog[open]')||(ownedDialog?.open?ownedDialog:null)||document.querySelector('dialog[open]')||document.body;portal.append(ui);
       chapter.textContent=({map:'The course map',maintenance:'Maintenance',calendar:'Work planning',crew:'Your crew',pumps:'Pump Stations',garage:'Garage',operations:'Daily work',chemicals:'Chemical Management',pins:'Pin placements',events:'Course events',learn:'Learning libraries'})[page];
       count.textContent=String(state.quick?quickIndices.indexOf(state.index)+1:state.index+1).padStart(2,'0')+' / '+(state.quick?quickIndices.length:tourSteps.length);bar.style.width=((state.quick?(quickIndices.indexOf(state.index)+1)/quickIndices.length:(state.index+1)/tourSteps.length)*100)+'%';
       title.textContent=step.title;text.textContent=step.text;back.hidden=state.index===0;ui.hidden=false;
       if(target!==launch)target.scrollIntoView({block:'center',inline:'nearest',behavior:'instant'});
-      await new Promise(resolve=>requestAnimationFrame(resolve));position();next.disabled=back.disabled=false;next.focus({preventScroll:true});
+      await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+      if(target!==launch)target.scrollIntoView({block:'center',inline:'nearest',behavior:'instant'});
+      position();next.disabled=back.disabled=false;next.focus({preventScroll:true});
     }catch{finish();}finally{busy=false;next.disabled=back.disabled=false;}
   }
   function position(){
