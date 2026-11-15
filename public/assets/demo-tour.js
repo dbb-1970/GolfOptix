@@ -1,4 +1,4 @@
-import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=polish1';
+import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=closing1';
 
 const page=Object.keys(tourPages).find(key=>tourPages[key]===location.pathname);
 if(page&&!(['chemicals','learn'].includes(page)&&new URLSearchParams(location.search).get('view')==='worker')) init();
@@ -122,7 +122,7 @@ function init(){
       const portal=target.closest('dialog[open]')||(ownedDialog?.open?ownedDialog:null)||document.querySelector('dialog[open]')||document.body;portal.append(ui);
       chapter.textContent=({map:'The course map',maintenance:'Maintenance',calendar:'Work planning',crew:'Your crew',pumps:'Pump Stations',garage:'Garage',operations:'Daily work',chemicals:'Chemical Management',pins:'Pin placements',events:'Course events',learn:'Learning libraries'})[page];
       count.textContent=String(state.quick?quickIndices.indexOf(state.index)+1:state.index+1).padStart(2,'0')+' / '+(state.quick?quickIndices.length:tourSteps.length);bar.style.width=((state.quick?(quickIndices.indexOf(state.index)+1)/quickIndices.length:(state.index+1)/tourSteps.length)*100)+'%';
-      title.textContent=step.title;text.textContent=step.text;back.hidden=state.index===0;ui.hidden=false;
+      title.textContent=step.title;text.textContent=step.text;next.textContent=state.index===tourSteps.length-1?'FINISH →':'NEXT →';back.hidden=state.index===0;ui.hidden=false;
       if(target!==launch)target.scrollIntoView({block:'center',inline:'nearest',behavior:'instant'});
       await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
       if(target!==launch)target.scrollIntoView({block:'center',inline:'nearest',behavior:'instant'});
@@ -144,5 +144,5 @@ function init(){
   new ResizeObserver(schedulePosition).observe(card);addEventListener('resize',schedulePosition);addEventListener('scroll',schedulePosition,true);window.visualViewport?.addEventListener('resize',schedulePosition);
   document.addEventListener('keydown',e=>{if(state.active&&e.key==='Escape'){e.preventDefault();e.stopImmediatePropagation();finish();}},true);
   // Only walkthrough progress survives navigation; no practice edits or personnel are retained.
-  (async()=>{const ready=await waitFor(()=>page==='map'?window.GolfCoverage&&$('#map-mount [data-edit-asset]'):page==='events'?window.GolfEventTour&&visible($('#events-content h2')):page==='pins'?window.GolfPinTour&&visible($('#pins-content h2')):page==='chemicals'?window.GolfChemicalTour&&visible($('#chem-content h2')):page==='operations'?window.GolfOperationsTour&&visible($('#ops-content h2')):page==='maintenance'?visible($('#hub-workspace')):page==='calendar'?!$('[data-schedule-type="watering"]')?.disabled:['pumps','garage'].includes(page)?window.GolfPumpTour&&visible($('#pump-content h1')):visible($('#crew-manager-actions')));if(!ready)return;if(!state.seen&&!state.active){state.active=true;state.seen=true;state.index=tourSteps.findIndex(s=>s.page===page);persist();chooseGuide();return;}if(state.active){if(tourSteps[state.index].page!==page){state.index=tourSteps.findIndex(s=>s.page===page);persist();}show();}})();
+  (async()=>{const ready=await waitFor(()=>page==='map'?window.GolfCoverage&&$('#map-mount [data-edit-asset]'):page==='events'?window.GolfEventTour&&visible($('#events-content h2')):page==='pins'?window.GolfPinTour&&visible($('#pins-content h2')):page==='chemicals'?window.GolfChemicalTour&&visible($('#chem-content h2')):page==='operations'?window.GolfOperationsTour&&visible($('#ops-content h2')):page==='learn'?visible($('#learn-results'))&&!!$('#learn-results').children.length:page==='maintenance'?visible($('#hub-workspace')):page==='calendar'?!$('[data-schedule-type="watering"]')?.disabled:['pumps','garage'].includes(page)?window.GolfPumpTour&&visible($('#pump-content h1')):visible($('#crew-manager-actions')));if(!ready)return;if(!state.seen&&!state.active){state.active=true;state.seen=true;state.index=tourSteps.findIndex(s=>s.page===page);persist();chooseGuide();return;}if(state.active){if(tourSteps[state.index].page!==page){state.index=tourSteps.findIndex(s=>s.page===page);persist();}show();}})();
 }
