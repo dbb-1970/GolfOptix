@@ -1,14 +1,14 @@
 import {randomUUID} from 'node:crypto';
 import catalog from '../../public/course-catalog.json' with {type:'json'};
 import {initialRoles,publicUser} from './access.mjs';
-import {isOwner,ownerCandidate} from './owner-access.mjs';
+import {isOwner,ownerCandidate,mayActivateOwner} from './owner-access.mjs';
 const reply=(body,status=200)=>Response.json(body,{status,headers:{'Cache-Control':'private, no-store'}});
 const tracks=()=>catalog.courses.filter(c=>!c.publicDemo).flatMap(c=>c.tracks.filter(t=>t.available).map(t=>({id:t.id,name:c.name+' — '+t.name,url:t.url||'/maintenance/?course='+encodeURIComponent(t.id)})));
 export function createOwnerActivationHandler({getUser,admin,verifyOrigin}){return async req=>{
  if(req.method!=='POST')return reply({error:'Method not allowed.'},405);
- const me=await getUser();if(!ownerCandidate(me))return reply({error:'Only the verified owner account can activate owner access.'},403);
+ const me=await getUser();if(!mayActivateOwner(me))return reply({error:'Only the verified owner account can activate owner access.'},403);
  try{verifyOrigin(req);}catch{return reply({error:'Request must come from GolfOptix.'},403);}
- try{const current=await admin.getUser(me.id);if(!ownerCandidate(current))return reply({error:'Owner account verification changed. Sign in again.'},403);await admin.updateUser(current.id,{app_metadata:{...current.appMetadata,roles:[...new Set([...(current.roles||[]),'owner','admin'])],license_exempt:true}});return reply({ok:true,message:'Owner access activated. Sign out and sign back in to refresh access.'});}catch{return reply({error:'Owner activation could not be confirmed. Please retry.'},503);}
+ try{const current=await admin.getUser(me.id);if(!ownerCandidate(current))return reply({error:'Owner account verification changed. Sign in again.'},403);await admin.updateUser(current.id,{app_metadata:{...current.appMetadata,roles:[...new Set([...(current.roles||[]),'owner','admin'])],license_exempt:true,owner_verified_at:current.confirmedAt}});return reply({ok:true,message:'Owner access activated. Sign out and sign back in to refresh access.'});}catch{return reply({error:'Owner activation could not be confirmed. Please retry.'},503);}
 };}
 export function createAdminHandler({getUser,admin,verifyOrigin,getStore,now=()=>new Date().toISOString()}){return async req=>{
  const me=await getUser();if(!isOwner(me))return reply({error:'Owner access required.'},403);
