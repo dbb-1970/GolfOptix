@@ -1,5 +1,5 @@
 {
-  "version": "2026.11.15",
+  "version": "2026.11.17",
   "guides": [
     {
       "id": "start",
@@ -100,7 +100,7 @@
       "summary": "Find a feature quickly without changing it.",
       "example": "Jake checks a valve beside a green, then returns to the overview.",
       "pitfall": "Panning the map is different from choosing Move this feature.",
-      "version": "2026.11.12",
+      "version": "2026.11.17",
       "minutes": 8,
       "steps": [
         {
@@ -112,7 +112,7 @@
         },
         {
           "title": "Explore without editing",
-          "text": "Drag to move the map; pinch or use plus and minus to zoom.",
+          "text": "Drag to move the map; pinch or use plus and minus to zoom. The map stays clear while browsing. Tap a feature for quick actions; choose Details for its full record. More holds other workspaces, field locations, language and the walkthrough.",
           "control": "+ / −",
           "example": "Zoom into the green",
           "image": "/assets/learn/map-navigation-2.svg"
@@ -146,7 +146,7 @@
           },
           {
             "title": "Explore",
-            "text": "Arrastre el mapa para moverlo y pellizque para acercar o alejar.",
+            "text": "Arrastre el mapa para moverlo y pellizque para acercar o alejar. El mapa permanece despejado al explorar. Toca un elemento para acciones rápidas; elige Detalles para ver su registro completo. Más contiene otras áreas, ubicaciones, idioma y la visita guiada.",
             "control": "+ / −",
             "example": "Práctica: Arrastre el mapa para moverlo y pellizque para acercar o alejar.",
             "image": "/assets/learn/map-navigation-2-es.svg"
@@ -280,12 +280,12 @@
       "summary": "Keep operational maps aligned with confirmed field conditions.",
       "example": "A superintendent corrects a garden’s position after walking the hole.",
       "pitfall": "Do not use an approximate drawing as a survey or invent underground connections.",
-      "version": "2026.11.12",
+      "version": "2026.11.17",
       "minutes": 8,
       "steps": [
         {
           "title": "Check the source feature",
-          "text": "Open its hole, select the feature and check the maintenance story.",
+          "text": "Open its hole, select the feature and check the maintenance story. On a phone, choose Details to expand the record, or Move in the compact action strip.",
           "control": "Move this feature",
           "example": "Choose the tree, not the nearby sprinkler",
           "image": "/assets/learn/move-feature-1.svg"
@@ -319,7 +319,7 @@
         "steps": [
           {
             "title": "Confirme el elemento",
-            "text": "Abra su hoyo y consulte su historial antes de editar.",
+            "text": "Abra su hoyo y consulte su historial antes de editar. En el teléfono, elige Detalles para ampliar el registro o Mover en la barra compacta de acciones.",
             "control": "Mover este elemento",
             "example": "Práctica: Abra su hoyo y consulte su historial antes de editar.",
             "image": "/assets/learn/move-feature-1-es.svg"

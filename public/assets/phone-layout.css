@@ -1,0 +1,95 @@
+/* Phone audit, 17 Nov 2026. Keep map space and one obvious navigation surface. */
+.phone-workspace-picker{display:none}
+@media(max-width:760px),(max-height:500px) and (pointer:coarse){
+  *,*::before,*::after{box-sizing:border-box}
+  body{overflow-wrap:break-word}
+  header{max-width:100%}
+  .workspace-tool-tabs{display:block!important;padding:6px 12px!important;min-height:56px;position:sticky;z-index:15}
+  .workspace-tool-tabs>a,.workspace-tool-tabs>details{display:none!important}
+  .phone-workspace-picker{display:block;width:100%;min-height:44px;border:1px solid #aebe9f;border-radius:8px;background:#fffefa;color:#153b2d;padding:9px 12px;font:600 16px Arial}
+  header>.owner-admin-link{display:none!important}
+  input:not([type=checkbox]):not([type=radio]):not([type=range]),select,textarea{font-size:16px!important;max-width:100%}
+  dialog{max-width:calc(100vw - 20px)!important;max-height:calc(100dvh - 24px)!important;margin:auto;overflow-y:auto;overscroll-behavior:contain}
+  dialog form{min-width:0}
+  .phone-workspace .app-nav{flex-wrap:nowrap!important;gap:8px!important;padding:7px 12px!important;min-height:52px;flex:0 0 auto}
+  .phone-workspace .app-nav .wordmark{margin:0!important;font-size:17px;flex-shrink:0}
+  .phone-workspace .app-club{min-width:0;overflow:hidden}
+  .phone-workspace .app-club strong{max-width:150px;font-size:10px}
+  .phone-workspace .app-club span{font-size:10px}
+  .phone-workspace .workspace-tool-tabs{display:none!important}
+  .phone-workspace .map-toolbar{min-height:48px;flex:0 0 auto}
+  .phone-workspace .mobile-save-status[hidden]{display:none!important}
+  .phone-workspace .map-guide{display:none}
+  .phone-workspace .asset-popover{height:118px;max-height:80%;border-radius:16px 16px 0 0}
+  .phone-workspace .asset-popover:not(.sheet-expanded) #asset-detail{display:none}
+  .phone-workspace .asset-popover.sheet-expanded{height:80%;max-height:80%}
+  .phone-workspace .asset-panel-header{padding:10px 48px 6px 14px}
+  .phone-workspace .asset-panel-header h2{font-size:18px;margin-bottom:5px}
+  .phone-workspace .mobile-sheet-actions{margin-right:-36px;gap:4px}
+  .phone-workspace .mobile-sheet-actions button{font-size:12px;padding:7px 9px;min-height:44px}
+  .phone-workspace #close-asset{min-width:44px;min-height:44px}
+  .phone-workspace .mobile-map-nav{padding-bottom:env(safe-area-inset-bottom,0px);flex:0 0 auto}
+  .phone-workspace .mobile-map-nav button{font-size:11px;padding:5px 2px;overflow-wrap:normal}
+  .phone-workspace .mobile-workspace-destinations{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .phone-workspace .mobile-workspace-destinations h3{grid-column:1/-1}
+  .phone-workspace .mobile-workspace-link{display:flex;align-items:center;min-height:44px;padding:10px;border:1px solid #c6d0bc;border-radius:8px;color:#153b2d;font-size:13px;text-decoration:none}
+  .phone-workspace [data-mobile-pane=more]>.field-locations-launch,.phone-workspace [data-mobile-pane=more]>.demo-tour-launch{position:static!important;display:block;width:100%;margin:10px 0!important;min-height:44px}
+  .phone-workspace [data-mobile-pane=more]>.language-switch{display:flex;gap:8px;margin:12px 0}
+  .phone-workspace .mobile-drawer-heading{position:sticky;top:0;background:#fffefa;z-index:2}
+  .phone-workspace .map-controls button{width:44px;height:44px}
+}
+
+@media(max-width:760px),(max-height:500px) and (pointer:coarse){
+  body:not(.phone-workspace):has(.workspace-tool-tabs) header{padding:7px 12px!important;min-height:54px;gap:8px;flex-wrap:nowrap!important}
+  body:not(.phone-workspace):has(.workspace-tool-tabs) header .wordmark{font-size:17px;margin:0!important;padding-bottom:10px}
+  body:not(.phone-workspace):has(.workspace-tool-tabs) header .language-switch{gap:4px;margin-left:auto}
+  body:not(.phone-workspace):has(.workspace-tool-tabs) header .language-switch button{min-width:44px;min-height:44px;padding:5px;font-size:9px}
+  body:not(.phone-workspace):has(.workspace-tool-tabs) .field-locations-launch,body:not(.phone-workspace):has(.workspace-tool-tabs)>.demo-tour-launch{display:none!important}
+  .workspace-tool-tabs::after{display:none!important}
+  .phone-disclosure{border:1px solid #c6d0bc;border-radius:9px;background:#fffefa;margin:10px 0;min-width:0}
+  .phone-disclosure>summary{cursor:pointer;min-height:46px;padding:13px 14px;font:600 14px Arial;color:#153b2d}
+  .phone-disclosure[open]>summary{border-bottom:1px solid #e0e5d7}
+  .phone-disclosure>.calendar-context,.phone-disclosure>.calendar-filters,.phone-disclosure>.calendar-create,.phone-disclosure>.calendar-date-jump,.phone-disclosure>#calendar-insights,.phone-disclosure>#crew-roster,.phone-disclosure>#crew-manager-actions{margin:0;padding:12px;border:0;position:static;width:auto}
+  .calendar-heading{margin:16px 0!important;gap:10px!important}
+  .calendar-heading h1{font-size:30px!important;margin:6px 0!important}
+  .calendar-heading .eyebrow{margin:0!important}
+  .calendar-heading>div>p:not(.eyebrow){margin:8px 0;line-height:1.5}
+  .calendar-heading>.button{min-height:44px;margin:0}
+  .calendar-create{display:grid;grid-template-columns:1fr}
+  .calendar-view{display:flex;flex-wrap:wrap;gap:5px}
+  .calendar-view button{min-height:44px;font-size:12px;padding:9px}
+  .calendar-period{gap:6px;flex-wrap:wrap}
+  .calendar-period button{min-height:44px}
+  .calendar-period h2{font-size:19px}
+  .calendar-filters{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+  .phone-disclosure .calendar-context select{width:100%}
+}
+@media print{.phone-disclosure>summary{display:none}.phone-disclosure> :not(summary){display:block!important}.phone-workspace-picker{display:none!important}}
+
+.phone-calendar-view{display:none}
+@media(max-width:760px),(max-height:500px) and (pointer:coarse){
+  #calendar-main .calendar-view>button{display:none}
+  .phone-calendar-view{display:block;width:100%;min-height:44px;padding:9px;background:#fffefa;border:1px solid #aebe9f;border-radius:8px;color:#153b2d}
+  #calendar-main .calendar-view{height:auto;min-height:44px;width:100%}
+  #calendar-main .calendar-period{justify-content:space-between}
+  #calendar-main .calendar-controls{gap:8px;margin:12px 0}
+  #calendar-main .calendar-controls h2{font-size:18px;margin:8px 0}
+  .phone-calendar-options>.phone-disclosure{margin:8px}
+  .phone-calendar-options> :not(summary):not(.phone-disclosure){margin:12px}
+  #calendar-main .calendar-conflict-summary{padding:12px;font-size:12px}
+  #calendar-main .calendar-conflict-summary p{margin:5px 0}
+  #calendar-main #calendar-status,#calendar-main #calendar-order-status{font-size:11px;margin:6px 0}
+  .phone-disclosure .calendar-context label{min-width:0;width:100%}
+}
+
+@media(max-width:760px),(max-height:500px) and (pointer:coarse){
+  dialog .calendar-editor-heading{position:sticky;top:0;background:#fffefa;z-index:3;padding:8px 0}
+  .phone-equipment-actions{width:100%}
+  .phone-equipment-actions>button{display:block;width:calc(100% - 20px);margin:10px;min-height:44px}
+}
+@media(max-width:760px),(max-height:500px) and (pointer:coarse){
+ .phone-workspace .app-club{max-width:calc(100% - 180px)}
+ .phone-workspace .app-club strong{display:block;max-width:100%}
+ .phone-workspace .app-club>div{min-width:0;max-width:100%;overflow:hidden}
+}
+.phone-disclosure:not(.phone-calendar-options):has(> [hidden]){display:none}

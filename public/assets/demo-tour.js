@@ -1,4 +1,4 @@
-import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=reports1';
+import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=phone-audit1';
 
 const page=Object.keys(tourPages).find(key=>tourPages[key]===location.pathname)||(location.pathname==='/test-drive/maintenance/reports/'?'operations':null);
 if(page&&!(['chemicals','learn'].includes(page)&&new URLSearchParams(location.search).get('view')==='worker')) init();
@@ -29,7 +29,7 @@ function init(){
   function persist(){state.updatedAt=Date.now();try{sessionStorage.setItem(KEY,JSON.stringify(state));}catch{}}
   function finish(){window.GolfPumpTour?.restore();if(ownedDialog?.matches('[data-tour-recovery]')){ownedDialog.close();ownedDialog=null;}window.GolfCrewTour?.restore();state.active=false;state.seen=true;persist();target=null;ui.hidden=true;document.body.append(ui);launch.hidden=false;(previousFocus?.isConnected?previousFocus:launch).focus({preventScroll:true});}
   launch.onclick=()=>chooseGuide();
-  function startGuide(index=0,quick=false){previousFocus=document.activeElement;state={version:2,active:true,seen:true,index,quick,updatedAt:Date.now()};persist();show();}
+  function startGuide(index=0,quick=false){closePane();previousFocus=document.activeElement;state={version:2,active:true,seen:true,index,quick,updatedAt:Date.now()};persist();show();}
   const quickIndices=[0,...['Every feature has a story.','Turn a problem into a repair.','A clear morning dispatch.','Reuse the job, review the instructions.','Actual work deserves its own record.','Let conditions start a conversation.','Set the day’s challenge.','Plan around the day’s play.','A clear week. A focused day.','Capture the time actually worked.','Draft close is a request.','Back to the approval desk.','Approve it—or send it back.','The whole story stays with the ticket.','Two libraries. One familiar home.',"Let's tee this up!"].map(title=>tourSteps.findIndex(s=>s.title===title)).filter(n=>n>=0)];
   function chooseGuide(){
     state.active=false;persist();ui.hidden=true;launch.hidden=false;
@@ -114,7 +114,7 @@ function init(){
       await prepare(step);
       // Forms settle their initial scroll and preset controls on the next frame.
       await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
-      target=await waitFor(()=>{const e=findTarget(step);return visible(e)?e:null;},2500);
+      target=await waitFor(()=>{const e=findTarget(step);if(e?.closest('#asset-detail')&&phone())$('#asset-panel')?.classList.add('sheet-expanded');if(e)for(let p=e.parentElement;p;p=p.parentElement)if(p.matches('details.phone-disclosure'))p.open=true;return visible(e)?e:null;},2500);
       if(!state.active)return;
       missing.hidden=!!target;target=target||launch;
       targetSizeObserver.disconnect();targetSizeObserver.observe(target);
