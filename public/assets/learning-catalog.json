@@ -1,5 +1,5 @@
 {
-  "version": "2026.11.18",
+  "version": "2026.11.18-docs",
   "guides": [
     {
       "id": "start",
@@ -10,7 +10,7 @@
       "summary": "Know where you are and how to reach each workspace.",
       "example": "A superintendent checks Kings Course before planning today’s work.",
       "pitfall": "A demo record is not a live course record.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -88,8 +88,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Use una computadora o tableta para configurar el campo. El teléfono empieza en vista de campo con Hoy, Mapa, Calendario y Más. Todas las herramientas restaura los controles autorizados en este dispositivo; Volver a la vista de campo recupera la vista sencilla."
+      },
+      "deviceMode": "both",
+      "deviceNote": "Use a computer or tablet for course setup. Phones start in field view with Today, Map, Schedule and More. Full tools restores your authorized setup controls on this device; Return to field view switches back."
     },
     {
       "id": "map-navigation",
@@ -100,19 +103,19 @@
       "summary": "Find a feature quickly without changing it.",
       "example": "Jake checks a valve beside a green, then returns to the overview.",
       "pitfall": "Panning the map is different from choosing Move this feature.",
-      "version": "2026.11.17",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
           "title": "Open a hole",
-          "text": "Select a numbered hole from the map or Holes menu.",
-          "control": "Holes",
+          "text": "On a phone, tap Map again or More → Choose a hole. On a computer or in Full tools, use Holes or the numbered map marker.",
+          "control": "Map / Choose a hole",
           "example": "Open Hole 3",
           "image": "/assets/learn/map-navigation-1.svg"
         },
         {
           "title": "Explore without editing",
-          "text": "Drag to move the map; pinch or use plus and minus to zoom. The map stays clear while browsing. Tap a feature for quick actions; choose Details for its full record. More holds other workspaces, field locations, language and the walkthrough.",
+          "text": "Drag to pan; pinch or use + and − to zoom. Close panels before panning. Tap a feature for quick actions and Details for its full record. More opens field workspaces and help.",
           "control": "+ / −",
           "example": "Zoom into the green",
           "image": "/assets/learn/map-navigation-2.svg"
@@ -126,8 +129,8 @@
         },
         {
           "title": "Choose visible information",
-          "text": "Use Layers to show water lines, valves, labels, coverage or repair boundaries.",
-          "control": "Layers",
+          "text": "On a phone choose More → Map layers. Switch water lines, valves, labels, coverage and repair boundaries individually. Close the panel to explore the map.",
+          "control": "More → Map layers",
           "example": "Keep valves visible while finding a leak",
           "image": "/assets/learn/map-navigation-4.svg"
         }
@@ -139,14 +142,14 @@
         "steps": [
           {
             "title": "Abra un hoyo",
-            "text": "Seleccione su número en el mapa o en Hoyos.",
-            "control": "Hoyos",
+            "text": "En el teléfono, pulse Mapa otra vez o Más → Elegir un hoyo. En computadora o Todas las herramientas, use Hoyos o el marcador numerado.",
+            "control": "Mapa / Elegir un hoyo",
             "example": "Práctica: Seleccione su número en el mapa o en Hoyos.",
             "image": "/assets/learn/map-navigation-1-es.svg"
           },
           {
             "title": "Explore",
-            "text": "Arrastre el mapa para moverlo y pellizque para acercar o alejar. El mapa permanece despejado al explorar. Toca un elemento para acciones rápidas; elige Detalles para ver su registro completo. Más contiene otras áreas, ubicaciones, idioma y la visita guiada.",
+            "text": "Arrastre para mover; pellizque o use + y − para ampliar. Cierre los paneles antes de mover el mapa. Pulse un elemento para acciones rápidas y Detalles para el registro. Más abre herramientas y ayuda.",
             "control": "+ / −",
             "example": "Práctica: Arrastre el mapa para moverlo y pellizque para acercar o alejar.",
             "image": "/assets/learn/map-navigation-2-es.svg"
@@ -160,8 +163,8 @@
           },
           {
             "title": "Elija las capas",
-            "text": "Muestre tuberías, válvulas, etiquetas, cobertura y áreas en reparación según necesite.",
-            "control": "Capas",
+            "text": "En el teléfono elija Más → Capas del mapa. Active o desactive líneas, válvulas, etiquetas, cobertura y límites de reparación por separado. Cierre el panel para explorar.",
+            "control": "Más → Capas del mapa",
             "example": "Práctica: Muestre tuberías, válvulas, etiquetas, cobertura y áreas en reparación según necesite.",
             "image": "/assets/learn/map-navigation-4-es.svg"
           }
@@ -178,8 +181,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "En el teléfono, Mapa vuelve al campo. Pulse Mapa otra vez para elegir un hoyo. Más contiene Elegir un hoyo, Buscar un elemento del mapa (incluidas reparaciones), Capas del mapa y Detalles del mapa y deshacer. Cierre el panel antes de mover el mapa."
+      },
+      "deviceMode": "field",
+      "deviceNote": "On a phone, Map returns to the course. Tap Map again to choose a hole. More contains Choose a hole, Find a map feature (including repairs), Map layers and Map details & undo. Close a panel before moving the map."
     },
     {
       "id": "map-repair",
@@ -190,7 +196,7 @@
       "summary": "Turn a field problem into a traceable work order.",
       "example": "A stuck head becomes an emergency inspection assigned to the irrigation technician.",
       "pitfall": "A manager must approve closure before the repair highlight clears.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -230,7 +236,7 @@
           {
             "title": "Seleccione el elemento",
             "text": "Abra el hoyo y confirme la etiqueta del elemento real.",
-            "control": "Open details and maintenance history",
+            "control": "Abrir detalles e historial de mantenimiento",
             "example": "Práctica: Abra el hoyo y confirme la etiqueta del elemento real.",
             "image": "/assets/learn/map-repair-1-es.svg"
           },
@@ -268,8 +274,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Notifique una reparación desde un elemento seleccionado en su teléfono. Más → Buscar un elemento del mapa incluye las reparaciones abiertas. Los trabajadores usan sus órdenes asignadas; el acceso al mapa depende de los permisos."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Report a repair from a selected feature on your phone. More → Find a map feature includes the open repair list. Workers use their assigned tickets; map access follows course permissions."
     },
     {
       "id": "move-feature",
@@ -280,7 +289,7 @@
       "summary": "Keep operational maps aligned with confirmed field conditions.",
       "example": "A superintendent corrects a garden’s position after walking the hole.",
       "pitfall": "Do not use an approximate drawing as a survey or invent underground connections.",
-      "version": "2026.11.17",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -358,8 +367,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Mueva y cambie el tamaño de elementos existentes desde la barra de acciones del teléfono. Abra Más → Detalles del mapa y deshacer para deshacer. Todas las herramientas no cambia sus permisos ni convierte una posición GPS en un levantamiento topográfico."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Move and resize existing features from the phone action strip. Open More → Map details & undo for undo. Full tools does not change your permissions or make a GPS fix survey-accurate."
     },
     {
       "id": "landscape",
@@ -370,7 +382,7 @@
       "summary": "Represent the maintained landscape and create work from it.",
       "example": "A new rock garden receives a planned inspection and weed-control task.",
       "pitfall": "Only add features confirmed by the course; decorative artwork is not engineering evidence.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -448,8 +460,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "En el teléfono, abra el hoyo y use Editar mapa para colocar elementos del paisaje y ajustar su tamaño. La construcción de riego y alineación están en Todas las herramientas en computadora o tableta."
+      },
+      "deviceMode": "field",
+      "deviceNote": "On a phone, open the hole and use Edit map for landscape placement and sizing. Irrigation construction and alignment tools are in Full tools on a computer or tablet."
     },
     {
       "id": "ground-repair",
@@ -460,7 +475,7 @@
       "summary": "Outline a visible, reversible repair area on phone or desktop.",
       "example": "A drainage trench is outlined while the related work order stays open.",
       "pitfall": "Drawing a boundary does not certify a Rules-of-Golf designation or survey its dimensions.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 10,
       "steps": [
         {
@@ -552,8 +567,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Trace límites de reparación en teléfono o computadora. Pause el dibujo para mover el mapa o ampliar y luego continúe. Guarde y confirme para compartir el límite."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Trace repair boundaries on a phone or computer. Pause drawing to pan or zoom, then resume. Save and confirm before the outline becomes shared."
     },
     {
       "id": "coverage",
@@ -564,12 +582,12 @@
       "summary": "Use editable coverage illustrations without cluttering labels.",
       "example": "A superintendent records a field-confirmed radius for one head.",
       "pitfall": "Coverage graphics do not prove pressure, flow or actual distribution.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
           "title": "Show coverage",
-          "text": "Turn on Sprinkler coverage in Layers.",
+          "text": "On a phone open More → Map layers and turn on Sprinkler coverage. In Full tools use the Layers panel. Coverage is separate from head labels.",
           "control": "Sprinkler coverage",
           "example": "Compare nearby illustrated circles",
           "image": "/assets/learn/coverage-1.svg"
@@ -603,7 +621,7 @@
         "steps": [
           {
             "title": "Muestre cobertura",
-            "text": "Active la capa de cobertura para comparar los círculos ilustrativos.",
+            "text": "En el teléfono abra Más → Capas del mapa y active Cobertura de aspersores. En Todas las herramientas use el panel Capas. La cobertura es independiente de las etiquetas.",
             "control": "Cobertura de aspersores",
             "example": "Práctica: Active la capa de cobertura para comparar los círculos ilustrativos.",
             "image": "/assets/learn/coverage-1-es.svg"
@@ -611,7 +629,7 @@
           {
             "title": "Seleccione el aspersor",
             "text": "Confirme su etiqueta antes de abrir los controles.",
-            "control": "Coverage",
+            "control": "Cobertura",
             "example": "Práctica: Confirme su etiqueta antes de abrir los controles.",
             "image": "/assets/learn/coverage-2-es.svg"
           },
@@ -642,8 +660,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "La cobertura y los ajustes de elementos existentes siguen en la vista de campo del teléfono. Use Más → Capas del mapa para activar la cobertura. Use computadora o tableta para construcción y calibración del mapa."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Coverage and existing-feature adjustments remain in phone field view. Use More → Map layers to switch coverage on. Computer/tablet tools handle broader map construction and calibration."
     },
     {
       "id": "crew-add",
@@ -654,12 +675,12 @@
       "summary": "Create a useful roster while keeping personnel private.",
       "example": "A Spray Technician is added without giving crew-management permission.",
       "pitfall": "Only the exact Assistant Superintendent title grants delegated crew management; other titles do not grant it.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
           "title": "Add the person",
-          "text": "Open Crew and choose Add worker. Enter the worker’s name and email.",
+          "text": "On a computer or tablet open Crew → Add worker. On a phone select Full tools first. Enter the worker’s name and email; email is their login.",
           "control": "Add worker",
           "example": "Alex Example · example address only",
           "image": "/assets/learn/crew-add-1.svg"
@@ -693,15 +714,15 @@
         "steps": [
           {
             "title": "Añada la persona",
-            "text": "Abra Personal e indique nombre y correo del trabajador.",
-            "control": "Añadir trabajador",
+            "text": "En computadora o tableta abra Personal → Agregar trabajador. En teléfono seleccione antes Todas las herramientas. Ingrese nombre y correo; el correo es el usuario.",
+            "control": "Agregar trabajador",
             "example": "Práctica: Abra Personal e indique nombre y correo del trabajador.",
             "image": "/assets/learn/crew-add-1-es.svg"
           },
           {
             "title": "Elija el puesto",
             "text": "Use la lista o un nombre personalizado. Lea la nota de permisos.",
-            "control": "Choose a job title",
+            "control": "Elegir cargo",
             "example": "Práctica: Use la lista o un nombre personalizado. Lea la nota de permisos.",
             "image": "/assets/learn/crew-add-2-es.svg"
           },
@@ -732,18 +753,21 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
+        ],
+        "deviceNote": "La configuración del personal está diseñada para computadora o tableta. En el teléfono, Más → Trabajo y personal → Personal abre el trabajo diario; seleccione Todas las herramientas para llegar a Agregar trabajador. Un cargo no otorga acceso sin restricciones."
       },
       "screenshots": [
         {
           "image": "/assets/learn/crew-profile-demo.png",
-          "caption": "Fictional demo worker profile — title selection and access notes."
+          "caption": "Full tools · Fictional demo worker profile — title selection and access notes."
         },
         {
           "image": "/assets/learn/credential-editor-demo.png",
-          "caption": "Fictional demo credential editor — choose a record type and an original GolfOptix badge."
+          "caption": "Full tools · Fictional demo credential editor — choose a record type and an original GolfOptix badge."
         }
-      ]
+      ],
+      "deviceMode": "setup",
+      "deviceNote": "Crew setup is designed for a computer or tablet. On a phone, More → Work & people → Crew opens daily crew work; select Full tools to reach Add worker. Adding a title does not grant unrestricted access."
     },
     {
       "id": "credentials",
@@ -754,7 +778,7 @@
       "summary": "Keep qualifications visible without implying automatic authorization.",
       "example": "A manager records CPR training and a separate pesticide license with its scope.",
       "pitfall": "Badges do not replace official credentials, hands-on evaluation or the applicable legal requirements.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 10,
       "steps": [
         {
@@ -801,35 +825,35 @@
           {
             "title": "Abra el perfil",
             "text": "Elija adjuntar un distintivo de credencial.",
-            "control": "Attach a credential badge",
+            "control": "Adjuntar insignia de credencial",
             "example": "Práctica: Elija adjuntar un distintivo de credencial.",
             "image": "/assets/learn/credentials-1-es.svg"
           },
           {
             "title": "Elija o personalice",
             "text": "Seleccione un registro conocido o propio. Distinga licencia, certificación y formación.",
-            "control": "Credential catalog",
+            "control": "Catálogo de credenciales",
             "example": "Práctica: Seleccione un registro conocido o propio. Distinga licencia, certificación y formación.",
             "image": "/assets/learn/credentials-2-es.svg"
           },
           {
             "title": "Registre evidencia",
             "text": "Indique emisor, alcance, fechas, vencimiento y referencia privada de la evidencia.",
-            "control": "Evidence reference / private filing location",
+            "control": "Referencia de evidencia / archivo privado",
             "example": "Práctica: Indique emisor, alcance, fechas, vencimiento y referencia privada de la evidencia.",
             "image": "/assets/learn/credentials-3-es.svg"
           },
           {
             "title": "Guarde y revise",
             "text": "Distinga registro, revisión del campo, vencido y vencimiento desconocido.",
-            "control": "Save credential record",
+            "control": "Guardar credencial",
             "example": "Práctica: Distinga registro, revisión del campo, vencido y vencimiento desconocido.",
             "image": "/assets/learn/credentials-4-es.svg"
           },
           {
             "title": "Mantenga el historial",
             "text": "Actualice renovaciones o archive el registro anterior sin borrar su historia.",
-            "control": "Open credential record",
+            "control": "Abrir credencial",
             "example": "Práctica: Actualice renovaciones o archive el registro anterior sin borrar su historia.",
             "image": "/assets/learn/credentials-5-es.svg"
           }
@@ -846,18 +870,21 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
+        ],
+        "deviceNote": "Adjunte y mantenga registros privados de credenciales con Todas las herramientas en computadora o tableta. Una insignia registra evidencia y estado de revisión; no otorga una cualificación. Los datos del personal siguen restringidos."
       },
       "screenshots": [
         {
           "image": "/assets/learn/crew-profile-demo.png",
-          "caption": "Fictional demo worker profile — title selection and access notes."
+          "caption": "Full tools · Fictional demo worker profile — title selection and access notes."
         },
         {
           "image": "/assets/learn/credential-editor-demo.png",
-          "caption": "Fictional demo credential editor — choose a record type and an original GolfOptix badge."
+          "caption": "Full tools · Fictional demo credential editor — choose a record type and an original GolfOptix badge."
         }
-      ]
+      ],
+      "deviceMode": "setup",
+      "deviceNote": "Attach and maintain private credential records in computer/tablet Full tools. A badge records evidence and review status; it does not award a qualification. Personnel details remain restricted."
     },
     {
       "id": "crew-assign",
@@ -868,7 +895,7 @@
       "summary": "Make each assignment understandable before the worker starts.",
       "example": "Instead of “bunkers,” write which bunkers, the expected finish and what to report.",
       "pitfall": "An email queue entry is not proof of receipt or that work has started.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -946,8 +973,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Los responsables pueden asignar y revisar trabajo en el teléfono desde Más → Trabajo y personal → Personal o Despacho diario. Los trabajadores solo ven su trabajo. Configure perfiles y horarios múltiples en Todas las herramientas."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Managers can assign and review work on a phone through More → Work & people → Crew or Daily dispatch. Workers see only their own work. Build worker profiles and bulk schedules in Full tools."
     },
     {
       "id": "briefings",
@@ -958,12 +988,12 @@
       "summary": "Communicate the day and week on a phone or paper.",
       "example": "A superintendent prints the team week and one mechanic’s daily list.",
       "pitfall": "Workers can view and print only their own work; private personnel details are excluded.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
           "title": "Start with the week",
-          "text": "Crew opens in Week view. Filter Everyone or one worker.",
+          "text": "For the team, open Crew and choose Week. Filter Everyone or one worker. Today and My Week show your own work instead; managers can switch to Team today.",
           "control": "Week view",
           "example": "Monday planning meeting",
           "image": "/assets/learn/briefings-1.svg"
@@ -997,7 +1027,7 @@
         "steps": [
           {
             "title": "Empiece por la semana",
-            "text": "Filtre todo el equipo o una persona.",
+            "text": "Para el equipo, abra Personal y elija Semana. Filtre Todos o un trabajador. Hoy y Mi semana muestran su propio trabajo; los responsables pueden cambiar a Equipo hoy.",
             "control": "Vista semanal",
             "example": "Práctica: Filtre todo el equipo o una persona.",
             "image": "/assets/learn/briefings-1-es.svg"
@@ -1036,8 +1066,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Hoy abre su día. Los responsables usan Equipo hoy o Más → Trabajo y personal → Personal para ver el equipo. Use Mi semana en Más para su semana. Imprima los resúmenes revisados desde la vista del personal; son copias del momento."
+      },
+      "deviceMode": "both",
+      "deviceNote": "Today opens your own day. Managers use Team today or More → Work & people → Crew for the team. Use My Week under More for your own week. Print reviewed briefings from the relevant crew view; copies are snapshots."
     },
     {
       "id": "work-progress",
@@ -1048,7 +1081,7 @@
       "summary": "Keep a clear work story from field action to approval.",
       "example": "A worker reports inspection findings before requesting closure.",
       "pitfall": "Submitting for closure does not close the work order.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -1126,8 +1159,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "En el teléfono, empiece con Hoy o Más → Mi semana y abra su orden asignada. Registre el trabajo y solicite el cierre allí. Todas las herramientas nunca concede a un trabajador derechos de aprobación."
+      },
+      "deviceMode": "field",
+      "deviceNote": "On a phone, start with Today or More → My Week and open your assigned ticket. Record work and request closure there. Full tools never gives a worker manager approval rights."
     },
     {
       "id": "approve",
@@ -1138,7 +1174,7 @@
       "summary": "Close the loop without losing accountability.",
       "example": "An assistant returns a pump ticket because the cause is not yet diagnosed.",
       "pitfall": "Ordinary crew cannot approve closure; chemical work also follows its application review.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -1216,8 +1252,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Los superintendentes y asistentes autorizados pueden revisar solicitudes de cierre en el teléfono. Abra la orden desde Personal o el calendario, revise el trabajo y apruebe o devuélvala."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Authorized superintendents and assistants can review closure requests on a phone. Open the ticket from Crew or the calendar, inspect its work log and approve or return it."
     },
     {
       "id": "copy-schedule",
@@ -1228,7 +1267,7 @@
       "summary": "Reuse useful schedules without copying a false completion history.",
       "example": "A repeating crew pattern is checked against a tournament next week.",
       "pitfall": "Copying a schedule is different from copying a completed work record.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -1306,8 +1345,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Copiar semanas o meses está en Todas las herramientas en computadora o tableta. El teléfono conserva asignaciones individuales y cambios de fecha. Revise el período de destino y los conflictos después de copiar."
+      },
+      "deviceMode": "setup",
+      "deviceNote": "Copying weeks or months is in Full tools on a computer or tablet. Phones retain individual assignments and date changes. Review the destination period and conflicts after every copy."
     },
     {
       "id": "calendar",
@@ -1318,7 +1360,7 @@
       "summary": "Plan regular course processes and preserve changes.",
       "example": "A superintendent sets a weekly inspection and moves one occurrence.",
       "pitfall": "A calendar plan does not operate irrigation equipment or authorize a chemical application.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -1337,8 +1379,8 @@
         },
         {
           "title": "Set the repeat",
-          "text": "Choose daily, weekly or monthly behavior and its end date. Review the weekdays.",
-          "control": "Last repeat date",
+          "text": "In Full tools choose daily, weekly or monthly behavior and its end date. In phone field view new schedules are one-time only. Move an occurrence separately when just one date changes.",
+          "control": "Last repeat date / One time only",
           "example": "Weekly through the maintenance period",
           "image": "/assets/learn/calendar-3.svg"
         },
@@ -1371,15 +1413,15 @@
           },
           {
             "title": "Configure repetición",
-            "text": "Revise frecuencia, días y última fecha de repetición.",
-            "control": "Última fecha de repetición",
+            "text": "En Todas las herramientas elija repetición diaria, semanal o mensual y fecha final. En vista de campo del teléfono los nuevos horarios son únicos. Mueva una ocurrencia por separado para cambiar solo una fecha.",
+            "control": "Última fecha de repetición / Una sola vez",
             "example": "Práctica: Revise frecuencia, días y última fecha de repetición.",
             "image": "/assets/learn/calendar-3-es.svg"
           },
           {
             "title": "Guarde y revise",
             "text": "Abra una ocurrencia para moverla, omitirla o registrar trabajo sin cambiar toda la serie.",
-            "control": "Edit repeat plan",
+            "control": "Editar plan repetido",
             "example": "Práctica: Abra una ocurrencia para moverla, omitirla o registrar trabajo sin cambiar toda la serie.",
             "image": "/assets/learn/calendar-4-es.svg"
           }
@@ -1396,8 +1438,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Calendario en teléfono permite trabajo único y cambios de ocurrencias individuales. Cree o cambie programas repetidos en Todas las herramientas en computadora o tableta. Los accesos químicos llevan a Gestión química, donde la planificación también requiere las herramientas completas."
+      },
+      "deviceMode": "setup",
+      "deviceNote": "Phone Schedule supports one-time course work and changes to individual occurrences. Create or change repeat programs using Full tools on a computer or tablet. Chemical shortcuts lead to Chemical Management, where planning is also a full-tools task."
     },
     {
       "id": "calendar-weather",
@@ -1408,7 +1453,7 @@
       "summary": "Use forecasts as planning context, not an automatic instruction.",
       "example": "A manager notices forecast rain and reviews tomorrow’s work before changing it.",
       "pitfall": "A forecast does not reschedule work, fill turf-model observations or authorize spraying.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -1486,8 +1531,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Abra Calendario en el teléfono y Opciones del calendario, filtros y clima para configurar el clima. La temperatura predeterminada es °F; puede elegir °C. El clima de la demo es ilustrativo y los pronósticos ausentes quedan en blanco."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Open Schedule on a phone, then Calendar options, filters & weather for weather settings. Temperatures default to °F; you may choose °C. Demo weather is illustrative, and missing forecasts stay blank."
     },
     {
       "id": "events",
@@ -1498,7 +1546,7 @@
       "summary": "Connect play schedules to preparation and maintenance availability.",
       "example": "A shotgun creates a blocked window plus a course-setup task.",
       "pitfall": "Emergency reports remain possible, but execution in a blocked window needs clearance.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -1545,7 +1593,7 @@
           {
             "title": "Defina disponibilidad",
             "text": "Marque fechas, horas, hoyos afectados y si bloquea el trabajo.",
-            "control": "Work availability",
+            "control": "Disponibilidad para trabajar",
             "example": "Práctica: Marque fechas, horas, hoyos afectados y si bloquea el trabajo.",
             "image": "/assets/learn/events-2-es.svg"
           },
@@ -1559,7 +1607,7 @@
           {
             "title": "Revise conflictos",
             "text": "El trabajo existente se señala, no se mueve solo. La excepción necesita razón del gerente.",
-            "control": "Manager override",
+            "control": "Excepción autorizada del responsable",
             "example": "Práctica: El trabajo existente se señala, no se mueve solo. La excepción necesita razón del gerente.",
             "image": "/assets/learn/events-4-es.svg"
           }
@@ -1576,8 +1624,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Cree eventos y planes detallados en Todas las herramientas. En el teléfono, Más → Campo e informes → Eventos del campo muestra los eventos existentes. Abra uno para Cambiar horario de juego, agregar preparación o revisar trabajos afectados."
+      },
+      "deviceMode": "setup",
+      "deviceNote": "Create events and detailed preparation plans in Full tools. On a phone, More → Course & insight → Course events shows existing events. Open one to Change play window, add preparation work or review affected jobs."
     },
     {
       "id": "pins",
@@ -1588,7 +1639,7 @@
       "summary": "Make a printable plan and a linked work route.",
       "example": "An assistant plans a three-position daily pattern through the end of the month.",
       "pitfall": "Front / middle / back is an approximate designation when true green geometry is unknown.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -1666,8 +1717,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Cree posiciones de banderas y rotaciones repetidas con Todas las herramientas en computadora o tableta. En el teléfono, Más → Campo e informes → Ubicación de banderas abre hojas fechadas y trabajos de corte de hoyos y banderas."
+      },
+      "deviceMode": "setup",
+      "deviceNote": "Build pin setups and repeating rotations in Full tools on a computer or tablet. On a phone, More → Course & insight → Pin placements opens dated pin sheets and combined cup-cutting jobs."
     },
     {
       "id": "garage-inventory",
@@ -1678,7 +1732,7 @@
       "summary": "Create accurate inventory baselines before tracking service.",
       "example": "A municipal course adds an older mower using a custom model name.",
       "pitfall": "Selecting a model does not prove installed parts or service intervals.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -1732,7 +1786,7 @@
           {
             "title": "Fije la base",
             "text": "Indique horas, distancia o lectura actual reales; marque lo desconocido.",
-            "control": "Current reading",
+            "control": "Lectura actual",
             "example": "Práctica: Indique horas, distancia o lectura actual reales; marque lo desconocido.",
             "image": "/assets/learn/garage-inventory-3-es.svg"
           },
@@ -1756,8 +1810,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Configure inventario y lecturas iniciales con Todas las herramientas en computadora o tableta. En el teléfono, Más → Equipos y suministros → Equipos permite buscar máquinas, registrar lecturas, notificar averías y actualizar su estado."
+      },
+      "deviceMode": "setup",
+      "deviceNote": "Inventory setup and baseline entry belong in computer/tablet Full tools. On a phone, More → Assets & supplies → Equipment lets you find machines, record meters, report breakdowns and update operating condition."
     },
     {
       "id": "garage-service",
@@ -1768,7 +1825,7 @@
       "summary": "Connect machine condition, maintenance plans and work orders.",
       "example": "A roller is marked unavailable while its vibration is diagnosed.",
       "pitfall": "Closing a ticket must not be treated as automatic proof that a machine is safe for service.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -1846,8 +1903,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Configure intervalos de servicio repetidos en Todas las herramientas. En el teléfono, abra la máquina y Más acciones de equipo para lecturas, estado, trabajo planificado y asignación. Notificar una avería sigue disponible directamente."
+      },
+      "deviceMode": "both",
+      "deviceNote": "Set recurring service intervals in Full tools. On a phone, open the machine and More equipment actions for meter readings, operating condition, planned work and task assignment. Report a breakdown stays directly available."
     },
     {
       "id": "parts",
@@ -1858,7 +1918,7 @@
       "summary": "Build useful failure information from actual repair evidence.",
       "example": "A technician records a failed spring without blaming an unconfirmed cause.",
       "pitfall": "Part use alone does not prove a root cause or universal compatibility.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -1919,7 +1979,7 @@
           {
             "title": "Revise patrones",
             "text": "Compare fallas confirmadas. La compatibilidad sin evidencia sigue sin verificar.",
-            "control": "Cost & failure reports",
+            "control": "Informes de costos y fallos",
             "example": "Práctica: Compare fallas confirmadas. La compatibilidad sin evidencia sigue sin verificar.",
             "image": "/assets/learn/parts-4-es.svg"
           }
@@ -1936,8 +1996,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "En el teléfono, Más → Equipos y suministros → Repuestos abre movimientos y consumo. Cree o edite referencias e importe listas con Todas las herramientas. La compatibilidad requiere evidencia exacta del fabricante."
+      },
+      "deviceMode": "both",
+      "deviceNote": "On a phone, More → Assets & supplies → Parts opens stock transactions and part use. Create or edit part references and import lists using Full tools. Compatibility still needs exact manufacturer evidence."
     },
     {
       "id": "pumps",
@@ -1948,7 +2011,7 @@
       "summary": "Model the station as it stands and maintain its component history.",
       "example": "Two failed pumps are separate assets beneath one station.",
       "pitfall": "A map icon does not infer underground connections or electrical/isolation procedures.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -2026,8 +2089,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Configure estaciones, componentes y servicio repetido en Todas las herramientas. En el teléfono, abra una estación del mapa o Más → Equipos y suministros → Estaciones de bombeo para consultar registros, estado, lecturas, averías y trabajo planificado."
+      },
+      "deviceMode": "both",
+      "deviceNote": "Build station/component inventory and recurring service in Full tools. Phones can open a mapped station or More → Assets & supplies → Pump stations for existing records, condition, readings, breakdowns and planned work."
     },
     {
       "id": "chemical-products",
@@ -2038,7 +2104,7 @@
       "summary": "Keep product evidence, measured areas and inventory distinct.",
       "example": "A spray tech asks the superintendent to confirm a product label before planning.",
       "pitfall": "The demo’s invented product and amounts are not application instructions.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -2085,21 +2151,21 @@
           {
             "title": "Conserve evidencia",
             "text": "Guarde documentos privados con su fuente y versión; revíselos localmente.",
-            "control": "Product documents",
+            "control": "Documentos del producto",
             "example": "Práctica: Guarde documentos privados con su fuente y versión; revíselos localmente.",
             "image": "/assets/learn/chemical-products-2-es.svg"
           },
           {
             "title": "Mida la zona",
             "text": "Use superficie y unidades medidas, no una suposición del dibujo.",
-            "control": "Treatment areas",
+            "control": "Áreas de tratamiento",
             "example": "Práctica: Use superficie y unidades medidas, no una suposición del dibujo.",
             "image": "/assets/learn/chemical-products-3-es.svg"
           },
           {
             "title": "Registre existencias",
             "text": "Una referencia no crea inventario; confirme cantidades iniciales reales.",
-            "control": "Stock",
+            "control": "Existencias",
             "example": "Práctica: Una referencia no crea inventario; confirme cantidades iniciales reales.",
             "image": "/assets/learn/chemical-products-4-es.svg"
           }
@@ -2116,8 +2182,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Configure productos revisados, áreas medidas y existencias iniciales con Todas las herramientas. Productos y existencias en teléfono permite buscar referencias, leer documentos y registrar movimientos autorizados; no establece lecturas iniciales por suposición."
+      },
+      "deviceMode": "setup",
+      "deviceNote": "Build reviewed product references, measured areas and opening stock using Full tools. Phone Products & stock is for finding references, reading documents and recording permitted stock movements; it does not establish a baseline by guessing."
     },
     {
       "id": "chemical-plan",
@@ -2128,7 +2197,7 @@
       "summary": "Connect planning to the assigned application record.",
       "example": "A manager reviews a measured-area calculation before assigning the application.",
       "pitfall": "GolfOptix does not prescribe products, doses, tank compatibility or legal permission.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -2168,7 +2237,7 @@
           {
             "title": "Seleccione datos revisados",
             "text": "Confirme zona medida, producto, alcance y cualificaciones necesarias.",
-            "control": "Plan application",
+            "control": "Planificar aplicación",
             "example": "Práctica: Confirme zona medida, producto, alcance y cualificaciones necesarias.",
             "image": "/assets/learn/chemical-plan-1-es.svg"
           },
@@ -2189,7 +2258,7 @@
           {
             "title": "Asigne el trabajo",
             "text": "El trabajador autorizado recibe el registro completo de aplicación.",
-            "control": "Dispatch",
+            "control": "Despachar",
             "example": "Práctica: El trabajador autorizado recibe el registro completo de aplicación.",
             "image": "/assets/learn/chemical-plan-4-es.svg"
           }
@@ -2206,8 +2275,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "La planificación, recetas reutilizables y copias futuras están en Todas las herramientas en computadora o tableta. Aplicar y registrar en teléfono conserva aplicaciones despachadas, registro real y revisión autorizada. Un plan no autoriza la aplicación."
+      },
+      "deviceMode": "setup",
+      "deviceNote": "Application planning, reusable recipes and future-date copies are in computer/tablet Full tools. Phone Apply & record keeps dispatched applications, actual entry and authorized review available. A plan is not permission to apply."
     },
     {
       "id": "chemical-record",
@@ -2218,7 +2290,7 @@
       "summary": "Retain the actual record instead of treating a plan as proof.",
       "example": "A partial treatment is recorded as the actual area covered.",
       "pitfall": "A printed briefing does not replace the complete chemical record.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -2230,8 +2302,8 @@
         },
         {
           "title": "Record actual work",
-          "text": "Enter actual products, quantities, area, times and field conditions.",
-          "control": "Actual application",
+          "text": "On a phone complete When & where, then Product quantities, then Conditions & checks. Enter actual times, area, product amounts, weather source, field conditions and checks. Next validates each step; Back keeps your entries. Full tools displays these fields together.",
+          "control": "Next / Back",
           "example": "Actual use can differ from the plan",
           "image": "/assets/learn/chemical-record-2.svg"
         },
@@ -2264,8 +2336,8 @@
           },
           {
             "title": "Registre hechos",
-            "text": "Indique productos, cantidades, zona, tiempos y condiciones reales.",
-            "control": "Actual application",
+            "text": "En el teléfono complete Cuándo y dónde, Cantidades de productos y Condiciones y comprobaciones. Registre horas, área, cantidades, fuente del clima, condiciones y comprobaciones reales. Siguiente valida cada paso; Atrás conserva los datos. Todas las herramientas muestra los campos juntos.",
+            "control": "Siguiente / Atrás",
             "example": "Práctica: Indique productos, cantidades, zona, tiempos y condiciones reales.",
             "image": "/assets/learn/chemical-record-2-es.svg"
           },
@@ -2279,7 +2351,7 @@
           {
             "title": "Conserve correcciones",
             "text": "El flujo de aplicación mantiene existencias, cierre, versiones y aprobaciones anteriores.",
-            "control": "Application history",
+            "control": "Historial de aplicaciones",
             "example": "Práctica: El flujo de aplicación mantiene existencias, cierre, versiones y aprobaciones anteriores.",
             "image": "/assets/learn/chemical-record-4-es.svg"
           }
@@ -2296,8 +2368,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "El registro real en teléfono tiene tres pasos: Cuándo y dónde, Cantidades de productos y Condiciones y comprobaciones. Siguiente comprueba el paso actual; Atrás conserva los datos. Solo el paso final envía para aprobación. Todas las herramientas en computadora o tableta muestra el formulario completo."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Phone actual entry has three steps: When & where, Product quantities, then Conditions & checks. Next checks the current step; Back retains your entries. Only the final step submits for approval. Computer/tablet Full tools shows the full form."
     },
     {
       "id": "turf-guidance",
@@ -2308,7 +2383,7 @@
       "summary": "Use models to organize scouting and reviewed field decisions.",
       "example": "A water-deficit estimate prompts a field inspection.",
       "pitfall": "Calendar forecasts do not automatically fill model inputs or prescribe chemicals.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -2327,7 +2402,7 @@
         },
         {
           "title": "Run the model",
-          "text": "Choose a period with sufficient readings and inspect the result and its inputs.",
+          "text": "In Full tools choose a period with sufficient readings and Calculate turf guidance. On a phone inspect the existing results and their inputs; record new observations without treating a missing result as zero.",
           "control": "Calculate turf guidance",
           "example": "A missing reading produces an incomplete result",
           "image": "/assets/learn/turf-guidance-3.svg"
@@ -2361,7 +2436,7 @@
           },
           {
             "title": "Calcule",
-            "text": "Revise resultados e insumos; las lecturas faltantes quedan incompletas.",
+            "text": "En Todas las herramientas elija un período con lecturas suficientes y Calcular orientación del césped. En el teléfono revise los resultados existentes y sus datos; registre observaciones sin tratar resultados ausentes como cero.",
             "control": "Calcular orientación del césped",
             "example": "Práctica: Revise resultados e insumos; las lecturas faltantes quedan incompletas.",
             "image": "/assets/learn/turf-guidance-3-es.svg"
@@ -2386,8 +2461,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Configure perfiles y calcule orientación con Todas las herramientas. Orientación del césped en teléfono conserva observaciones, resultados y Programar revisión de campo. Los resultados no autorizan tratamientos ni controlan el riego automáticamente."
+      },
+      "deviceMode": "both",
+      "deviceNote": "Set area profiles and calculate guidance with Full tools. Phone Turf guidance retains observations, current results and Schedule a field review. Results do not automatically authorize treatments or control irrigation."
     },
     {
       "id": "recovery",
@@ -2398,12 +2476,12 @@
       "summary": "Recover shared operational map edits with a checked safety path.",
       "example": "A manager reverses an incorrect position without erasing repair approvals.",
       "pitfall": "Map-version restore is not a full-record database rollback; browser downloads are a separate path.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
           "title": "Open recovery from overview",
-          "text": "Go to Course overview and open Shared map & recovery.",
+          "text": "On a computer or tablet open Course overview → Shared map & recovery. On a phone select Full tools first. For an accidental recent geometry edit, consider Undo map edit before restoring a version.",
           "control": "Shared map & recovery",
           "example": "Confirm the correct course",
           "image": "/assets/learn/recovery-1.svg"
@@ -2437,29 +2515,29 @@
         "steps": [
           {
             "title": "Abra recuperación",
-            "text": "Desde la vista general confirme el recorrido y abra mapa compartido y recuperación.",
-            "control": "Shared map & recovery",
+            "text": "En computadora o tableta abra Vista general del campo → Mapa compartido y recuperación. En el teléfono seleccione antes Todas las herramientas. Para un cambio geométrico reciente accidental, considere Deshacer antes de restaurar una versión.",
+            "control": "Mapa compartido y recuperación",
             "example": "Práctica: Desde la vista general confirme el recorrido y abra mapa compartido y recuperación.",
             "image": "/assets/learn/recovery-1-es.svg"
           },
           {
             "title": "Revise versiones",
             "text": "Compruebe fecha y editor de la versión anterior.",
-            "control": "Recent shared map versions",
+            "control": "Versiones recientes del mapa compartido",
             "example": "Práctica: Compruebe fecha y editor de la versión anterior.",
             "image": "/assets/learn/recovery-2-es.svg"
           },
           {
             "title": "Pruebe primero",
             "text": "La prueba aislada verifica sin reemplazar registros reales.",
-            "control": "Test restore in isolation",
+            "control": "Probar restauración aislada",
             "example": "Práctica: La prueba aislada verifica sin reemplazar registros reales.",
             "image": "/assets/learn/recovery-3-es.svg"
           },
           {
             "title": "Restaure deliberadamente",
             "text": "Confirme el efecto en todos los mapas; se conserva una versión de seguridad y las órdenes actuales.",
-            "control": "Restore this map version",
+            "control": "Restaurar esta versión del mapa",
             "example": "Práctica: Confirme el efecto en todos los mapas; se conserva una versión de seguridad y las órdenes actuales.",
             "image": "/assets/learn/recovery-4-es.svg"
           }
@@ -2476,8 +2554,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "La recuperación de mapas y los puntos completos son herramientas de oficina. En el teléfono elija Todas las herramientas y abra Vista general del campo → Mapa compartido y recuperación. Deshacer un cambio de interfaz no requiere restaurar datos operativos."
+      },
+      "deviceMode": "setup",
+      "deviceNote": "Shared map recovery and full recovery points are office tools. On a phone choose Full tools, then open Course overview → Shared map & recovery. Undoing a UI change does not require restoring operational data."
     },
     {
       "id": "accounts",
@@ -2488,7 +2569,7 @@
       "summary": "Keep personal access understandable and course-scoped.",
       "example": "A new worker confirms they are opening the invited course.",
       "pitfall": "A job title is not a substitute for administrator approval or course membership.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -2566,8 +2647,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Use su correo y acceso aprobado en cualquier dispositivo compatible. En el teléfono, Mi cuenta está en Más → Cuenta y ayuda. Todas las herramientas solo cambia la presentación, no la pertenencia, el cargo ni la identidad."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Use your email and approved course access on any supported device. On a phone, My account is under More → Account & help. Full tools changes presentation only, not course membership, role or identity."
     },
     {
       "id": "quotes",
@@ -2578,7 +2662,7 @@
       "summary": "Share a reproducible estimate without hiding the price.",
       "example": "A superintendent sends a scope-specific link to a director.",
       "pitfall": "The estimate is not a contract; GolfOptix does not automatically send the quote email.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "steps": [
         {
@@ -2618,7 +2702,7 @@
           {
             "title": "Elija el plan",
             "text": "Indique facturación y cantidad de recorridos.",
-            "control": "Pricing calculator",
+            "control": "Calculadora de precios",
             "example": "Práctica: Indique facturación y cantidad de recorridos.",
             "image": "/assets/learn/quotes-1-es.svg"
           },
@@ -2656,8 +2740,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "La calculadora de precios es pública y funciona en teléfono, tableta o computadora. Compartir abre un enlace o un borrador de correo; revíselo y envíelo usted. No crea una suscripción ni una cuenta del campo."
+      },
+      "deviceMode": "public",
+      "deviceNote": "The pricing calculator is public and usable on a phone, tablet or computer. Sharing opens a link or your own email draft; review and send it yourself. This does not create a subscription or course account."
     },
     {
       "id": "learning",
@@ -2668,7 +2755,7 @@
       "summary": "Find instructions, lead a practical class and retain the version you taught.",
       "example": "An assistant leads the ticket class, prints the handout and records actual attendance.",
       "pitfall": "Printing a single presentation slide is different from printing the complete handout.",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 10,
       "steps": [
         {
@@ -2694,7 +2781,7 @@
         },
         {
           "title": "Add your local instruction",
-          "text": "Create a course lesson as a draft. Review local procedures, then publish it for this course’s crew.",
+          "text": "Use Full tools to Create a course lesson as a draft. Review the local procedure and any Spanish text, then publish it for this course’s crew. Existing lessons remain readable in phone field view.",
           "control": "Create a course lesson",
           "example": "Publish a reviewed Spanish version",
           "image": "/assets/learn/learning-4.svg"
@@ -2715,14 +2802,14 @@
           {
             "title": "Elija biblioteca",
             "text": "Soporte explica GolfOptix; Curso contiene clases para el equipo.",
-            "control": "Learn",
+            "control": "Aprendizaje",
             "example": "Práctica: Soporte explica GolfOptix; Curso contiene clases para el equipo.",
             "image": "/assets/learn/learning-1-es.svg"
           },
           {
             "title": "Recorra juntos",
             "text": "Abra la clase y avance paso a paso comentando ejemplos.",
-            "control": "Lead this class",
+            "control": "Presentar esta clase",
             "example": "Práctica: Abra la clase y avance paso a paso comentando ejemplos.",
             "image": "/assets/learn/learning-2-es.svg"
           },
@@ -2735,15 +2822,15 @@
           },
           {
             "title": "Añada instrucciones locales",
-            "text": "Guarde un borrador, revise el procedimiento y publique para su equipo.",
-            "control": "Create a course lesson",
+            "text": "Use Todas las herramientas para Crear una lección del campo como borrador. Revise el procedimiento local y cualquier texto español; luego publique para el personal de este campo. Las lecciones existentes siguen legibles en vista de campo.",
+            "control": "Crear una lección del campo",
             "example": "Práctica: Guarde un borrador, revise el procedimiento y publique para su equipo.",
             "image": "/assets/learn/learning-4-es.svg"
           },
           {
             "title": "Registre la clase real",
             "text": "Después de impartirla registre asistentes, fecha y versión; no concede certificación.",
-            "control": "Record class attendance",
+            "control": "Registrar asistencia",
             "example": "Práctica: Después de impartirla registre asistentes, fecha y versión; no concede certificación.",
             "image": "/assets/learn/learning-5-es.svg"
           }
@@ -2760,8 +2847,11 @@
             "question": "Explique cuál es el siguiente paso y cuándo debe pedir ayuda al superintendente.",
             "answer": "El trabajador debe identificar la tarea, leer las instrucciones revisadas, respetar su autorización, registrar lo realizado y pedir aclaración o aprobación cuando corresponda."
           }
-        ]
-      }
+        ],
+        "deviceNote": "El teléfono permite buscar, leer y presentar lecciones existentes y registrar asistencia real con autorización. La creación y las herramientas completas de impresión están diseñadas para Todas las herramientas en computadora o tableta. Esta biblioteca general no es el curso exclusivo para móviles."
+      },
+      "deviceMode": "both",
+      "deviceNote": "Phones can search, read and lead existing lessons and record actual attendance when authorized. Lesson authoring and full printing tools are designed for computer/tablet Full tools. This general library is not the separate mobile-only course."
     },
     {
       "id": "offline",
@@ -2771,7 +2861,7 @@
       "summary": "Record a useful draft, then deliberately send it when connected.",
       "role": "manager",
       "library": "support",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "example": "The superintendent practices with fictional demo records, checks the result, then explains the real course procedure.",
       "pitfall": "Use the correct account and course. A local note, printed label or imported reference does not replace authorization or a confirmed shared save.",
@@ -2814,33 +2904,36 @@
           {
             "title": "Reconozca el fallo",
             "text": "No suponga que el servidor recibió el trabajo si falla el guardado.",
-            "control": "Keep offline draft instead",
+            "control": "Conservar borrador sin conexión",
             "example": "No suponga que el servidor recibió el trabajo si falla el guardado.",
             "image": "/assets/learn/offline-1-es.svg"
           },
           {
             "title": "Conserve el borrador",
             "text": "La opción local no crea un registro compartido. Revise el contexto de cuenta y dispositivo.",
-            "control": "Keep offline draft instead",
+            "control": "Conservar borrador sin conexión",
             "example": "La opción local no crea un registro compartido. Revise el contexto de cuenta y dispositivo.",
             "image": "/assets/learn/offline-2-es.svg"
           },
           {
             "title": "Revise al reconectar",
             "text": "Compare el borrador con el registro actual y resuelva los cambios.",
-            "control": "Review and send draft",
+            "control": "Revisar y enviar borrador",
             "example": "Compare el borrador con el registro actual y resuelva los cambios.",
             "image": "/assets/learn/offline-3-es.svg"
           },
           {
             "title": "Confirme",
             "text": "Compruebe el guardado real y el historial. No deje borradores privados en un teléfono compartido.",
-            "control": "Review and send draft",
+            "control": "Revisar y enviar borrador",
             "example": "Compruebe el guardado real y el historial. No deje borradores privados en un teléfono compartido.",
             "image": "/assets/learn/offline-4-es.svg"
           }
-        ]
-      }
+        ],
+        "deviceNote": "Un borrador del teléfono queda en ese dispositivo y no se comparte hasta que se envía con éxito tras revisarlo. Reconecte, compare el registro actual y verifique el historial guardado. Una nota sin conexión no equivale a una reparación completada."
+      },
+      "deviceMode": "field",
+      "deviceNote": "A phone draft remains on that device and is not shared until a reviewed send succeeds. Reconnect, compare the current record and verify the saved history. Never treat an offline note as a completed repair."
     },
     {
       "id": "transfer",
@@ -2850,7 +2943,7 @@
       "summary": "Move supported data with a preview, a confirmed course and a retained history.",
       "role": "manager",
       "library": "support",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "example": "The superintendent practices with fictional demo records, checks the result, then explains the real course procedure.",
       "pitfall": "Use the correct account and course. A local note, printed label or imported reference does not replace authorization or a confirmed shared save.",
@@ -2893,33 +2986,36 @@
           {
             "title": "Use la plantilla correcta",
             "text": "Descargue la plantilla de equipos o calendario del área correspondiente.",
-            "control": "Download equipment CSV template",
+            "control": "Descargar plantilla CSV de equipos",
             "example": "Descargue la plantilla de equipos o calendario del área correspondiente.",
             "image": "/assets/learn/transfer-1-es.svg"
           },
           {
             "title": "Revise la vista previa",
             "text": "Confirme recorrido, columnas, unidades y lecturas iniciales reales. Referencias no son existencias.",
-            "control": "Import equipment CSV",
+            "control": "Importar CSV de equipos",
             "example": "Confirme recorrido, columnas, unidades y lecturas iniciales reales. Referencias no son existencias.",
             "image": "/assets/learn/transfer-2-es.svg"
           },
           {
             "title": "Confirme y compruebe",
             "text": "Importe solo las filas previstas y abra los registros nuevos.",
-            "control": "Import equipment CSV",
+            "control": "Importar CSV de equipos",
             "example": "Importe solo las filas previstas y abra los registros nuevos.",
             "image": "/assets/learn/transfer-3-es.svg"
           },
           {
             "title": "Conserve salida",
             "text": "Revierta solo importaciones sin usar ni editar, cuando se permita. Exporte desde el área correspondiente.",
-            "control": "Roll back this unused import",
+            "control": "Revertir esta importación sin uso",
             "example": "Revierta solo importaciones sin usar ni editar, cuando se permita. Exporte desde el área correspondiente.",
             "image": "/assets/learn/transfer-4-es.svg"
           }
-        ]
-      }
+        ],
+        "deviceNote": "Importar, exportar y revertir importaciones sin uso están en Todas las herramientas en computadora o tableta. Revertir la interfaz no revierte registros guardados; use el proceso de corrección correspondiente."
+      },
+      "deviceMode": "setup",
+      "deviceNote": "Import, export and supported unused-import rollback are in Full tools on a computer or tablet. A UI rollback does not reverse saved records; use the matching record-specific correction process."
     },
     {
       "id": "equipment-qr",
@@ -2929,7 +3025,7 @@
       "summary": "Give a machine a quick route to its authorized equipment record.",
       "role": "manager",
       "library": "support",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 8,
       "example": "The superintendent practices with fictional demo records, checks the result, then explains the real course procedure.",
       "pitfall": "Use the correct account and course. A local note, printed label or imported reference does not replace authorization or a confirmed shared save.",
@@ -2972,33 +3068,36 @@
           {
             "title": "Confirme la máquina",
             "text": "Compruebe nombre e identificador de la ficha exacta.",
-            "control": "Garage",
+            "control": "Taller",
             "example": "Compruebe nombre e identificador de la ficha exacta.",
             "image": "/assets/learn/equipment-qr-1-es.svg"
           },
           {
             "title": "Imprima",
             "text": "Revise nombre y destino de la etiqueta QR antes de imprimir.",
-            "control": "Print equipment QR label",
+            "control": "Imprimir etiqueta QR del equipo",
             "example": "Revise nombre y destino de la etiqueta QR antes de imprimir.",
             "image": "/assets/learn/equipment-qr-2-es.svg"
           },
           {
             "title": "Pruebe acceso",
             "text": "Escanee con el teléfono previsto. Se necesita cuenta y acceso al recorrido adecuados.",
-            "control": "Print equipment QR label",
+            "control": "Imprimir etiqueta QR del equipo",
             "example": "Escanee con el teléfono previsto. Se necesita cuenta y acceso al recorrido adecuados.",
             "image": "/assets/learn/equipment-qr-3-es.svg"
           },
           {
             "title": "Mantenga la etiqueta",
             "text": "Sustituya etiquetas incorrectas o dañadas y revise cuando cambie el equipo.",
-            "control": "Open equipment",
+            "control": "Abrir equipo",
             "example": "Sustituya etiquetas incorrectas o dañadas y revise cuando cambie el equipo.",
             "image": "/assets/learn/equipment-qr-4-es.svg"
           }
-        ]
-      }
+        ],
+        "deviceNote": "Cree e imprima etiquetas de equipo con Todas las herramientas. Escanéelas con el teléfono para abrir la máquina; siguen vigentes el inicio de sesión y los permisos. Un código QR no concede acceso."
+      },
+      "deviceMode": "both",
+      "deviceNote": "Create and print equipment labels in Full tools. Scan them with a phone to open the existing machine record; normal sign-in and equipment permissions still apply. A QR code does not grant access."
     },
     {
       "id": "reschedule",
@@ -3007,7 +3106,7 @@
       "screen": "calendar",
       "role": "manager",
       "library": "support",
-      "version": "2026.11.12.1",
+      "version": "2026.11.18",
       "minutes": 10,
       "summary": "Reschedule unstarted work with a mouse or phone and see conflicts before confirming.",
       "example": "Move a one-time application reminder onto a day with another named-crew plan. Review the warning, choose a clear slot and save the change.",
@@ -3090,8 +3189,11 @@
             "example": "Guarde fecha y hora. Deshaga el último cambio si no cambió su registro. Se conserva el historial; la disponibilidad puede impedir deshacer.",
             "image": "/assets/learn/reschedule-5-es.svg"
           }
-        ]
-      }
+        ],
+        "deviceNote": "Calendario en teléfono conserva Día, Semana, Mes, Intervalo y cambios de fecha. Pulse el agarre si arrastrar resulta difícil. Los responsables revisan conflictos; un trabajador no puede mover trabajo ajeno. Use Todas las herramientas para cambiar programas repetidos."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Phone Schedule keeps Day, Week, Month, Date range and date moves. Tap the move grip if dragging is difficult. Managers review conflicts; workers cannot move another person’s work. Use Full tools for repeat-program changes."
     },
     {
       "id": "reports",
@@ -3102,7 +3204,7 @@
       "summary": "Understand budget status, urgent work, equipment, chemical and fuel reports without double-counting costs.",
       "example": "A superintendent drills from Garage to a mower, then opens its service ticket.",
       "pitfall": "Missing prices are not zero. A stock purchase is not counted again when it is consumed.",
-      "version": "2026.11.15",
+      "version": "2026.11.18",
       "minutes": 10,
       "library": "support",
       "steps": [
@@ -3115,14 +3217,14 @@
         },
         {
           "title": "Choose the reporting period",
-          "text": "Select a saved budget to use its exact dates, or choose custom dates. Custom dates do not compare a partial period to a full annual allowance.",
-          "control": "Budget period / financial scope",
+          "text": "For detailed analysis select Full tools. Choose a saved budget for its exact dates, or custom dates. Phone summaries show their current date range; a partial period must not be compared to a full annual allowance.",
+          "control": "Full tools → Budget period",
           "example": "Actual spending and estimates remain separate",
           "image": "/assets/learn/reports-2.svg"
         },
         {
           "title": "Follow the spending",
-          "text": "Click an area such as Garage, then select a machine. Inspect its ledger and open the source ticket. Unallocated stock stays visible.",
+          "text": "In computer/tablet Full tools, choose Garage and a machine to inspect its spending ledger and source ticket. Phone Equipment summaries link to each machine’s record. Stock without a machine allocation stays separate.",
           "control": "Drill into a machine",
           "example": "Garage → mower → spending entries",
           "image": "/assets/learn/reports-3.svg"
@@ -3136,8 +3238,8 @@
         },
         {
           "title": "Act on unfinished work",
-          "text": "Open Work order status. Emergency work comes first, then scheduled date and time. Open a ticket or export and print the filtered report.",
-          "control": "Work order status",
+          "text": "On a phone choose Review open work or Open work orders: emergencies appear first, then scheduled date/time. Open a ticket, filter the list or Show 20 more. Full tools adds detailed report export and printing.",
+          "control": "Review open work / Show 20 more",
           "example": "All incomplete dates are included unless you limit them",
           "image": "/assets/learn/reports-5.svg"
         }
@@ -3155,14 +3257,14 @@
           },
           {
             "title": "Elija el período",
-            "text": "Seleccione un presupuesto para usar sus fechas exactas o elija fechas personalizadas. No compare un período parcial con el presupuesto anual completo.",
-            "control": "Período del presupuesto",
+            "text": "Para análisis detallado seleccione Todas las herramientas. Elija un presupuesto con sus fechas exactas o fechas personalizadas. Los resúmenes del teléfono muestran su intervalo; no compare un período parcial con el presupuesto anual.",
+            "control": "Todas las herramientas → Período",
             "example": "Los gastos reales y las estimaciones se separan",
             "image": "/assets/learn/reports-2-es.svg"
           },
           {
             "title": "Siga los gastos",
-            "text": "Pulse un área como Taller y seleccione una máquina. Revise su libro de gastos y abra la orden original. El inventario sin asignar permanece visible.",
+            "text": "En Todas las herramientas de computadora o tableta, elija Taller y una máquina para revisar gastos y orden original. Los resúmenes de Equipos del teléfono enlazan a cada máquina. El inventario sin asignar permanece separado.",
             "control": "Profundizar en una máquina",
             "example": "Taller → cortacésped → gastos",
             "image": "/assets/learn/reports-3-es.svg"
@@ -3176,13 +3278,16 @@
           },
           {
             "title": "Actúe sobre el trabajo pendiente",
-            "text": "Abra Estado de las órdenes. Las emergencias aparecen primero, seguidas de fecha y hora. Abra una orden, exporte o imprima el informe filtrado.",
-            "control": "Estado de las órdenes",
+            "text": "En el teléfono elija Revisar trabajo pendiente u Órdenes abiertas: emergencias primero, luego fecha y hora. Abra una orden, filtre o Mostrar 20 más. Todas las herramientas agrega exportación e impresión detallada.",
+            "control": "Revisar trabajo pendiente / Mostrar 20 más",
             "example": "Todas las fechas pendientes salvo que aplique un filtro",
             "image": "/assets/learn/reports-5-es.svg"
           }
-        ]
-      }
+        ],
+        "deviceNote": "Informes en teléfono ofrece resúmenes de presupuesto, trabajo pendiente, equipos, químicos, combustible y personal. Filtros detallados, libros, exportaciones y entrada anual de presupuestos están en Todas las herramientas en computadora o tableta. Un precio ausente es desconocido, no cero."
+      },
+      "deviceMode": "both",
+      "deviceNote": "Phone Reports provides compact budget, unfinished-work, equipment, chemical, fuel and crew summaries. Detailed date/scope filters, ledger drill-down, exports and annual budget entry are in computer/tablet Full tools. Missing prices remain unknown, not zero."
     }
   ],
   "classes": [
@@ -3193,7 +3298,7 @@
       "screen": "crew",
       "role": "all",
       "library": "course",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 10,
       "summary": "A superintendent-led practical class with examples, a check for understanding and a printable handout.",
       "steps": [
@@ -3283,8 +3388,11 @@
             "question": "¿Se actualiza el papel cuando cambia el horario?",
             "answer": "No. Es una instantánea. Consulte la orden actual o al superintendente."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Presente esta clase desde una lección existente en cualquier dispositivo compatible o use una hoja impresa revisada. Los trabajadores solo abren su trabajo asignado y aprendizaje permitido; el superintendente demuestra mapas, planificación y registros privados reservados a responsables."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Teach this class from an existing lesson on any supported device or use a reviewed printed handout. Crew members open only their assigned work and permitted learning; the superintendent demonstrates manager-only maps, planning and private records."
     },
     {
       "id": "class-report",
@@ -3293,14 +3401,14 @@
       "screen": "crew",
       "role": "all",
       "library": "course",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 15,
       "summary": "A superintendent-led practical class with examples, a check for understanding and a printable handout.",
       "steps": [
         {
           "title": "Identify the feature",
-          "text": "Find the hole and feature label. Confirm you are describing the correct item.",
-          "control": "Map",
+          "text": "Use the location and feature label on your assigned ticket. A superintendent with map access demonstrates finding the correct hole and feature; a map demonstration does not grant crew map access.",
+          "control": "Work ticket / Map demonstration",
           "example": "Head beside Green 3",
           "image": "/assets/learn/class-report-1.svg"
         },
@@ -3344,8 +3452,8 @@
         "steps": [
           {
             "title": "Identifique",
-            "text": "Confirme hoyo y etiqueta del elemento.",
-            "control": "Mapa",
+            "text": "Use la ubicación y etiqueta de su orden asignada. Un superintendente con acceso al mapa demuestra el hoyo y elemento correctos; la demostración no concede acceso al mapa al personal.",
+            "control": "Orden de trabajo / Demostración del mapa",
             "example": "Práctica: Confirme hoyo y etiqueta del elemento.",
             "image": "/assets/learn/class-report-1-es.svg"
           },
@@ -3383,8 +3491,11 @@
             "question": "¿Cambiar una pieza demuestra por sí solo la causa de la falla?",
             "answer": "No. Registre el diagnóstico confirmado o déjelo sin diagnosticar."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Presente esta clase desde una lección existente en cualquier dispositivo compatible o use una hoja impresa revisada. Los trabajadores solo abren su trabajo asignado y aprendizaje permitido; el superintendente demuestra mapas, planificación y registros privados reservados a responsables."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Teach this class from an existing lesson on any supported device or use a reviewed printed handout. Crew members open only their assigned work and permitted learning; the superintendent demonstrates manager-only maps, planning and private records."
     },
     {
       "id": "class-ticket",
@@ -3393,7 +3504,7 @@
       "screen": "crew",
       "role": "all",
       "library": "course",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 15,
       "summary": "A superintendent-led practical class with examples, a check for understanding and a printable handout.",
       "steps": [
@@ -3483,8 +3594,11 @@
             "question": "¿Quién aprueba el cierre final?",
             "answer": "El superintendente o un Assistant Superintendent autorizado."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Presente esta clase desde una lección existente en cualquier dispositivo compatible o use una hoja impresa revisada. Los trabajadores solo abren su trabajo asignado y aprendizaje permitido; el superintendente demuestra mapas, planificación y registros privados reservados a responsables."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Teach this class from an existing lesson on any supported device or use a reviewed printed handout. Crew members open only their assigned work and permitted learning; the superintendent demonstrates manager-only maps, planning and private records."
     },
     {
       "id": "class-translation",
@@ -3493,7 +3607,7 @@
       "screen": "crew",
       "role": "all",
       "library": "course",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 15,
       "summary": "A superintendent-led practical class with examples, a check for understanding and a printable handout.",
       "steps": [
@@ -3583,8 +3697,11 @@
             "question": "¿La bandera traduce etiquetas químicas o crea instrucciones aprobadas?",
             "answer": "No. Use los documentos reales y las instrucciones revisadas."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Presente esta clase desde una lección existente en cualquier dispositivo compatible o use una hoja impresa revisada. Los trabajadores solo abren su trabajo asignado y aprendizaje permitido; el superintendente demuestra mapas, planificación y registros privados reservados a responsables."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Teach this class from an existing lesson on any supported device or use a reviewed printed handout. Crew members open only their assigned work and permitted learning; the superintendent demonstrates manager-only maps, planning and private records."
     },
     {
       "id": "class-gur",
@@ -3593,7 +3710,7 @@
       "screen": "crew",
       "role": "all",
       "library": "course",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 15,
       "summary": "A superintendent-led practical class with examples, a check for understanding and a printable handout.",
       "steps": [
@@ -3683,8 +3800,11 @@
             "question": "¿El contorno demuestra una distancia medida o una designación reglamentaria automática?",
             "answer": "No. Siga el procedimiento real del superintendente."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Presente esta clase desde una lección existente en cualquier dispositivo compatible o use una hoja impresa revisada. Los trabajadores solo abren su trabajo asignado y aprendizaje permitido; el superintendente demuestra mapas, planificación y registros privados reservados a responsables."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Teach this class from an existing lesson on any supported device or use a reviewed printed handout. Crew members open only their assigned work and permitted learning; the superintendent demonstrates manager-only maps, planning and private records."
     },
     {
       "id": "class-equipment",
@@ -3693,7 +3813,7 @@
       "screen": "crew",
       "role": "all",
       "library": "course",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 15,
       "summary": "A superintendent-led practical class with examples, a check for understanding and a printable handout.",
       "steps": [
@@ -3783,8 +3903,11 @@
             "question": "¿Cerrar la orden hace automáticamente segura una máquina?",
             "answer": "No. La persona responsable debe seguir el procedimiento aplicable de retorno al servicio."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Presente esta clase desde una lección existente en cualquier dispositivo compatible o use una hoja impresa revisada. Los trabajadores solo abren su trabajo asignado y aprendizaje permitido; el superintendente demuestra mapas, planificación y registros privados reservados a responsables."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Teach this class from an existing lesson on any supported device or use a reviewed printed handout. Crew members open only their assigned work and permitted learning; the superintendent demonstrates manager-only maps, planning and private records."
     },
     {
       "id": "class-pins",
@@ -3793,7 +3916,7 @@
       "screen": "crew",
       "role": "all",
       "library": "course",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 15,
       "summary": "A superintendent-led practical class with examples, a check for understanding and a printable handout.",
       "steps": [
@@ -3852,7 +3975,7 @@
           {
             "title": "Lea designaciones",
             "text": "Explique etiquetas y zonas según la configuración del responsable.",
-            "control": "Pin sheet",
+            "control": "Hoja de banderas",
             "example": "Práctica: Explique etiquetas y zonas según la configuración del responsable.",
             "image": "/assets/learn/class-pins-2-es.svg"
           },
@@ -3883,8 +4006,11 @@
             "question": "¿Frente, centro y fondo son coordenadas exactas medidas?",
             "answer": "No. Use la ubicación real aprobada por el superintendente."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Presente esta clase desde una lección existente en cualquier dispositivo compatible o use una hoja impresa revisada. Los trabajadores solo abren su trabajo asignado y aprendizaje permitido; el superintendente demuestra mapas, planificación y registros privados reservados a responsables."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Teach this class from an existing lesson on any supported device or use a reviewed printed handout. Crew members open only their assigned work and permitted learning; the superintendent demonstrates manager-only maps, planning and private records."
     },
     {
       "id": "class-weather",
@@ -3893,7 +4019,7 @@
       "screen": "crew",
       "role": "all",
       "library": "course",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 15,
       "summary": "A superintendent-led practical class with examples, a check for understanding and a printable handout.",
       "steps": [
@@ -3983,8 +4109,11 @@
             "question": "¿Autoriza el pronóstico una aplicación química?",
             "answer": "No. Se deben comprobar condiciones reales, instrucciones de la etiqueta y autorización."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Presente esta clase desde una lección existente en cualquier dispositivo compatible o use una hoja impresa revisada. Los trabajadores solo abren su trabajo asignado y aprendizaje permitido; el superintendente demuestra mapas, planificación y registros privados reservados a responsables."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Teach this class from an existing lesson on any supported device or use a reviewed printed handout. Crew members open only their assigned work and permitted learning; the superintendent demonstrates manager-only maps, planning and private records."
     },
     {
       "id": "class-chemical",
@@ -3993,7 +4122,7 @@
       "screen": "crew",
       "role": "all",
       "library": "course",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 20,
       "summary": "A superintendent-led practical class with examples, a check for understanding and a printable handout.",
       "steps": [
@@ -4052,7 +4181,7 @@
           {
             "title": "Busque documentos",
             "text": "El responsable muestra etiqueta, ficha de seguridad e instrucciones revisadas reales.",
-            "control": "Product documents",
+            "control": "Documentos del producto",
             "example": "Práctica: El responsable muestra etiqueta, ficha de seguridad e instrucciones revisadas reales.",
             "image": "/assets/learn/class-chemical-2-es.svg"
           },
@@ -4066,7 +4195,7 @@
           {
             "title": "Registre hechos",
             "text": "Use aplicación y revisión del responsable. Nunca use cantidades ficticias de la demo en el campo.",
-            "control": "Actual application",
+            "control": "Aplicación real",
             "example": "Práctica: Use aplicación y revisión del responsable. Nunca use cantidades ficticias de la demo en el campo.",
             "image": "/assets/learn/class-chemical-4-es.svg"
           }
@@ -4083,8 +4212,11 @@
             "question": "¿Sustituye esta orientación o un producto ficticio la formación de aplicadores o la etiqueta?",
             "answer": "No. Esta clase solo orienta sobre el programa; use la formación cualificada y los documentos reales."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Presente esta clase desde una lección existente en cualquier dispositivo compatible o use una hoja impresa revisada. Los trabajadores solo abren su trabajo asignado y aprendizaje permitido; el superintendente demuestra mapas, planificación y registros privados reservados a responsables."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Teach this class from an existing lesson on any supported device or use a reviewed printed handout. Crew members open only their assigned work and permitted learning; the superintendent demonstrates manager-only maps, planning and private records."
     },
     {
       "id": "class-events",
@@ -4093,7 +4225,7 @@
       "screen": "crew",
       "role": "all",
       "library": "course",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 15,
       "summary": "A superintendent-led practical class with examples, a check for understanding and a printable handout.",
       "steps": [
@@ -4183,8 +4315,11 @@
             "question": "¿Reportar una emergencia autoriza trabajar dentro de un evento bloqueado?",
             "answer": "No. Repórtela y obtenga la autorización requerida."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Presente esta clase desde una lección existente en cualquier dispositivo compatible o use una hoja impresa revisada. Los trabajadores solo abren su trabajo asignado y aprendizaje permitido; el superintendente demuestra mapas, planificación y registros privados reservados a responsables."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Teach this class from an existing lesson on any supported device or use a reviewed printed handout. Crew members open only their assigned work and permitted learning; the superintendent demonstrates manager-only maps, planning and private records."
     },
     {
       "id": "class-credentials",
@@ -4193,7 +4328,7 @@
       "screen": "crew",
       "role": "all",
       "library": "course",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 15,
       "summary": "A superintendent-led practical class with examples, a check for understanding and a printable handout.",
       "steps": [
@@ -4245,21 +4380,21 @@
           {
             "title": "Distinga el tipo",
             "text": "Una licencia, certificación y constancia de curso no son iguales.",
-            "control": "Credentials & training records",
+            "control": "Credenciales y registros de formación",
             "example": "Práctica: Una licencia, certificación y constancia de curso no son iguales.",
             "image": "/assets/learn/class-credentials-1-es.svg"
           },
           {
             "title": "Revise alcance y fechas",
             "text": "El responsable comprueba credencial, emisor y vencimiento reales.",
-            "control": "Open credential record",
+            "control": "Abrir credencial",
             "example": "Práctica: El responsable comprueba credencial, emisor y vencimiento reales.",
             "image": "/assets/learn/class-credentials-2-es.svg"
           },
           {
             "title": "Informe cambios",
             "text": "Entregue evidencia de renovación o formación mediante los registros privados autorizados.",
-            "control": "Evidence reference / private filing location",
+            "control": "Referencia de evidencia / archivo privado",
             "example": "Práctica: Entregue evidencia de renovación o formación mediante los registros privados autorizados.",
             "image": "/assets/learn/class-credentials-3-es.svg"
           },
@@ -4283,8 +4418,11 @@
             "question": "¿El distintivo demuestra que el emisor verificó el registro?",
             "answer": "No. GolfOptix no verifica de manera independiente a la entidad emisora."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Presente esta clase desde una lección existente en cualquier dispositivo compatible o use una hoja impresa revisada. Los trabajadores solo abren su trabajo asignado y aprendizaje permitido; el superintendente demuestra mapas, planificación y registros privados reservados a responsables."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Teach this class from an existing lesson on any supported device or use a reviewed printed handout. Crew members open only their assigned work and permitted learning; the superintendent demonstrates manager-only maps, planning and private records."
     },
     {
       "id": "class-handover",
@@ -4293,7 +4431,7 @@
       "screen": "crew",
       "role": "all",
       "library": "course",
-      "version": "2026.11.12",
+      "version": "2026.11.18",
       "minutes": 15,
       "summary": "A superintendent-led practical class with examples, a check for understanding and a printable handout.",
       "steps": [
@@ -4320,8 +4458,8 @@
         },
         {
           "title": "Prepare tomorrow’s discussion",
-          "text": "The manager reviews the next day and copies only the appropriate schedule pattern.",
-          "control": "Week view",
+          "text": "The manager reviews the next day and assigns remaining work. Copy only an appropriate schedule pattern using Full tools; never copy completion records as new proof of work.",
+          "control": "Week view / Full tools",
           "example": "Include a clear follow-up location",
           "image": "/assets/learn/class-handover-4.svg"
         }
@@ -4365,8 +4503,8 @@
           },
           {
             "title": "Prepare mañana",
-            "text": "El responsable revisa el próximo día y copia solo el patrón apropiado.",
-            "control": "Vista semanal",
+            "text": "El responsable revisa el día siguiente y asigna trabajo pendiente. Copie solo patrones adecuados con Todas las herramientas; nunca copie registros completados como nueva prueba de trabajo.",
+            "control": "Vista semanal / Todas las herramientas",
             "example": "Práctica: El responsable revisa el próximo día y copia solo el patrón apropiado.",
             "image": "/assets/learn/class-handover-4-es.svg"
           }
@@ -4383,8 +4521,11 @@
             "question": "¿Qué distingue una solicitud de cierre de una orden cerrada?",
             "answer": "La solicitud espera aprobación; el cierre tiene la aprobación registrada del responsable."
           }
-        ]
-      }
+        ],
+        "deviceNote": "Presente esta clase desde una lección existente en cualquier dispositivo compatible o use una hoja impresa revisada. Los trabajadores solo abren su trabajo asignado y aprendizaje permitido; el superintendente demuestra mapas, planificación y registros privados reservados a responsables."
+      },
+      "deviceMode": "field",
+      "deviceNote": "Teach this class from an existing lesson on any supported device or use a reviewed printed handout. Crew members open only their assigned work and permitted learning; the superintendent demonstrates manager-only maps, planning and private records."
     }
   ]
 }

@@ -27,3 +27,5 @@
 .demo-tour-ring{transition:none}
 
 .demo-tour-meta .demo-tour-count{font:700 18px/1.25 Arial,sans-serif;letter-spacing:1px;color:#fff0cb;white-space:nowrap}
+
+.demo-tour-card p.demo-tour-device-note{font:11px/1.5 Arial,sans-serif;color:#efdfb6;background:#ffffff0a;border-left:2px solid #b99b58;padding:7px 9px;margin:8px 0}.demo-tour-device-note[hidden]{display:none}

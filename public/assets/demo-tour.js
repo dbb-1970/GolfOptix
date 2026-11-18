@@ -1,4 +1,4 @@
-import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=field2';
+import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=docsfield1';
 
 const page=Object.keys(tourPages).find(key=>tourPages[key]===location.pathname)||(location.pathname==='/test-drive/maintenance/reports/'?'operations':null);
 if(page&&!(['chemicals','learn'].includes(page)&&new URLSearchParams(location.search).get('view')==='worker')) init();
@@ -25,7 +25,7 @@ function init(){
   const back=control('BACK','demo-tour-back',()=>advance(-1));
   const end=control('END INSTRUCTION','demo-tour-end',finish);
   const next=control('NEXT →','demo-tour-next',()=>advance(1));
-  card.append(meta,progress,title,copy,actions);ui.append(ring,connector,card);document.body.append(launch,ui);
+  const deviceHint=make('p','demo-tour-device-note','Full tools preview · END INSTRUCTION returns to phone field view.');deviceHint.hidden=true;card.append(meta,progress,deviceHint,title,copy,actions);ui.append(ring,connector,card);document.body.append(launch,ui);
   function persist(){state.updatedAt=Date.now();try{sessionStorage.setItem(KEY,JSON.stringify(state));}catch{}}
   function finish(){try{if(sessionStorage.getItem('golfoptix-tour-return-field')==='yes'){sessionStorage.removeItem('golfoptix-tour-return-field');window.GolfFieldMode?.set('field');}}catch{}window.GolfPumpTour?.restore();if(ownedDialog?.matches('[data-tour-recovery]')){ownedDialog.close();ownedDialog=null;}window.GolfCrewTour?.restore();state.active=false;state.seen=true;persist();target=null;ui.hidden=true;document.body.append(ui);launch.hidden=false;(previousFocus?.isConnected?previousFocus:launch).focus({preventScroll:true});}
   launch.onclick=()=>chooseGuide();
@@ -120,7 +120,7 @@ function init(){
       targetSizeObserver.disconnect();targetSizeObserver.observe(target);
       // Keep tour controls in the modal top layer even if a target is unavailable.
       const portal=target.closest('dialog[open]')||(ownedDialog?.open?ownedDialog:null)||document.querySelector('dialog[open]')||document.body;portal.append(ui);
-      chapter.textContent=({map:'The course map',maintenance:'Maintenance',calendar:'Work planning',crew:'Your crew',pumps:'Pump Stations',garage:'Garage',operations:'Daily work',chemicals:'Chemical Management',pins:'Pin placements',events:'Course events',learn:'Learning libraries'})[page];
+      deviceHint.hidden=!(phone()&&document.documentElement.classList.contains('field-full-mode'));chapter.textContent=({map:'The course map',maintenance:'Maintenance',calendar:'Work planning',crew:'Your crew',pumps:'Pump Stations',garage:'Garage',operations:'Daily work',chemicals:'Chemical Management',pins:'Pin placements',events:'Course events',learn:'Learning libraries'})[page];
       count.textContent=String(state.quick?quickIndices.indexOf(state.index)+1:state.index+1).padStart(2,'0')+' / '+(state.quick?quickIndices.length:tourSteps.length);bar.style.width=((state.quick?(quickIndices.indexOf(state.index)+1)/quickIndices.length:(state.index+1)/tourSteps.length)*100)+'%';
       title.textContent=step.title;text.textContent=step.text;next.textContent=state.index===tourSteps.length-1?'FINISH →':'NEXT →';back.hidden=state.index===0;ui.hidden=false;
       if(target!==launch)target.scrollIntoView({block:'center',inline:'nearest',behavior:'instant'});
