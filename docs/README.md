@@ -17,6 +17,6 @@ Taught course lesson snapshots and customer-authored lessons are operational rec
 
 Older release/research documents are retained for provenance. Mock-login-only, browser-local-only and earlier phone-navigation directions in dated documents are historical, not current operating instructions. Do not follow them to change authentication, course storage or atlas geometry. The app and server permissions remain authoritative.
 
-## Next step
+## Mobile training and remaining audit
 
-The owner has requested a separate mobile-only course and walkthrough next. They are intentionally not created by this documentation alignment release. Actual iPhone field acceptance and remaining screen audit items are also not certified by this review.
+The separate mobile-only walkthrough is now in the demo menu. It remains in phone field view and ends in the illustrated mobile field course in Learning → Course Library. Desktop users can open /test-drive/mobile/ for a fixed phone preview. See MOBILE-TRAINING-20261118.md. Actual iPhone field acceptance and remaining screen audit items are also not certified by this review.

@@ -1,5 +1,5 @@
 {
-  "version": "2026.11.18-docs",
+  "version": "2026.11.18-mobile",
   "guides": [
     {
       "id": "start",
@@ -4526,6 +4526,174 @@
       },
       "deviceMode": "field",
       "deviceNote": "Teach this class from an existing lesson on any supported device or use a reviewed printed handout. Crew members open only their assigned work and permitted learning; the superintendent demonstrates manager-only maps, planning and private records."
+    },
+    {
+      "id": "class-mobile-field",
+      "title": "GolfOptix in the field: phone essentials",
+      "category": "Mobile fieldwork",
+      "screen": "map",
+      "role": "all",
+      "library": "course",
+      "minutes": 20,
+      "version": "2026.11.18-mobile",
+      "deviceMode": "field",
+      "deviceNote": "This course teaches the phone field layout: Today, Map, Schedule and More. Some demonstrations require superintendent access; workers use only their assigned tickets. The separate Mobile-only walkthrough is in the demo menu. Full tools is for office setup, not required for this class.",
+      "summary": "A practical phone-only class: navigate the course, report issues, read work and keep the crew informed.",
+      "facilitator": "Lead the examples in the fictional demo. Demonstrate manager-only tools from your authorized view. Ask learners to explain each next action before practicing; the class never grants permissions or qualifications.",
+      "example": "A superintendent finds Hole 3, reports an irrigation problem and checks the team day without opening office setup.",
+      "pitfall": "GPS accuracy varies. Never promise a three-foot fix or treat an unsent note as a saved work order.",
+      "examples": [
+        "A crew member records work and requests closure; the assistant reviews it before the map alert clears.",
+        "A mower fails during a shift. The manager checks its record, records the issue and reviews affected assignments."
+      ],
+      "quiz": [
+        {
+          "question": "Where do you find layers on a phone?",
+          "answer": "More → Map layers. Close the panel to pan freely."
+        },
+        {
+          "question": "Does a closure request mean the work order is approved?",
+          "answer": "No. A superintendent or authorized assistant must inspect and approve it."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Start with four places",
+          "text": "Today is your own work. Map opens the course. Schedule opens the calendar. More groups the remaining workspaces and help. Managers use Team today or Crew for the team; workers see only their assignments.",
+          "control": "Today · Map · Schedule · More",
+          "example": "Name the next tap before starting.",
+          "image": "/assets/learn/class-mobile-field-1.svg"
+        },
+        {
+          "title": "Give the map room",
+          "text": "Choose a hole, close the panel, then drag with one finger and pinch with two to zoom. Use the crosshair to fit the view. More → Map layers reduces clutter without removing records.",
+          "control": "More → Map layers",
+          "example": "Open Hole 3 and find the green.",
+          "image": "/assets/learn/class-mobile-field-2.svg"
+        },
+        {
+          "title": "Open the feature before editing",
+          "text": "Tap the exact feature and check its label. The compact strip has Details, Move, Size or Repair as appropriate. Preview every position/size edit and confirm before saving; use More → Map details & undo for a recent mistake.",
+          "control": "Details / Move / Size / Repair",
+          "example": "Select a sprinkler without moving it.",
+          "image": "/assets/learn/class-mobile-field-3.svg"
+        },
+        {
+          "title": "Make the problem actionable",
+          "text": "Managers can report a feature repair, choose planned or emergency and link a worker. Workers report through their assigned ticket or the course escalation process. Capture GPS only at the actual issue and check the displayed accuracy; this lesson never activates GPS.",
+          "control": "Repair / Record work performed",
+          "example": "Describe symptoms separately from the suspected cause.",
+          "image": "/assets/learn/class-mobile-field-4.svg"
+        },
+        {
+          "title": "See the day and resolve timing",
+          "text": "Open Schedule, choose Day or Week and open a dated job. Tap a move grip if dragging is difficult. A manager reviews worker, equipment and event conflicts before confirming a new date. New phone schedules are one-time work; repeat programs are in Full tools.",
+          "control": "Schedule / Review schedule conflicts",
+          "example": "Move no job until the proposed date is reviewed.",
+          "image": "/assets/learn/class-mobile-field-5.svg"
+        },
+        {
+          "title": "Record the work and request closure",
+          "text": "Open your ticket, read the instructions and log actual work and time when known. Submit for closure asks for inspection; it does not close the ticket. A superintendent or authorized assistant approves or returns it. Read the history to confirm who acted.",
+          "control": "Record work performed / Submit for closure",
+          "example": "A repair stays highlighted while approval is pending.",
+          "image": "/assets/learn/class-mobile-field-6.svg"
+        },
+        {
+          "title": "Use the field records",
+          "text": "Managers find Equipment and Pump stations under More → Assets & supplies for readings, condition and repair work. Chemical actual entry has three steps: When & where, Product quantities, Conditions & checks. Use actual reviewed instructions; the demo is not application guidance.",
+          "control": "More → Assets & supplies",
+          "example": "Check the machine identity before recording a reading.",
+          "image": "/assets/learn/class-mobile-field-7.svg"
+        },
+        {
+          "title": "Check status and keep a way back",
+          "text": "Budget and Reports under More → Course & insight provide compact manager summaries. Office setup remains behind Full tools; Return to field view switches back. If signal fails, keep and review an offline draft; confirm a successful save and history before treating it as shared.",
+          "control": "More / Mobile-only walkthrough",
+          "example": "End the walkthrough, then practice in the temporary demo.",
+          "image": "/assets/learn/class-mobile-field-8.svg"
+        }
+      ],
+      "es": {
+        "title": "GolfOptix en campo: uso esencial del teléfono",
+        "summary": "Clase práctica solo para teléfonos: navegar, informar problemas, leer tareas y comunicar al equipo.",
+        "deviceNote": "Este curso enseña la vista de campo: Hoy, Mapa, Calendario y Más. Algunas demostraciones requieren acceso de superintendente; los trabajadores usan sus órdenes. El Recorrido solo para móviles está en el menú de la demo. Todas las herramientas es para configuración, no necesaria para esta clase.",
+        "facilitator": "Presente ejemplos en la demo ficticia. Demuestre herramientas reservadas desde su vista autorizada. Pida explicar el siguiente paso antes de practicar. La clase no concede permisos ni cualificaciones.",
+        "example": "El superintendente encuentra el hoyo 3, informa un problema y revisa el día del equipo sin abrir configuración.",
+        "pitfall": "La precisión GPS varía. No prometa tres pies ni trate una nota sin enviar como orden guardada.",
+        "examples": [
+          "Un trabajador registra y solicita cierre; el asistente revisa antes de quitar la alerta.",
+          "Falla una máquina; el responsable consulta su registro, informa el problema y revisa asignaciones."
+        ],
+        "quiz": [
+          {
+            "question": "¿Dónde están las capas en el teléfono?",
+            "answer": "Más → Capas del mapa. Cierre el panel para mover libremente."
+          },
+          {
+            "question": "¿La solicitud de cierre es una aprobación?",
+            "answer": "No. El superintendente o asistente autorizado debe revisar y aprobar."
+          }
+        ],
+        "steps": [
+          {
+            "title": "Empiece con cuatro lugares",
+            "text": "Hoy es su trabajo. Mapa abre el campo. Calendario abre la programación. Más agrupa espacios y ayuda. Los responsables usan Equipo hoy o Personal; los trabajadores solo ven sus asignaciones.",
+            "control": "Hoy · Mapa · Calendario · Más",
+            "example": "Diga el siguiente toque antes de empezar.",
+            "image": "/assets/learn/class-mobile-field-1-es.svg"
+          },
+          {
+            "title": "Dé espacio al mapa",
+            "text": "Elija un hoyo, cierre el panel y arrastre con un dedo; pellizque con dos para ampliar. La mira encuadra la vista. Más → Capas reduce detalle sin borrar registros.",
+            "control": "Más → Capas del mapa",
+            "example": "Abra el hoyo 3 y busque el green.",
+            "image": "/assets/learn/class-mobile-field-2-es.svg"
+          },
+          {
+            "title": "Abra el elemento antes de editar",
+            "text": "Pulse el elemento y compruebe su etiqueta. La barra muestra Detalles, Mover, Tamaño o Reparación según corresponda. Revise y confirme cambios antes de guardar; Más → Detalles y deshacer permite corregir un cambio reciente.",
+            "control": "Detalles / Mover / Tamaño / Reparación",
+            "example": "Seleccione un aspersor sin moverlo.",
+            "image": "/assets/learn/class-mobile-field-3-es.svg"
+          },
+          {
+            "title": "Haga que el problema sea accionable",
+            "text": "Los responsables notifican reparaciones, eligen planificado o emergencia y enlazan trabajadores. El personal informa desde su orden o el proceso local. Capture GPS solo en el lugar real y compruebe precisión; la lección no activa GPS.",
+            "control": "Reparación / Registrar trabajo realizado",
+            "example": "Separe síntomas de causas sospechadas.",
+            "image": "/assets/learn/class-mobile-field-4-es.svg"
+          },
+          {
+            "title": "Vea el día y resuelva horarios",
+            "text": "Abra Calendario, elija Día o Semana y una tarea. Pulse el agarre si arrastrar resulta difícil. El responsable revisa conflictos de personal, equipos y eventos antes de confirmar. Los nuevos horarios del teléfono son únicos; las repeticiones están en Todas las herramientas.",
+            "control": "Calendario / Revisar conflictos",
+            "example": "No mueva una tarea sin revisar la fecha propuesta.",
+            "image": "/assets/learn/class-mobile-field-5-es.svg"
+          },
+          {
+            "title": "Registre trabajo y solicite cierre",
+            "text": "Abra su orden, lea instrucciones y registre trabajo y tiempo reales si se conocen. Enviar para cierre pide inspección; no cierra la orden. El superintendente o asistente autorizado aprueba o devuelve. Lea quién actuó en el historial.",
+            "control": "Registrar trabajo / Enviar para cierre",
+            "example": "La reparación sigue resaltada hasta la aprobación.",
+            "image": "/assets/learn/class-mobile-field-6-es.svg"
+          },
+          {
+            "title": "Use los registros de campo",
+            "text": "Los responsables encuentran Equipos y Estaciones de bombeo en Más → Equipos y suministros para lecturas, estado y reparaciones. El registro químico tiene tres pasos: Cuándo y dónde, Cantidades y Condiciones. Use instrucciones revisadas reales; la demo no indica aplicaciones.",
+            "control": "Más → Equipos y suministros",
+            "example": "Compruebe la máquina antes de registrar lecturas.",
+            "image": "/assets/learn/class-mobile-field-7-es.svg"
+          },
+          {
+            "title": "Revise estado y conserve una salida",
+            "text": "Presupuesto e Informes en Más → Campo e informes ofrecen resúmenes para responsables. La configuración está en Todas las herramientas; Volver a la vista de campo recupera la vista sencilla. Sin señal conserve y revise un borrador; confirme guardado e historial antes de tratarlo como compartido.",
+            "control": "Más / Recorrido solo para móviles",
+            "example": "Termine el recorrido y practique en la demo temporal.",
+            "image": "/assets/learn/class-mobile-field-8-es.svg"
+          }
+        ]
+      }
     }
   ]
 }

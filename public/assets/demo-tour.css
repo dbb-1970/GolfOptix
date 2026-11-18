@@ -29,3 +29,7 @@
 .demo-tour-meta .demo-tour-count{font:700 18px/1.25 Arial,sans-serif;letter-spacing:1px;color:#fff0cb;white-space:nowrap}
 
 .demo-tour-card p.demo-tour-device-note{font:11px/1.5 Arial,sans-serif;color:#efdfb6;background:#ffffff0a;border-left:2px solid #b99b58;padding:7px 9px;margin:8px 0}.demo-tour-device-note[hidden]{display:none}
+
+.demo-tour-choice-mobile{border-color:#b69a58!important;background:#eee9d6!important}.mobile-tour-ui .demo-tour-card{border-color:#d4ba77}.mobile-tour-ui .demo-tour-chapter{font-size:10px}
+
+.demo-tour-mobile-course{display:block;padding:14px 0;color:#31503a;text-decoration:underline;font-size:13px}

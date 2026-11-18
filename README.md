@@ -7,6 +7,7 @@ The public Test Drive uses fictional Juniper Cove records. Real course workspace
 
 Phones default to field work through Today, Map, Schedule and More. Computer/tablet navigation retains the complete setup workspaces. The device fallback and global presentation rollback are documented below.
 
+- [Mobile field course and walkthrough](docs/MOBILE-TRAINING-20261118.md)
 - [Current documentation and learning index](docs/README.md)
 - [Documentation review and lesson inventory](docs/DOCUMENTATION-REVIEW-20261118.md)
 - [Field-interface behavior and rollback](docs/FIELD-INTERFACE-RELEASE-20261118.md)

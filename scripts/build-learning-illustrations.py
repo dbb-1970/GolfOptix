@@ -18,7 +18,7 @@ for guide in catalog['guides']+catalog['classes']:
    art=rect(0,0,760,360,'#e8eddf',20)+rect(18,18,724,324,'#fffef8',16,'#b5c4a5')+rect(18,18,724,50,'#153e2e',16)
    art+=text('GOLFOPTIX',38,49,16,20,'#efdfb6')+text(badge,335,49,12,48,'#efdfb6')
    art+=text(str(number)+'. '+step['title'],38,104,22,58,limit=2)
-   if guide['id']=='map-navigation':
+   if guide['id']=='map-navigation' or guide['id']=='class-mobile-field' and number in [1,2]:
     art+=rect(38,153,330,139,'#e4ead8')+'<path d="M110 278 Q165 240 170 190 Q180 160 220 166 Q260 172 238 198 Q220 246 200 278Z" fill="#a8c58c"/>'
     art+='<circle cx="223" cy="178" r="13" fill="#789d63"/><path d="M105 270 140 245 158 218 171 192 198 174" fill="none" stroke="#1f8db3" stroke-width="2"/>'
     for x,y in [(105,270),(140,245),(158,218),(171,192),(198,174)]:art+=f'<circle cx="{x}" cy="{y}" r="4" fill="white" stroke="#153e2e"/>'
