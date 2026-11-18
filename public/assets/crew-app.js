@@ -1,6 +1,6 @@
 const M=GolfCrew,$=id=>document.getElementById(id),query=new URLSearchParams(location.search),demo=location.pathname.startsWith('/test-drive/crew/');
 let state=null,user=null,course=null,manager=false,selfId=null,view=['month','week','day'].includes(query.get('view'))?query.get('view'):'week',anchor=(()=>{try{return M.date(query.get('date')||M.day());}catch{return M.day();}})(),filter='all',showCancelled=false,busy=false,dirty=false,demoState=null,orderKind='all';
-let crewCatalog={roles:[],credentials:[]};try{const r=await fetch('/assets/crew-catalog.json',{cache:'no-cache'});if(r.ok)crewCatalog=await r.json();}catch{}
+let crewCatalog={roles:[],credentials:[]},crewCatalogRequest;async function loadCrewCatalog(){if(crewCatalog.roles.length)return;if(!crewCatalogRequest)crewCatalogRequest=fetch('/assets/crew-catalog.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{crewCatalog=data;}).catch(()=>{crewCatalogRequest=null;});return crewCatalogRequest;}if(!window.GolfFieldMode?.active())await loadCrewCatalog();
 let crewConflictKeys=new Set(),thisPersonalLoaded=false;
 const dialog=$('crew-editor');
 const el=(tag,text,cls)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;};
@@ -89,3 +89,5 @@ function ticketBudget(a){const B=window.GolfBusiness;if(!B)return;const leave=B.
 const googleCrewLink=document.createElement('a');googleCrewLink.textContent='Connect Google Calendar';googleCrewLink.className='button outline';googleCrewLink.href=(location.pathname.startsWith('/test-drive/')?'/test-drive/maintenance/operations/':'/maintenance/operations/')+location.search+(location.search?'&':'?')+'tab=google';crewQuickLinks().append(googleCrewLink);
 
 function crewQuickLinks(){let box=$('crew-quick-links');if(!box){box=el('nav',undefined,'crew-quick-links');box.id='crew-quick-links';box.setAttribute('aria-label','Personal schedule');const base=demo?'/test-drive/crew/':'/crew/';for(const [v,label]of [['day','My Day'],['week','My Week']]){const a=el('a',label,'button outline');a.href=base+'?course='+(course?.id||query.get('course')||'')+'&view='+v+'&person=me';box.append(a);}document.querySelector('.calendar-heading').after(box);}return box;}
+
+addEventListener('golf-field-mode-change',async()=>{if(!window.GolfFieldMode?.active())await loadCrewCatalog();if(state)render();});

@@ -1,0 +1,59 @@
+/* Presentation-only field mode. Full tools and desktop retain existing components. */
+.field-nav,.field-note,.field-full-bar{display:none}
+.field-mode .field-nav{display:grid;grid-template-columns:repeat(var(--field-tabs,4),minmax(0,1fr));position:fixed;bottom:0;left:0;right:0;z-index:18;background:#fffefa;border-top:1px solid #b8c8ab;padding:4px 6px max(4px,env(safe-area-inset-bottom));gap:5px}
+.field-nav a,.field-nav button{display:flex;align-items:center;justify-content:center;min-height:48px;font:600 14px Arial;text-decoration:none;border:0;border-radius:8px;color:#204b37;background:transparent}
+.field-nav [aria-current=page]{background:#dce7ce;color:#123e2c}
+.field-mode body:has(.field-nav){padding-bottom:64px}
+.field-mode .phone-workspace{padding-bottom:0!important}
+.field-mode .phone-workspace .app-main{padding-bottom:60px!important}
+.field-mode .workspace-tool-tabs,.field-mode .mobile-map-nav{display:none!important}
+.field-mode .field-note{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 11px;background:#edf0e4;border-left:3px solid #a88d4b;color:#526747;font:12px/1.4 Arial;margin:10px 0}
+.field-note button{border:0;border-bottom:1px solid #879774;color:#244a35;background:none;font:600 11px Arial;min-width:64px;min-height:40px;padding:4px;flex-shrink:0}
+.field-mode .map-panel>.field-note{flex:0 0 auto;margin:0;border:0;border-bottom:1px solid #d7dfcc;padding:3px 10px;font-size:10px;min-height:26px}
+.field-mode .map-panel>.field-note button{min-height:28px;font-size:10px}
+.field-mode [data-field-office=true],.field-mode [data-field-secondary=true],.field-mode .field-office-content{display:none!important}
+.field-mode .field-personal-page .crew-quick-links,.field-mode .field-personal-page nav[aria-label='Personal schedule'],.field-mode .field-personal-page #crew-roster,.field-mode .field-personal-page #crew-manager-actions{display:none!important}
+.field-mode .field-personal-page .calendar-heading>div>p:not(.eyebrow),.field-mode .field-personal-page .calendar-heading>.button,.field-mode .field-personal-page .crew-access-pill{display:none}
+.field-mode .field-team-switch{display:flex;gap:8px;margin:12px 0}
+.field-team-switch a{padding:10px 16px;min-height:44px;background:#e4ebd9;border:1px solid #bdcaad;border-radius:8px;color:#1a4532;text-decoration:none;font-size:14px}
+.field-mode .crew-personal-empty{font-size:12px;padding:12px;margin:10px 0}
+.field-mode .crew-filter{gap:8px}
+.field-mode .calendar-controls{gap:8px}
+.field-mode .calendar-heading h1{font-size:28px!important}
+.field-mode .mobile-workspace-destinations{display:none!important}
+.field-full-mode .field-full-bar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:40;justify-content:space-between;align-items:center;padding:6px 12px;background:#153d2c;color:#fff5dc;font:13px Arial}
+.field-full-bar button{min-height:44px;padding:8px;border:1px solid #d8c281;background:transparent;color:#fff5dc;border-radius:7px}
+.field-full-mode body:has(.field-full-bar){padding-bottom:62px}
+.field-menu{width:min(460px,calc(100vw - 20px));max-height:85dvh;padding:18px;background:#fffefa;color:#153b2d;border:1px solid #afbf9e;border-radius:16px;overflow:auto}
+.field-menu::backdrop{background:#0a2f2355}
+.field-menu-heading{display:flex;align-items:center;justify-content:space-between;position:sticky;top:-18px;background:#fffefa;padding:8px 0;gap:12px}
+.field-menu h2{font:27px Georgia;margin:0}
+.field-menu button,.field-menu a{font:14px Arial;min-height:44px;padding:11px;border:1px solid #becbad;border-radius:8px;background:#f7f8ef;color:#153b2d;text-decoration:none}
+.field-menu details{border-bottom:1px solid #d9e1ce}
+.field-menu summary{padding:16px 0;font-weight:bold;cursor:pointer;min-height:48px}
+.field-menu-links{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.field-menu-links p{font-size:12px;grid-column:1/-1}
+.field-form-step[hidden]{display:none!important}
+.field-step-progress{font-size:13px;font-weight:bold;color:#597347}
+.field-step-controls{display:flex;justify-content:space-between;gap:10px;margin:16px 0}
+.field-step-controls button{min-height:44px;padding:12px 24px;border:1px solid #b9c8a8;border-radius:8px;background:#153d2c;color:#fff9e5}
+.field-summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.field-summary-card{padding:14px;background:#fffefa;border:1px solid #d0dbc3;border-radius:10px;overflow-wrap:anywhere}
+.field-summary-card strong{display:block;font:25px Georgia;margin:8px 0}
+.field-summary-card p{font:12px/1.5 Arial}
+.field-order-link{display:block;padding:14px;margin:8px 0;background:#fffefa;border:1px solid #cbd8bc;border-radius:9px;color:#183f2f;text-decoration:none;font-size:14px}
+.field-order-link small{display:block;margin-top:6px;font-size:12px}
+@media print{.field-nav,.field-note,.field-full-bar,.field-step-controls,.field-step-progress{display:none!important}.field-form-step[hidden]{display:block!important}}
+
+.field-mode .crew-roster{max-height:300px;overflow:auto}
+.field-mode .pin-entry-choices,.field-mode #pin-setups,.field-mode #pin-rotations{display:none!important}
+.field-mode #learn-create,.field-mode #event-planning{display:none!important}
+.field-mode .field-personal-page #crew-demo-role,.field-mode .field-personal-page #crew-email-notice{display:none!important}
+.field-mode .report-table-wrap{display:none}
+
+.field-mode .field-personal-page #crew-access,.field-mode .field-personal-page .crew-help-text,.field-mode .field-personal-page #crew-email-details,.field-mode .field-personal-page #crew-history{display:none!important}
+.field-mode .field-personal-page .calendar-view button[data-crew-view=month]{display:none}
+.field-mode .field-personal-page .crew-filter:has(#crew-worker-filter){margin:8px 0}
+
+.field-mode #ops-tabs{display:none!important}
+.field-mode .report-mobile-nav::after,.field-mode .workspace-tool-tabs::after,.field-mode #ops-tabs::after{display:none!important}

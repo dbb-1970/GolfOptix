@@ -1,4 +1,4 @@
-import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=phone-audit1';
+import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=field2';
 
 const page=Object.keys(tourPages).find(key=>tourPages[key]===location.pathname)||(location.pathname==='/test-drive/maintenance/reports/'?'operations':null);
 if(page&&!(['chemicals','learn'].includes(page)&&new URLSearchParams(location.search).get('view')==='worker')) init();
@@ -27,14 +27,14 @@ function init(){
   const next=control('NEXT →','demo-tour-next',()=>advance(1));
   card.append(meta,progress,title,copy,actions);ui.append(ring,connector,card);document.body.append(launch,ui);
   function persist(){state.updatedAt=Date.now();try{sessionStorage.setItem(KEY,JSON.stringify(state));}catch{}}
-  function finish(){window.GolfPumpTour?.restore();if(ownedDialog?.matches('[data-tour-recovery]')){ownedDialog.close();ownedDialog=null;}window.GolfCrewTour?.restore();state.active=false;state.seen=true;persist();target=null;ui.hidden=true;document.body.append(ui);launch.hidden=false;(previousFocus?.isConnected?previousFocus:launch).focus({preventScroll:true});}
+  function finish(){try{if(sessionStorage.getItem('golfoptix-tour-return-field')==='yes'){sessionStorage.removeItem('golfoptix-tour-return-field');window.GolfFieldMode?.set('field');}}catch{}window.GolfPumpTour?.restore();if(ownedDialog?.matches('[data-tour-recovery]')){ownedDialog.close();ownedDialog=null;}window.GolfCrewTour?.restore();state.active=false;state.seen=true;persist();target=null;ui.hidden=true;document.body.append(ui);launch.hidden=false;(previousFocus?.isConnected?previousFocus:launch).focus({preventScroll:true});}
   launch.onclick=()=>chooseGuide();
-  function startGuide(index=0,quick=false){closePane();previousFocus=document.activeElement;state={version:2,active:true,seen:true,index,quick,updatedAt:Date.now()};persist();show();}
+  function startGuide(index=0,quick=false){if(window.GolfFieldMode?.active()){try{sessionStorage.setItem('golfoptix-tour-return-field','yes');}catch{}window.GolfFieldMode.set('full');}closePane();previousFocus=document.activeElement;state={version:2,active:true,seen:true,index,quick,updatedAt:Date.now()};persist();show();}
   const quickIndices=[0,...['Every feature has a story.','Turn a problem into a repair.','A clear morning dispatch.','Reuse the job, review the instructions.','Actual work deserves its own record.','Let conditions start a conversation.','Set the day’s challenge.','Plan around the day’s play.','A clear week. A focused day.','Capture the time actually worked.','Draft close is a request.','Back to the approval desk.','Approve it—or send it back.','The whole story stays with the ticket.','Two libraries. One familiar home.',"Let's tee this up!"].map(title=>tourSteps.findIndex(s=>s.title===title)).filter(n=>n>=0)];
   function chooseGuide(){
     state.active=false;persist();ui.hidden=true;launch.hidden=false;
     const d=make('dialog','demo-tour-picker'),h=make('h2',null,'Choose your walkthrough');h.id='tour-picker-title';d.setAttribute('aria-labelledby',h.id);
-    const intro=make('p','demo-tour-picker-intro','Start with the full tour, take a quick look, or explore one chapter.');
+    const intro=make('p','demo-tour-picker-intro','Start with the full tour, take a quick look, or explore one chapter. On a phone, the tour temporarily shows full tools; ending it returns you to field view.');
     const form=make('form','demo-tour-picker-form'),list=make('fieldset','demo-tour-choices'),legend=make('legend','demo-tour-choice-legend','Choose a walkthrough');list.append(legend);
     const options=[{title:'Full superintendent tour',detail:'Explore the complete GolfOptix workflow',index:0,quick:false},{title:'Five-minute overview',detail:'A quick introduction to the essentials',index:0,quick:true},...[["map","Course map"],["garage","Garage"],["pumps","Pump Stations"],["operations","Daily work"],["calendar","Calendar"],["crew","Crew"],["chemicals","Chemical Management"],["pins","Pin placements"],["events","Course events"],["learn","Learning libraries"]].map(([page,title])=>({title,detail:'Start this chapter',index:tourSteps.findIndex(s=>s.page===page),quick:false}))];
     options.forEach((option,i)=>{const row=make('label','demo-tour-choice'),input=make('input');input.type='radio';input.name='walkthrough';input.value=String(i);input.checked=i===0;

@@ -1,5 +1,5 @@
 {
-  "version": "2026.11.17",
+  "version": "2026.11.18",
   "guides": [
     {
       "id": "start",
@@ -22,8 +22,8 @@
         },
         {
           "title": "Find your tools",
-          "text": "Use the same-sized function tabs. The selected tab is highlighted; use Map to return to the overview.",
-          "control": "Map · Maintenance · Calendar · Crew",
+          "text": "On a phone, use Today, Map, Schedule and More for field work. Computer and tablet screens retain the function tabs. A small note explains fuller setup tools; Full tools on this device temporarily restores them, and Return to field view brings back the simpler layout.",
+          "control": "Today · Map · Schedule · More",
           "example": "One active track at a time",
           "image": "/assets/learn/start-2.svg"
         },
@@ -56,8 +56,8 @@
           },
           {
             "title": "Busque las herramientas",
-            "text": "Use las pestañas del mismo tamaño. Mapa vuelve a la vista general.",
-            "control": "Map · Maintenance · Calendar · Crew",
+            "text": "En el teléfono, use Hoy, Mapa, Calendario y Más para trabajar en campo. La computadora y tableta conservan las pestañas. Todas las herramientas restaura la configuración completa en este dispositivo; Volver a la vista de campo recupera la vista sencilla.",
+            "control": "Hoy · Mapa · Calendario · Más",
             "example": "Práctica: Use las pestañas del mismo tamaño. Mapa vuelve a la vista general.",
             "image": "/assets/learn/start-2-es.svg"
           },
@@ -3108,7 +3108,7 @@
       "steps": [
         {
           "title": "Open Reports",
-          "text": "Choose Reports in the course navigation. Only authorized course managers can open whole-course and financial reports.",
+          "text": "Choose Reports in the course navigation. Only authorized course managers can open whole-course and financial reports. On a phone, open More → Course & insight → Reports for compact status cards and urgent-first work links. Annual budget entry, detailed ledgers and exports remain in Full tools on a computer or tablet.",
           "control": "Reports",
           "example": "Choose Budget status or Work order status",
           "image": "/assets/learn/reports-1.svg"
@@ -3148,7 +3148,7 @@
         "steps": [
           {
             "title": "Abra Informes",
-            "text": "Elija Informes en la navegación del campo. Solo los responsables autorizados pueden consultar datos financieros y de todo el campo.",
+            "text": "Elija Informes en la navegación del campo. Solo los responsables autorizados pueden consultar datos financieros y de todo el campo. En el teléfono, abra Más → Campo e informes → Informes para ver resúmenes y órdenes urgentes. La entrada anual del presupuesto, libros detallados y exportaciones siguen en Todas las herramientas para computadora o tableta.",
             "control": "Informes",
             "example": "Estado del presupuesto o de las órdenes",
             "image": "/assets/learn/reports-1-es.svg"

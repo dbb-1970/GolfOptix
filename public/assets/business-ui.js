@@ -1,6 +1,13 @@
 /* Financial amounts are manager-only. Receipt drafts never post automatically. */
 export function renderBusiness(ctx){const{state:s,course,access,run,form,input,card,button,el,id,date,demo}=ctx,B=GolfBusiness,C=GolfCrew,b=B.init(s),tab=ctx.tab,root=demo?'/test-drive/maintenance/':'/maintenance/',cash=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(n),projects=[['','Course operations'],...Object.values(b.projects).filter(p=>!p.archived).map(p=>[p.id,p.name])],jobs={...s.assignments,...s.workOrders},tickets=[['','No specific work order'],...Object.values(jobs).map(w=>[w.id,w.title+' · '+w.date])],yesno=[['no','No'],['yes','Yes']],notice=(p,e)=>{p.textContent=e.message;},download=(name,data,type='application/json')=>{const u=URL.createObjectURL(new Blob([data],{type})),a=el('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);};
 if(tab==='budget'){
+ if(window.GolfFieldMode?.active()){
+  const c=card('Budget at a glance','Recorded costs only. Annual setup, amendments and full ledgers are available on a computer or tablet.');
+  for(const budget of Object.values(b.budgets)){const r=B.report(s,budget.id),box=el('article',undefined,'field-summary-card');box.append(el('h3',budget.name),el('p',budget.date+' — '+budget.endDate),el('p','Recorded spending '+cash(r.spent)),el('strong','Available '+cash(r.available)),el('p','Open commitments '+cash(r.committed)),el('p',r.unpriced?r.unpriced+' entries are missing costs; totals are incomplete.':'Unrecorded bills, payroll and future costs are not inferred.'));c.append(box);}
+  if(!Object.keys(b.budgets).length)c.append(el('p','No budget has been entered yet. Set it up using the full tools on a computer or tablet.'));
+  c.append(button('Set work-order estimate / project',()=>workForm()));return;
+ }
+
  const c=card('Budgets and spending','Enter a full annual allowance, or the remaining allowance as of a chosen date. Purchases and recorded labor count against it; using purchased stock does not count a second time. Estimates are commitments, not additional spending.');
  c.append(button('Set a budget',()=>budgetForm()),button('Add a project',()=>form('Add project',[['name','Project name',{required:true}],['notes','Purpose / scope',{type:'textarea'}]],v=>run('biz.project.save',id('PRJ'),v))));
  for(const p of Object.values(b.projects))c.append(el('p','Project: '+p.name));
