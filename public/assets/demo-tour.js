@@ -1,4 +1,4 @@
-import './mobile-tour.js?v=mobilecourse1';
+import './mobile-tour.js?v=mobilecourse2';
 import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=mobilecourse1';
 
 const page=Object.keys(tourPages).find(key=>tourPages[key]===location.pathname)||(location.pathname==='/test-drive/maintenance/reports/'?'operations':null);

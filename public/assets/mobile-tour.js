@@ -3,7 +3,7 @@ import {placeFlyout} from './demo-tour-model.js?v=mobilecourse1';
 const KEY='golfoptix-mobile-tour-v1',path=location.pathname;if(!path.startsWith('/test-drive/')||path==='/test-drive/mobile/'){}else init();
 function init(){
  const $=s=>document.querySelector(s),make=(tag,text,cls)=>{const e=document.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;return e;};
- let state;try{state=readMobileTour(sessionStorage.getItem(KEY));}catch{state=readMobileTour(null);}let busy=false,target,ui,card,title,copy,count,back,next,ring,owned=null;
+ let state;try{state=readMobileTour(sessionStorage.getItem(KEY));}catch{state=readMobileTour(null);}let busy=false,target,ui,card,title,copy,count,back,next,ring,owned=null;if(state.active&&!matchMedia('(max-width:760px), (max-height:500px) and (pointer:coarse)').matches){state.active=false;try{sessionStorage.setItem(KEY,JSON.stringify(state));}catch{}}
  const spanish=()=>window.GolfLanguage?.get()==='es',say=(en,es)=>spanish()?es:en;
  const persist=()=>{state.at=Date.now();try{sessionStorage.setItem(KEY,JSON.stringify(state));}catch{}};
  function closeOwned(){if(owned?.open)owned.close();owned=null;window.GolfCrewTour?.restore();window.GolfPumpTour?.restore();$('.mobile-drawer-backdrop')?.click();$('#close-asset')?.click();}
