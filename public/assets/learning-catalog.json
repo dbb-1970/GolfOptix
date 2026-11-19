@@ -2569,7 +2569,7 @@
       "summary": "Keep personal access understandable and course-scoped.",
       "example": "A new worker confirms they are opening the invited course.",
       "pitfall": "A job title is not a substitute for administrator approval or course membership.",
-      "version": "2026.11.18",
+      "version": "2026.11.19",
       "minutes": 8,
       "steps": [
         {
@@ -2588,8 +2588,8 @@
         },
         {
           "title": "Edit your own profile",
-          "text": "Open My account to change supported profile information.",
-          "control": "My account",
+          "text": "Select your circular avatar beside the language picker or on My Day. Edit profile and Change password open your own account settings. Choose a face photo with crop sliders or the neutral maintenance-worker icon; Save avatar keeps it private to your account.",
+          "control": "My profile / Change photo or icon",
           "example": "Keep your contact details current",
           "image": "/assets/learn/accounts-3.svg"
         },
@@ -2622,8 +2622,8 @@
           },
           {
             "title": "Edite su perfil",
-            "text": "Use Mi cuenta para los datos permitidos.",
-            "control": "Mi cuenta",
+            "text": "Seleccione su avatar circular junto al selector de idioma o en Mi día. Editar perfil y Cambiar contraseña abren su propia cuenta. Elija una foto con controles de recorte o el icono neutro; Guardar avatar lo mantiene privado en su cuenta.",
+            "control": "Mi perfil / Cambiar foto o icono",
             "example": "Práctica: Use Mi cuenta para los datos permitidos.",
             "image": "/assets/learn/accounts-3-es.svg"
           },

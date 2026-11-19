@@ -1,5 +1,5 @@
-import './mobile-tour.js?v=mobilecourse2';
-import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=mobilecourse1';
+import './mobile-tour.js?v=avatar1';
+import {tourPages,tourSteps,readTour,placeFlyout} from './demo-tour-model.js?v=avatar1';
 
 const page=Object.keys(tourPages).find(key=>tourPages[key]===location.pathname)||(location.pathname==='/test-drive/maintenance/reports/'?'operations':null);
 if(page&&!(['chemicals','learn'].includes(page)&&new URLSearchParams(location.search).get('view')==='worker')) init();

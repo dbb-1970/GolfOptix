@@ -1,5 +1,5 @@
-import {mobileTourSteps as steps,readMobileTour,mobileTourURL} from './mobile-tour-model.js?v=mobilecourse1';
-import {placeFlyout} from './demo-tour-model.js?v=mobilecourse1';
+import {mobileTourSteps as steps,readMobileTour,mobileTourURL} from './mobile-tour-model.js?v=avatar1';
+import {placeFlyout} from './demo-tour-model.js?v=avatar1';
 const KEY='golfoptix-mobile-tour-v1',path=location.pathname;if(!path.startsWith('/test-drive/')||path==='/test-drive/mobile/'){}else init();
 function init(){
  const $=s=>document.querySelector(s),make=(tag,text,cls)=>{const e=document.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;return e;};
