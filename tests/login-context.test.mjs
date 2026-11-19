@@ -37,6 +37,8 @@ test('URL hints cannot grant course access or choose an external post-login dest
   const approved={courses:[{id:'kings-ridge-kings',url:'/course/'}]};
   assert.equal(loginDestination({courses:[]},'kings-ridge-kings',true),null);
   assert.equal(loginDestination(approved,'unapproved',true),null);
-  assert.equal(loginDestination(approved,'kings-ridge-kings',true),'/crew/?course=kings-ridge-kings');
-  assert.equal(loginDestination(approved,'kings-ridge-kings',false),'/course/');
+  assert.equal(loginDestination(approved,'kings-ridge-kings',true),'/crew/?course=kings-ridge-kings&view=day&person=me');
+  assert.equal(loginDestination(approved,'kings-ridge-kings',false),'/crew/?course=kings-ridge-kings&view=day&person=me');
 });
+
+test('Crew and Super both land on their own day without trusting a supplied course URL',()=>{for(const crewOnly of [true,false]){const u={courses:[{id:'course / one',crewOnly,url:'https://untrusted.invalid/'}]};assert.equal(loginDestination(u,'course / one'),'/crew/?course=course%20%2F%20one&view=day&person=me');}assert.equal(loginDestination({courses:[]},'course / one'),null);});

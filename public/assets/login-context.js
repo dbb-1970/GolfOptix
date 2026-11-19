@@ -13,5 +13,5 @@ export function loginContext(courses, search) {
 
 export function loginDestination(user, trackId, crewSetup) {
   const track = user.courses?.find(t => t.id === trackId);
-  return track ? (crewSetup ? '/crew/?course=' + encodeURIComponent(track.id) : track.url) : null;
+  return track ? '/crew/?course=' + encodeURIComponent(track.id) + '&view=day&person=me' : null;
 }

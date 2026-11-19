@@ -10,12 +10,12 @@
       "summary": "Know where you are and how to reach each workspace.",
       "example": "A superintendent checks Kings Course before planning today’s work.",
       "pitfall": "A demo record is not a live course record.",
-      "version": "2026.11.18",
+      "version": "2026.11.19",
       "minutes": 8,
       "steps": [
         {
           "title": "Choose the correct track",
-          "text": "Sign in with your approved account. Choose the course and track you intend to manage.",
+          "text": "Sign in with your approved account and choose the course and track. Crew and Super both start on My Day, showing their own work for today. Direct ticket links still open the requested ticket.",
           "control": "Sign in",
           "example": "Kings Ridge · Kings Course",
           "image": "/assets/learn/start-1.svg"
@@ -49,7 +49,7 @@
         "steps": [
           {
             "title": "Elija el recorrido",
-            "text": "Inicie sesión con su cuenta aprobada y confirme el club y recorrido.",
+            "text": "Inicie sesión con su cuenta aprobada y elija campo y recorrido. Personal y Super empiezan en Mi día, con su propio trabajo de hoy. Los enlaces directos a órdenes siguen abriendo la orden solicitada.",
             "control": "Iniciar sesión",
             "example": "Práctica: Inicie sesión con su cuenta aprobada y confirme el club y recorrido.",
             "image": "/assets/learn/start-1-es.svg"
