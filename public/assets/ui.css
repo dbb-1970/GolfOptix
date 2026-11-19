@@ -34,3 +34,6 @@ header:has(>.owner-admin-link){column-gap:18px}
 header>.owner-admin-link{order:20;margin-left:0}
 header>.language-switch{order:30;margin-left:auto;flex-shrink:0;justify-content:flex-end}
 @media(max-width:760px){header:has(>.owner-admin-link){flex-wrap:wrap;gap:12px}header>.language-switch{margin-left:auto}}
+/* Give the My Day introduction a clear pause before the action rows. */
+.crew-page .calendar-heading{margin-bottom:20px;gap:18px}.crew-page .calendar-heading h1{margin-bottom:12px}.crew-page .calendar-heading>div>p{margin:0;line-height:1.7;max-width:66ch}.crew-page .crew-quick-links{margin:0 0 18px;gap:10px;row-gap:12px}
+@media(max-width:760px){.crew-page .calendar-heading{margin-bottom:14px}.crew-page .calendar-heading h1{margin-bottom:6px}}

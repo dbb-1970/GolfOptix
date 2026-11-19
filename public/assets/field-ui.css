@@ -57,3 +57,5 @@
 
 .field-mode #ops-tabs{display:none!important}
 .field-mode .report-mobile-nav::after,.field-mode .workspace-tool-tabs::after,.field-mode #ops-tabs::after{display:none!important}
+/* A phone-only switch must not linger unspaced after returning to computer layout. */
+.field-team-switch{display:none}.field-mode .field-team-switch{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 18px}

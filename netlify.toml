@@ -166,7 +166,7 @@
   to = "/maintenance/:splat"
   status = 200
   force = true
-  conditions = {Role = ["owner", "kings-member"]}
+  conditions = {Role = ["owner", "kings-member", "crew"]}
 [[redirects]]
   from = "/maintenance/*"
   to = "/login/?required=maintenance"
@@ -183,7 +183,7 @@
   to = "/course/:splat"
   status = 200
   force = true
-  conditions = {Role = ["owner", "kings-member"]}
+  conditions = {Role = ["owner", "kings-member", "crew"]}
 [[redirects]]
   from = "/course/*"
   to = "/login/?required=course"
@@ -195,6 +195,13 @@
   status = 200
   force = true
   conditions = {Role = ["owner", "kings-member"]}
+# Delegated Supers are checked against the current server roster for each asset.
+[[redirects]]
+  from = "/course-preview/*"
+  to = "/api/course-map-asset?file=:splat"
+  status = 200
+  force = true
+  conditions = {Role = ["crew"]}
 [[redirects]]
   from = "/course-preview/*"
   to = "/access-denied/"
@@ -217,5 +224,22 @@
     Cache-Control = "no-store"
 [[headers]]
   for = "/course-preview/*"
+  [headers.values]
+    Cache-Control = "private, no-store"
+
+# Quick Start contains no static customer data; the API independently requires Super access.
+[[redirects]]
+  from = "/quick-start/*"
+  to = "/quick-start/:splat"
+  status = 200
+  force = true
+  conditions = {Role = ["owner", "admin", "kings-member", "crew"]}
+[[redirects]]
+  from = "/quick-start/*"
+  to = "/login/?required=quick-start"
+  status = 302
+  force = true
+[[headers]]
+  for = "/quick-start/*"
   [headers.values]
     Cache-Control = "private, no-store"

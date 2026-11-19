@@ -1,5 +1,5 @@
 {
-  "version": "2026.11.18-mobile",
+  "version": "2026.11.19-quickstart",
   "guides": [
     {
       "id": "start",
@@ -93,6 +93,142 @@
       },
       "deviceMode": "both",
       "deviceNote": "Use a computer or tablet for course setup. Phones start in field view with Today, Map, Schedule and More. Full tools restores your authorized setup controls on this device; Return to field view switches back."
+    },
+    {
+      "id": "quick-start",
+      "title": "Quick Start: build a useful first day",
+      "category": "Getting started",
+      "screen": "quickstart",
+      "role": "manager",
+      "library": "support",
+      "summary": "An eight-step, resumable setup for people, opening balances, equipment, stock and first work. Works on phone and computer.",
+      "example": "A Super starts with confirmed data and a real first assignment.",
+      "pitfall": "Do not invent readings, quantities or prior spending. Review before publishing; release email separately.",
+      "version": "2026.11.19",
+      "minutes": 20,
+      "steps": [
+        {
+          "title": "Confirm your operation",
+          "text": "Open Quick Start from My Day or More. Confirm the property address and current track. An unavailable track is not activated. Existing forecast points and source maps are preserved.",
+          "control": "Course & tracks",
+          "example": "Kings Course now; Ridge stays deferred.",
+          "image": "/assets/learn/quick-start-en-1.svg"
+        },
+        {
+          "title": "Decide what is shared",
+          "text": "Review each resource separately: crew, budget, Garage, pumps, chemicals, parts, fuel, seed and facilities. Matching groups share a canonical record; separate groups keep separate records. Another manager’s tracks require their approval. The current live release activates single-track properties; multi-track migration requires coordinated support.",
+          "control": "Shared resources",
+          "example": "One shed and one budget; equipment sharing is a separate choice.",
+          "image": "/assets/learn/quick-start-en-2.svg"
+        },
+        {
+          "title": "Start from a known balance",
+          "text": "Check I know the remaining budget balance, enter the amount, as-of date and end date. Say whether recorded commitments were already deducted. Leave the choice off to keep your existing budget. Review blocks an overlapping new budget rather than overwriting it.",
+          "control": "Starting budget",
+          "example": "$48,000 remaining as of today; no historic spending invented.",
+          "image": "/assets/learn/quick-start-en-3.svg"
+        },
+        {
+          "title": "Add people and working hours",
+          "text": "Choose a job title, email, language and Crew or Super access separately. Add working days, start/end times and availability dates. A matching verified signed-in email links your own crew profile. Review fails if first assignments are outside recorded hours.",
+          "control": "Crew & hours",
+          "example": "Spray Technician with Crew access, Monday–Friday 06:00–14:00.",
+          "image": "/assets/learn/quick-start-en-4.svg"
+        },
+        {
+          "title": "Confirm the equipment baseline",
+          "text": "Choose a known model or enter custom equipment. Confirm condition, meter type and the current reading. Choose Unknown instead of entering a made-up zero. Catalog browsing creates no inventory or maintenance history.",
+          "control": "Garage",
+          "example": "A mower has 1,245 hours today, not a guessed lifetime history.",
+          "image": "/assets/learn/quick-start-en-5.svg"
+        },
+        {
+          "title": "Count what you actually have",
+          "text": "Add exact chemical references, seed/materials, parts, tanks and maintenance facilities. Confirm quantities only after checking them. Opening balances are not new spending. Unknown parts value must be recorded in Parts before costed issue. Fuel quantity confirmation currently requires a unit cost. Chemical use still needs label/SDS and local review.",
+          "control": "Stock & facilities",
+          "example": "12 bags counted today; unknown stock stays unconfirmed.",
+          "image": "/assets/learn/quick-start-en-6.svg"
+        },
+        {
+          "title": "Make the first day useful",
+          "text": "Assign an existing or new worker, a date, time, duration, clear instructions and optional Garage equipment. Classify Planned or Emergency. Review checks crew hours, bookings, equipment condition and event restrictions. Choose My Day after publishing, or Team today to review others’ work.",
+          "control": "First work",
+          "example": "An operating mower and qualified worker, booked before play.",
+          "image": "/assets/learn/quick-start-en-7.svg"
+        },
+        {
+          "title": "Review, publish and release separately",
+          "text": "Select Check setup before publishing. Correct any error, review the counts and confirm Publish reviewed setup. The starting state is saved and read back before publication. Work and welcome emails stay held. Release them only after reviewing the people and assignments. Save & exit keeps an unfinished draft. Demo changes expire and never send real emails.",
+          "control": "Review & launch",
+          "example": "Draft → review → publish → release messages → My Day.",
+          "image": "/assets/learn/quick-start-en-8.svg"
+        }
+      ],
+      "deviceMode": "both",
+      "es": {
+        "title": "Inicio rápido: prepare el primer día",
+        "summary": "Configure personas, saldos, equipos, existencias y primeras tareas en ocho pasos. Funciona en teléfono y computadora.",
+        "steps": [
+          {
+            "title": "Confirme su operación",
+            "text": "Abra Inicio rápido desde Mi día o Más. Confirme la dirección y el recorrido actual. No se activa un recorrido no disponible ni se modifica el mapa.",
+            "control": "Course & tracks",
+            "example": "Kings Course now; Ridge stays deferred.",
+            "image": "/assets/learn/quick-start-es-1.svg"
+          },
+          {
+            "title": "Decida qué se comparte",
+            "text": "Revise personal, presupuesto, equipos, bombas, productos, repuestos, combustible, semillas e instalaciones por separado. Los grupos comunes comparten un registro. La activación de varias pistas requiere una migración coordinada.",
+            "control": "Shared resources",
+            "example": "One shed and one budget; equipment sharing is a separate choice.",
+            "image": "/assets/learn/quick-start-es-2.svg"
+          },
+          {
+            "title": "Comience con un saldo conocido",
+            "text": "Indique el saldo restante, la fecha y el fin del período. Aclare si ya se descontaron compromisos registrados. Puede conservar el presupuesto actual; no se inventan gastos anteriores.",
+            "control": "Starting budget",
+            "example": "$48,000 remaining as of today; no historic spending invented.",
+            "image": "/assets/learn/quick-start-es-3.svg"
+          },
+          {
+            "title": "Añada personas y horarios",
+            "text": "Elija cargo, correo, idioma y acceso Personal o Super por separado. Registre días, horas y fechas. El correo verificado de su cuenta vincula su propio perfil. Las primeras tareas deben respetar las horas registradas.",
+            "control": "Crew & hours",
+            "example": "Spray Technician with Crew access, Monday–Friday 06:00–14:00.",
+            "image": "/assets/learn/quick-start-es-4.svg"
+          },
+          {
+            "title": "Confirme la base de los equipos",
+            "text": "Elija un modelo o añada su equipo. Confirme estado, medidor y lectura actual. Elija Desconocido cuando corresponda. Explorar el catálogo no crea historial.",
+            "control": "Garage",
+            "example": "A mower has 1,245 hours today, not a guessed lifetime history.",
+            "image": "/assets/learn/quick-start-es-5.svg"
+          },
+          {
+            "title": "Cuente lo que realmente tiene",
+            "text": "Añada productos, semillas, materiales, repuestos, tanques e instalaciones. Confirme cantidades medidas. Los saldos iniciales no son gastos nuevos. Registre el valor de repuestos antes de emitirlos con costo; el combustible inicial requiere costo unitario.",
+            "control": "Stock & facilities",
+            "example": "12 bags counted today; unknown stock stays unconfirmed.",
+            "image": "/assets/learn/quick-start-es-6.svg"
+          },
+          {
+            "title": "Prepare el primer día",
+            "text": "Asigne persona, fecha, hora, duración, instrucciones y equipo opcional. Clasifique trabajo Planificado o Emergencia. Se revisan horarios, reservas, estado del equipo y restricciones de eventos.",
+            "control": "First work",
+            "example": "An operating mower and qualified worker, booked before play.",
+            "image": "/assets/learn/quick-start-es-7.svg"
+          },
+          {
+            "title": "Revise, publique y envíe por separado",
+            "text": "Compruebe la configuración, corrija errores y confirme la publicación. Se conserva una copia inicial verificada. Los correos quedan retenidos hasta que los libere. Guardar y salir conserva el borrador. La demostración no envía correos reales.",
+            "control": "Review & launch",
+            "example": "Draft → review → publish → release messages → My Day.",
+            "image": "/assets/learn/quick-start-es-8.svg"
+          }
+        ],
+        "deviceNote": "Inicio rápido es una configuración para teléfono y computadora. Guarde cada paso para conservar el borrador privado; se mantienen los permisos normales."
+      },
+      "deviceNote": "Quick Start is an intentional phone and computer setup flow. Use Save & continue to retain the private draft; normal workspace permissions still apply."
     },
     {
       "id": "map-navigation",
@@ -4694,6 +4830,158 @@
           }
         ]
       }
+    },
+    {
+      "id": "class-quick-start",
+      "title": "Practice launching an operation",
+      "category": "Superintendent setup",
+      "screen": "quickstart",
+      "role": "manager",
+      "library": "course",
+      "summary": "A practical setup class: use the fictional course, confirm baselines, assign first work, and discuss what must stay unknown.",
+      "example": "A Super starts with confirmed data and a real first assignment.",
+      "pitfall": "Do not invent readings, quantities or prior spending. Review before publishing; release email separately.",
+      "version": "2026.11.19",
+      "minutes": 20,
+      "steps": [
+        {
+          "title": "Confirm your operation",
+          "text": "Open Quick Start from My Day or More. Confirm the property address and current track. An unavailable track is not activated. Existing forecast points and source maps are preserved.",
+          "control": "Course & tracks",
+          "example": "Kings Course now; Ridge stays deferred.",
+          "image": "/assets/learn/class-quick-start-en-1.svg"
+        },
+        {
+          "title": "Decide what is shared",
+          "text": "Review each resource separately: crew, budget, Garage, pumps, chemicals, parts, fuel, seed and facilities. Matching groups share a canonical record; separate groups keep separate records. Another manager’s tracks require their approval. The current live release activates single-track properties; multi-track migration requires coordinated support.",
+          "control": "Shared resources",
+          "example": "One shed and one budget; equipment sharing is a separate choice.",
+          "image": "/assets/learn/class-quick-start-en-2.svg"
+        },
+        {
+          "title": "Start from a known balance",
+          "text": "Check I know the remaining budget balance, enter the amount, as-of date and end date. Say whether recorded commitments were already deducted. Leave the choice off to keep your existing budget. Review blocks an overlapping new budget rather than overwriting it.",
+          "control": "Starting budget",
+          "example": "$48,000 remaining as of today; no historic spending invented.",
+          "image": "/assets/learn/class-quick-start-en-3.svg"
+        },
+        {
+          "title": "Add people and working hours",
+          "text": "Choose a job title, email, language and Crew or Super access separately. Add working days, start/end times and availability dates. A matching verified signed-in email links your own crew profile. Review fails if first assignments are outside recorded hours.",
+          "control": "Crew & hours",
+          "example": "Spray Technician with Crew access, Monday–Friday 06:00–14:00.",
+          "image": "/assets/learn/class-quick-start-en-4.svg"
+        },
+        {
+          "title": "Confirm the equipment baseline",
+          "text": "Choose a known model or enter custom equipment. Confirm condition, meter type and the current reading. Choose Unknown instead of entering a made-up zero. Catalog browsing creates no inventory or maintenance history.",
+          "control": "Garage",
+          "example": "A mower has 1,245 hours today, not a guessed lifetime history.",
+          "image": "/assets/learn/class-quick-start-en-5.svg"
+        },
+        {
+          "title": "Count what you actually have",
+          "text": "Add exact chemical references, seed/materials, parts, tanks and maintenance facilities. Confirm quantities only after checking them. Opening balances are not new spending. Unknown parts value must be recorded in Parts before costed issue. Fuel quantity confirmation currently requires a unit cost. Chemical use still needs label/SDS and local review.",
+          "control": "Stock & facilities",
+          "example": "12 bags counted today; unknown stock stays unconfirmed.",
+          "image": "/assets/learn/class-quick-start-en-6.svg"
+        },
+        {
+          "title": "Make the first day useful",
+          "text": "Assign an existing or new worker, a date, time, duration, clear instructions and optional Garage equipment. Classify Planned or Emergency. Review checks crew hours, bookings, equipment condition and event restrictions. Choose My Day after publishing, or Team today to review others’ work.",
+          "control": "First work",
+          "example": "An operating mower and qualified worker, booked before play.",
+          "image": "/assets/learn/class-quick-start-en-7.svg"
+        },
+        {
+          "title": "Review, publish and release separately",
+          "text": "Select Check setup before publishing. Correct any error, review the counts and confirm Publish reviewed setup. The starting state is saved and read back before publication. Work and welcome emails stay held. Release them only after reviewing the people and assignments. Save & exit keeps an unfinished draft. Demo changes expire and never send real emails.",
+          "control": "Review & launch",
+          "example": "Draft → review → publish → release messages → My Day.",
+          "image": "/assets/learn/class-quick-start-en-8.svg"
+        }
+      ],
+      "deviceMode": "both",
+      "es": {
+        "title": "Practique el inicio de una operación",
+        "summary": "Clase práctica con el campo ficticio: confirme bases, asigne trabajo y conserve datos desconocidos sin inventarlos.",
+        "steps": [
+          {
+            "title": "Confirme su operación",
+            "text": "Abra Inicio rápido desde Mi día o Más. Confirme la dirección y el recorrido actual. No se activa un recorrido no disponible ni se modifica el mapa.",
+            "control": "Course & tracks",
+            "example": "Kings Course now; Ridge stays deferred.",
+            "image": "/assets/learn/class-quick-start-es-1.svg"
+          },
+          {
+            "title": "Decida qué se comparte",
+            "text": "Revise personal, presupuesto, equipos, bombas, productos, repuestos, combustible, semillas e instalaciones por separado. Los grupos comunes comparten un registro. La activación de varias pistas requiere una migración coordinada.",
+            "control": "Shared resources",
+            "example": "One shed and one budget; equipment sharing is a separate choice.",
+            "image": "/assets/learn/class-quick-start-es-2.svg"
+          },
+          {
+            "title": "Comience con un saldo conocido",
+            "text": "Indique el saldo restante, la fecha y el fin del período. Aclare si ya se descontaron compromisos registrados. Puede conservar el presupuesto actual; no se inventan gastos anteriores.",
+            "control": "Starting budget",
+            "example": "$48,000 remaining as of today; no historic spending invented.",
+            "image": "/assets/learn/class-quick-start-es-3.svg"
+          },
+          {
+            "title": "Añada personas y horarios",
+            "text": "Elija cargo, correo, idioma y acceso Personal o Super por separado. Registre días, horas y fechas. El correo verificado de su cuenta vincula su propio perfil. Las primeras tareas deben respetar las horas registradas.",
+            "control": "Crew & hours",
+            "example": "Spray Technician with Crew access, Monday–Friday 06:00–14:00.",
+            "image": "/assets/learn/class-quick-start-es-4.svg"
+          },
+          {
+            "title": "Confirme la base de los equipos",
+            "text": "Elija un modelo o añada su equipo. Confirme estado, medidor y lectura actual. Elija Desconocido cuando corresponda. Explorar el catálogo no crea historial.",
+            "control": "Garage",
+            "example": "A mower has 1,245 hours today, not a guessed lifetime history.",
+            "image": "/assets/learn/class-quick-start-es-5.svg"
+          },
+          {
+            "title": "Cuente lo que realmente tiene",
+            "text": "Añada productos, semillas, materiales, repuestos, tanques e instalaciones. Confirme cantidades medidas. Los saldos iniciales no son gastos nuevos. Registre el valor de repuestos antes de emitirlos con costo; el combustible inicial requiere costo unitario.",
+            "control": "Stock & facilities",
+            "example": "12 bags counted today; unknown stock stays unconfirmed.",
+            "image": "/assets/learn/class-quick-start-es-6.svg"
+          },
+          {
+            "title": "Prepare el primer día",
+            "text": "Asigne persona, fecha, hora, duración, instrucciones y equipo opcional. Clasifique trabajo Planificado o Emergencia. Se revisan horarios, reservas, estado del equipo y restricciones de eventos.",
+            "control": "First work",
+            "example": "An operating mower and qualified worker, booked before play.",
+            "image": "/assets/learn/class-quick-start-es-7.svg"
+          },
+          {
+            "title": "Revise, publique y envíe por separado",
+            "text": "Compruebe la configuración, corrija errores y confirme la publicación. Se conserva una copia inicial verificada. Los correos quedan retenidos hasta que los libere. Guardar y salir conserva el borrador. La demostración no envía correos reales.",
+            "control": "Review & launch",
+            "example": "Draft → review → publish → release messages → My Day.",
+            "image": "/assets/learn/class-quick-start-es-8.svg"
+          }
+        ],
+        "deviceNote": "Inicio rápido es una configuración para teléfono y computadora. Guarde cada paso para conservar el borrador privado; se mantienen los permisos normales."
+      },
+      "examples": [
+        "A mower’s meter is unreadable: choose Unknown.",
+        "There is already a budget: retain it instead of entering a second overlapping baseline.",
+        "A worker is off on Friday: move the first task rather than overriding their recorded hours."
+      ],
+      "quiz": [
+        {
+          "question": "Does Save & continue send welcome emails?",
+          "answer": "No. Draft saves create no operational records. Publishing holds messages; release is a separate action."
+        },
+        {
+          "question": "Does one shared mower require a shared budget?",
+          "answer": "No. Resource sharing choices are independent."
+        }
+      ],
+      "facilitator": "Practice only on the fictional demo. Inspect the resulting Crew, Garage and My Day records. Discuss chemical review and local qualifications before real work.",
+      "deviceNote": "Quick Start is an intentional phone and computer setup flow. Use Save & continue to retain the private draft; normal workspace permissions still apply."
     }
   ]
 }

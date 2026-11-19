@@ -5,7 +5,7 @@ import catalog from '../../public/course-catalog.json' with {type:'json'};
 import {Crew,crewStore,readCrew} from './crew-store.mjs';
 const courses=new Set(catalog.courses.filter(c=>!c.publicDemo).flatMap(c=>c.tracks.filter(t=>t.available).map(t=>t.id)));
 const respond=(body,status=200)=>Response.json(body,{status,headers:{'Cache-Control':'private, no-store'}});
-export function crewAccess(user,state){if(canCourse(user,state.course))return{manager:true,workerId:null};const w=Object.values(state.workers).find(w=>w.identityId===user?.id&&!w.archived);return w?{manager:Crew.managerTitle(w.jobTitle),technician:w.equipmentAccess===true,workerId:w.id}:null;}
+export function crewAccess(user,state){if(canCourse(user,state.course)&&!user.resolvedSuperCourses?.includes(state.course))return{manager:true,workerId:null};const w=Object.values(state.workers).find(w=>w.identityId===user?.id&&!w.archived);return w?{manager:w.accessLevel?w.accessLevel==='super':Crew.managerTitle(w.jobTitle),technician:w.equipmentAccess===true,workerId:w.id}:null;}
 export function createCrewHandler({getUser,verifyOrigin,getStore,emailReady=()=>false,now=()=>new Date().toISOString()}){return async req=>{
  try{
   const user=await getUser();if(!user)return respond({error:'Sign in to open Crew.'},401);const course=new URL(req.url).searchParams.get('course');if(!courses.has(course))return respond({error:'This track is unavailable.'},403);

@@ -1,0 +1,2 @@
+import{getUser as identityGetUser}from'@netlify/identity';import{getStore}from'@netlify/blobs';import{resolveCourseUser}from'../lib/resolved-access.mjs';import{createCourseMapAssetHandler}from'../lib/course-map-asset-api.mjs';import source from'../lib/map-source-release.json'with{type:'json'};import baseline from'../../.netlify/recovery-baseline.json'with{type:'json'};
+export default createCourseMapAssetHandler({getUser:()=>resolveCourseUser(identityGetUser,getStore),source,baseline});export const config={path:'/api/course-map-asset'};
