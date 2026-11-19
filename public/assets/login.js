@@ -1,4 +1,4 @@
-import{signinValidation,signinFailure}from'./login-feedback.js?v=signin1';
+import{signinValidation,signinFailure}from'./login-feedback.js?v=signin2';
 import {recoverPassword} from './password-recovery.js?v=owner1';
 import {login,signup,getUser,handleAuthCallback,requestPasswordRecovery,updateUser,acceptInvite} from './identity-sdk.js';
 import {loginContext,loginDestination} from './login-context.js?v=myday1';

@@ -2621,7 +2621,6 @@
   "Enter your password to sign in.": "Introduzca su contraseña para iniciar sesión.",
   "Enter a valid email address, such as name@example.com.": "Introduzca un correo válido, por ejemplo nombre@ejemplo.com.",
   "Choose an available course and track before signing in.": "Elija un club y recorrido disponible antes de iniciar sesión.",
-  "We could not sign you in because the email address or password is incorrect. Check both and try again. Use Forgot your password? to reset it, or Create account if you have not registered.": "No pudo iniciar sesión porque el correo o la contraseña son incorrectos. Revise ambos e inténtelo de nuevo. Use ¿Olvidó su contraseña? para restablecerla o Crear cuenta si no se ha registrado.",
   "You are signed in, but your account is not approved for this course and track. Open My account to review your request, or ask your superintendent for access.": "Ha iniciado sesión, pero su cuenta no está aprobada para este club y recorrido. Abra Mi cuenta para revisar su solicitud o pida acceso a su superintendente.",
   "Your sign-in was accepted, but we could not confirm your course access. Please try again. If this continues, contact GolfOptix support.": "Se aceptó su inicio de sesión, pero no se pudo confirmar el acceso al campo. Inténtelo de nuevo. Si continúa, contacte al soporte de GolfOptix.",
   "Too many sign-in attempts. Wait a few minutes, then try again.": "Demasiados intentos de inicio de sesión. Espere unos minutos e inténtelo de nuevo.",
@@ -2629,5 +2628,6 @@
   "The sign-in service is temporarily unavailable. Please try again shortly.": "El servicio de inicio de sesión no está disponible temporalmente. Inténtelo de nuevo en breve.",
   "We could not reach the sign-in service. Check your connection and try again. If this continues, contact GolfOptix support.": "No se pudo conectar al servicio de inicio de sesión. Revise su conexión e inténtelo de nuevo. Si continúa, contacte al soporte de GolfOptix.",
   "Sign-in is not permitted for this account. Contact GolfOptix support for help.": "Esta cuenta no tiene permitido iniciar sesión. Contacte al soporte de GolfOptix.",
-  "Signing in…": "Iniciando sesión…"
+  "Signing in…": "Iniciando sesión…",
+  "The email address or password is incorrect. Try again, select “Forgot your password?” to reset it, or choose “Create account” to register.": "El correo o la contraseña son incorrectos. Inténtelo de nuevo, seleccione «¿Olvidó su contraseña?» para restablecerla o elija «Crear cuenta» para registrarse."
 }
